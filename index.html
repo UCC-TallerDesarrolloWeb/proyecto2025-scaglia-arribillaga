@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -6,48 +6,23 @@
   <meta name="description" content="Pokédex interactiva">
   <meta name="keywords" content="pokédex, pokemon, login, registro, filtrado, búsqueda">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokédex 2025</title>
+  <title>Pokédex</title>
   <link rel="icon" type="image/png" href="imagenes/logo.png">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Sección de Login -->
-  <section id="login">
+  <!-- Pantalla de bienvenida -->
+  <section id="intro">
     <h1>Bienvenido a la Pokédex</h1>
-
-    <!-- Formulario de Iniciar Sesión -->
-    <form id="formLogin">
-      <h2>Iniciar Sesión</h2>
-      <label for="usuarioLogin">Usuario:</label>
-      <input type="text" id="usuarioLogin" placeholder="Ingresa tu usuario" maxlength="15">
-
-      <label for="passwordLogin">Contraseña:</label>
-      <input type="password" id="passwordLogin" placeholder="Contraseña" maxlength="12">
-
-      <button type="submit">Entrar</button>
-      <p><a href="#" id="mostrarRegistro">¿No tenés cuenta? Crear Usuario</a></p>
-    </form>
-
-    <!-- Formulario de Registro -->
-    <form id="formRegistro">
-      <h2>Crear Usuario</h2>
-      <label for="usuarioRegistro">Usuario:</label>
-      <input type="text" id="usuarioRegistro" placeholder="Crea tu usuario" maxlength="15">
-
-      <label for="passwordRegistro">Contraseña:</label>
-      <input type="password" id="passwordRegistro" placeholder="Crea tu contraseña" maxlength="12">
-
-      <button type="submit">Registrar</button>
-      <p><a href="#" id="mostrarLogin">¿Ya tenés cuenta? Iniciar Sesión</a></p>
-    </form>
+    <p>Presiona <strong>Enter</strong> para continuar</p>
   </section>
 
   <!-- Contenido principal -->
-  <div id="contenido" style="display: none;">
+  <div id="contenido">
     <header>
       <img src="imagenes/logo.png" alt="Logo Pokédex" class="logo">
-      <h1 id="bienvenida">Pokédex 2025</h1>
+      <h1 id="bienvenida">Pokédex</h1>
       <nav>
         <ul>
           <li><a href="#inicio">Inicio</a></li>
@@ -109,19 +84,19 @@
       <section class="resultados">
         <h2>Resultados</h2>
         <div id="listaPokemons" class="lista">
-          <article class="pokemon-card" data-nombre="bulbasaur" data-tipo="planta">
+          <article class="pokemon-card" data-nombre="bulbasaur" data-tipo="planta" data-altura="bajo" data-peso="medio">
             <img src="imagenes/bulbasaur.png" alt="Bulbasaur">
             <h3>Bulbasaur</h3>
             <p>Tipo: Planta</p>
           </article>
 
-          <article class="pokemon-card" data-nombre="charmander" data-tipo="fuego">
+          <article class="pokemon-card" data-nombre="charmander" data-tipo="fuego" data-altura="medio" data-peso="ligero">
             <img src="imagenes/charmander.png" alt="Charmander">
             <h3>Charmander</h3>
             <p>Tipo: Fuego</p>
           </article>
 
-          <article class="pokemon-card" data-nombre="squirtle" data-tipo="agua">
+          <article class="pokemon-card" data-nombre="squirtle" data-tipo="agua" data-altura="bajo" data-peso="pesado">
             <img src="imagenes/squirtle.png" alt="Squirtle">
             <h3>Squirtle</h3>
             <p>Tipo: Agua</p>

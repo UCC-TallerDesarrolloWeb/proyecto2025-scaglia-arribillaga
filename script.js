@@ -1,10 +1,8 @@
-// Mostrar formulario de registro
-document.getElementById("mostrarRegistro").addEventListener("click", (e) => {
-  e.preventDefault();
-  document.getElementById("formLogin").style.display = "none";
-  document.getElementById("formRegistro").style.display = "flex";
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const intro = document.getElementById("intro");
+  const contenido = document.getElementById("contenido");
 
+<<<<<<< HEAD
 // Volver al login
 document.getElementById("mostrarLogin").addEventListener("click", (e) => {
   e.preventDefault();
@@ -85,19 +83,58 @@ const buscarPokemon = (e) => {
       contador++;
     } else {
       pokemon.style.display = "none";
+
+        // Evento de intro
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      intro.classList.add("hide");
+      setTimeout(() => {
+        intro.style.display = "none";
+        contenido.classList.add("active");
+      }, 500);
+=======
+
+>>>>>>> 65a0e5d367e0328368ec3230620d9e3b76db00f0
     }
   });
 
-  document.getElementById("contador").textContent = `Se encontraron ${contador} Pokémon.`;
-};
+  /**
+   * Buscar Pokémon por nombre, tipo, altura o peso
+   */
+  const buscarPokemon = (e) => {
+    e.preventDefault();
 
-// Eventos
-document.getElementById("formRegistro").addEventListener("submit", registrarUsuario);
-document.getElementById("formLogin").addEventListener("submit", validarLogin);
-document.getElementById("formBusquedaAvanzada").addEventListener("submit", buscarPokemon);
+    const nombre = document.getElementById("nombre").value.trim().toLowerCase();
+    const tipo = document.getElementById("tipo").value;
+    const altura = document.getElementById("altura").value;
+    const peso = document.getElementById("peso").value;
 
-// Mostrar login por defecto
-window.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("formLogin").style.display = "flex";
-  document.getElementById("formRegistro").style.display = "none";
+    const pokemons = document.querySelectorAll(".pokemon-card");
+    let contador = 0;
+
+    pokemons.forEach(pokemon => {
+      const nombrePokemon = pokemon.dataset.nombre;
+      const tipoPokemon = pokemon.dataset.tipo;
+      const alturaPokemon = pokemon.dataset.altura;
+      const pesoPokemon = pokemon.dataset.peso;
+
+      if (
+        (!nombre || nombrePokemon.includes(nombre)) &&
+        (!tipo || tipoPokemon === tipo) &&
+        (!altura || alturaPokemon === altura) &&
+        (!peso || pesoPokemon === peso)
+      ) {
+        pokemon.style.display = "block";
+        contador++;
+      } else {
+        pokemon.style.display = "none";
+      }
+    });
+
+    document.getElementById("contador").textContent = `Se encontraron ${contador} Pokémon.`;
+  };
+
+  // Evento del buscador
+  document.getElementById("formBusquedaAvanzada")
+          .addEventListener("submit", buscarPokemon);
 });
