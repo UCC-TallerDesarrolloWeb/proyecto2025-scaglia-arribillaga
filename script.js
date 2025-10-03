@@ -53,7 +53,6 @@ const validarLogin = (e) => {
   if (usuario === usuarioGuardado && password === passwordGuardado) {
     document.getElementById("login").style.display = "none";
     document.getElementById("contenido").style.display = "block";
-    document.getElementById("bienvenida").textContent = `Bienvenido, ${usuario}`;
   } else {
     alert("Usuario o contraseña incorrectos");
   }

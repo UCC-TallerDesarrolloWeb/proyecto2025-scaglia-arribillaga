@@ -109,12 +109,13 @@ nav a:hover {
   background: #333;
   color: white;
   padding: 1rem;
-  border-radius: 10px;
-  margin-bottom: 2rem;
+  border-radius: 15px;
+  margin:  1.5rem;
 }
 
 .buscador h2 {
   margin-top: 0;
+  align-content: center;
 }
 
 .filtros {
@@ -126,7 +127,7 @@ nav a:hover {
 
 .buscador input,
 .buscador select {
-  width: 100%;
+  width: 90%;
   padding: 0.5rem;
   border-radius: 5px;
   border: none;
@@ -151,6 +152,14 @@ nav a:hover {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.resultados h2 {
+  margin: 0px 10px 20px 10px;
+}
+
+#listaPokemons {
+  margin: 0px 15px 0px 15px;
 }
 
 .pokemon-card {
