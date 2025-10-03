@@ -32,19 +32,22 @@
     </header>
 
     <main id="pokedex">
-      <!-- Buscador avanzado -->
+      <!-- Buscador -->
       <section class="buscador">
         <h2>Busca tu Pokémon</h2>
         <form id="formBusquedaPrincipal">
           <div class="busqueda">
-              <label for="nombre">Nombre o Número:</label>
-              <input type="text" id="nombre" placeholder="Ej: Bulbasaur o 001">
+            <label for="nombre">Nombre o Número:</label>
+            <input type="text" id="nombre" placeholder="Ej: Bulbasaur o 001">
+            <button type="submit">Buscar</button>
           </div>
         </form>
+
         <div class="abrirFiltro">
           <h5>Mostrar búsqueda avanzada</h5>
           <img src="imagenes/chevron-abajo.png" alt="Flecha hacia abajo">
         </div>
+
         <form id="formBusquedaAvanzada">
           <div class="filtros">
             <div>
@@ -58,7 +61,6 @@
                 <option value="tierra">Tierra</option>
               </select>
             </div>
-
             <div>
               <label for="altura">Altura:</label>
               <select id="altura">
@@ -68,7 +70,6 @@
                 <option value="alto">Alto</option>
               </select>
             </div>
-
             <div>
               <label for="peso">Peso:</label>
               <select id="peso">
@@ -84,28 +85,1967 @@
       </section>
 
       <!-- Resultados -->
-      <section class="resultados">
+      <section id="resultadosPokedex">
         <h2>Resultados</h2>
         <div id="listaPokemons" class="lista">
-          <article class="pokemon-card" data-nombre="bulbasaur" data-tipo="planta" data-altura="bajo" data-peso="medio">
-            <img src="imagenes/bulbasaur.png" alt="Bulbasaur">
-            <h3>Bulbasaur</h3>
-            <p>Tipo: Planta</p>
-          </article>
+          <!-- #001 Bulbasaur -->
+<article class="pokemon-card" 
+        data-numero="001" 
+        data-nombre="bulbasaur" 
+        data-tipo="Planta,Veneno" 
+        data-altura="0.7 m" 
+        data-peso="6.9 kg"
+        data-evoluciones="001,002,003">
+  <img src="imagenes/Pokemones/001.png" alt="Bulbasaur">
+  <h3>Bulbasaur</h3>
+  <p>Tipo: Planta / Veneno</p>
+</article>
 
-          <article class="pokemon-card" data-nombre="charmander" data-tipo="fuego" data-altura="medio" data-peso="ligero">
-            <img src="imagenes/charmander.png" alt="Charmander">
-            <h3>Charmander</h3>
-            <p>Tipo: Fuego</p>
-          </article>
+<!-- #002 Ivysaur -->
+<article class="pokemon-card" 
+        data-numero="002" 
+        data-nombre="ivysaur" 
+        data-tipo="Planta,Veneno" 
+        data-altura="1.0 m" 
+        data-peso="13.0 kg"
+        data-evoluciones="001,002,003">
+  <img src="imagenes/Pokemones/002.png" alt="Ivysaur">
+  <h3>Ivysaur</h3>
+  <p>Tipo: Planta / Veneno</p>
+</article>
 
-          <article class="pokemon-card" data-nombre="squirtle" data-tipo="agua" data-altura="bajo" data-peso="pesado">
-            <img src="imagenes/squirtle.png" alt="Squirtle">
-            <h3>Squirtle</h3>
-            <p>Tipo: Agua</p>
-          </article>
+<!-- #003 Venusaur -->
+<article class="pokemon-card" 
+        data-numero="003" 
+        data-nombre="venusaur" 
+        data-tipo="Planta,Veneno" 
+        data-altura="2.0 m" 
+        data-peso="100.0 kg"
+        data-evoluciones="001,002,003">
+  <img src="imagenes/Pokemones/003.png" alt="Venusaur">
+  <h3>Venusaur</h3>
+  <p>Tipo: Planta / Veneno</p>
+</article>
+
+<!-- #004 Charmander -->
+<article class="pokemon-card" 
+        data-numero="004" 
+        data-nombre="charmander" 
+        data-tipo="Fuego" 
+        data-altura="0.6 m" 
+        data-peso="8.5 kg"
+        data-evoluciones="004,005,006">
+  <img src="imagenes/Pokemones/004.png" alt="Charmander">
+  <h3>Charmander</h3>
+  <p>Tipo: Fuego</p>
+</article>
+
+<!-- #005 Charmeleon -->
+<article class="pokemon-card" 
+        data-numero="005" 
+        data-nombre="charmeleon" 
+        data-tipo="Fuego" 
+        data-altura="1.1 m" 
+        data-peso="19.0 kg"
+        data-evoluciones="004,005,006">
+  <img src="imagenes/Pokemones/005.png" alt="Charmeleon">
+  <h3>Charmeleon</h3>
+  <p>Tipo: Fuego</p>
+</article>
+
+<!-- #006 Charizard -->
+<article class="pokemon-card" 
+        data-numero="006" 
+        data-nombre="charizard" 
+        data-tipo="Fuego,Volador" 
+        data-altura="1.7 m" 
+        data-peso="90.5 kg"
+        data-evoluciones="004,005,006">
+  <img src="imagenes/Pokemones/006.png" alt="Charizard">
+  <h3>Charizard</h3>
+  <p>Tipo: Fuego / Volador</p>
+</article>
+
+<!-- #007 Squirtle -->
+<article class="pokemon-card" 
+        data-numero="007" 
+        data-nombre="squirtle" 
+        data-tipo="Agua" 
+        data-altura="0.5 m" 
+        data-peso="9.0 kg"
+        data-evoluciones="007,008,009">
+  <img src="imagenes/Pokemones/007.png" alt="Squirtle">
+  <h3>Squirtle</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #008 Wartortle -->
+<article class="pokemon-card" 
+        data-numero="008" 
+        data-nombre="wartortle" 
+        data-tipo="Agua" 
+        data-altura="1.0 m" 
+        data-peso="22.5 kg"
+        data-evoluciones="007,008,009">
+  <img src="imagenes/Pokemones/008.png" alt="Wartortle">
+  <h3>Wartortle</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #009 Blastoise -->
+<article class="pokemon-card" 
+        data-numero="009" 
+        data-nombre="blastoise" 
+        data-tipo="Agua" 
+        data-altura="1.6 m" 
+        data-peso="85.5 kg"
+        data-evoluciones="007,008,009">
+  <img src="imagenes/Pokemones/009.png" alt="Blastoise">
+  <h3>Blastoise</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #010 Caterpie -->
+<article class="pokemon-card" 
+        data-numero="010" 
+        data-nombre="caterpie" 
+        data-tipo="Bicho" 
+        data-altura="0.3 m" 
+        data-peso="2.9 kg"
+        data-evoluciones="010,011,012">
+  <img src="imagenes/Pokemones/010.png" alt="Caterpie">
+  <h3>Caterpie</h3>
+  <p>Tipo: Bicho</p>
+</article>
+<!-- #011 Metapod -->
+<article class="pokemon-card" 
+        data-numero="011" 
+        data-nombre="metapod" 
+        data-tipo="Bicho" 
+        data-altura="0.7 m" 
+        data-peso="9.9 kg"
+        data-evoluciones="010,011,012">
+  <img src="imagenes/Pokemones/011.png" alt="Metapod">
+  <h3>Metapod</h3>
+  <p>Tipo: Bicho</p>
+</article>
+
+<!-- #012 Butterfree -->
+<article class="pokemon-card" 
+        data-numero="012" 
+        data-nombre="butterfree" 
+        data-tipo="Bicho,Volador" 
+        data-altura="1.1 m" 
+        data-peso="32.0 kg"
+        data-evoluciones="010,011,012">
+  <img src="imagenes/Pokemones/012.png" alt="Butterfree">
+  <h3>Butterfree</h3>
+  <p>Tipo: Bicho / Volador</p>
+</article>
+
+<!-- #013 Weedle -->
+<article class="pokemon-card" 
+        data-numero="013" 
+        data-nombre="weedle" 
+        data-tipo="Bicho,Veneno" 
+        data-altura="0.3 m" 
+        data-peso="3.2 kg"
+        data-evoluciones="013,014,015">
+  <img src="imagenes/Pokemones/013.png" alt="Weedle">
+  <h3>Weedle</h3>
+  <p>Tipo: Bicho / Veneno</p>
+</article>
+
+<!-- #014 Kakuna -->
+<article class="pokemon-card" 
+        data-numero="014" 
+        data-nombre="kakuna" 
+        data-tipo="Bicho,Veneno" 
+        data-altura="0.6 m" 
+        data-peso="10.0 kg"
+        data-evoluciones="013,014,015">
+  <img src="imagenes/Pokemones/014.png" alt="Kakuna">
+  <h3>Kakuna</h3>
+  <p>Tipo: Bicho / Veneno</p>
+</article>
+
+<!-- #015 Beedrill -->
+<article class="pokemon-card" 
+        data-numero="015" 
+        data-nombre="beedrill" 
+        data-tipo="Bicho,Veneno" 
+        data-altura="1.0 m" 
+        data-peso="29.5 kg"
+        data-evoluciones="013,014,015">
+  <img src="imagenes/Pokemones/015.png" alt="Beedrill">
+  <h3>Beedrill</h3>
+  <p>Tipo: Bicho / Veneno</p>
+</article>
+
+<!-- #016 Pidgey -->
+<article class="pokemon-card" 
+        data-numero="016" 
+        data-nombre="pidgey" 
+        data-tipo="Normal,Volador" 
+        data-altura="0.3 m" 
+        data-peso="1.8 kg"
+        data-evoluciones="016,017,018">
+  <img src="imagenes/Pokemones/016.png" alt="Pidgey">
+  <h3>Pidgey</h3>
+  <p>Tipo: Normal / Volador</p>
+</article>
+
+<!-- #017 Pidgeotto -->
+<article class="pokemon-card" 
+        data-numero="017" 
+        data-nombre="pidgeotto" 
+        data-tipo="Normal,Volador" 
+        data-altura="1.1 m" 
+        data-peso="30.0 kg"
+        data-evoluciones="016,017,018">
+  <img src="imagenes/Pokemones/017.png" alt="Pidgeotto">
+  <h3>Pidgeotto</h3>
+  <p>Tipo: Normal / Volador</p>
+</article>
+
+<!-- #018 Pidgeot -->
+<article class="pokemon-card" 
+        data-numero="018" 
+        data-nombre="pidgeot" 
+        data-tipo="Normal,Volador" 
+        data-altura="1.5 m" 
+        data-peso="39.5 kg"
+        data-evoluciones="016,017,018">
+  <img src="imagenes/Pokemones/018.png" alt="Pidgeot">
+  <h3>Pidgeot</h3>
+  <p>Tipo: Normal / Volador</p>
+</article>
+
+<!-- #019 Rattata -->
+<article class="pokemon-card" 
+        data-numero="019" 
+        data-nombre="rattata" 
+        data-tipo="Normal" 
+        data-altura="0.3 m" 
+        data-peso="3.5 kg"
+        data-evoluciones="019,020">
+  <img src="imagenes/Pokemones/019.png" alt="Rattata">
+  <h3>Rattata</h3>
+  <p>Tipo: Normal</p>
+</article>
+
+<!-- #020 Raticate -->
+<article class="pokemon-card" 
+        data-numero="020" 
+        data-nombre="raticate" 
+        data-tipo="Normal" 
+        data-altura="0.7 m" 
+        data-peso="18.5 kg"
+        data-evoluciones="019,020">
+  <img src="imagenes/Pokemones/020.png" alt="Raticate">
+  <h3>Raticate</h3>
+  <p>Tipo: Normal</p>
+</article>
+<!-- #021 Spearow -->
+<article class="pokemon-card" 
+        data-numero="021" 
+        data-nombre="spearow" 
+        data-tipo="Normal,Volador" 
+        data-altura="0.3 m" 
+        data-peso="2.0 kg"
+        data-evoluciones="021,022">
+  <img src="imagenes/Pokemones/021.png" alt="Spearow">
+  <h3>Spearow</h3>
+  <p>Tipo: Normal / Volador</p>
+</article>
+
+<!-- #022 Fearow -->
+<article class="pokemon-card" 
+        data-numero="022" 
+        data-nombre="fearow" 
+        data-tipo="Normal,Volador" 
+        data-altura="1.2 m" 
+        data-peso="38.0 kg"
+        data-evoluciones="021,022">
+  <img src="imagenes/Pokemones/022.png" alt="Fearow">
+  <h3>Fearow</h3>
+  <p>Tipo: Normal / Volador</p>
+</article>
+
+<!-- #023 Ekans -->
+<article class="pokemon-card" 
+        data-numero="023" 
+        data-nombre="ekans" 
+        data-tipo="Veneno" 
+        data-altura="2.0 m" 
+        data-peso="6.9 kg"
+        data-evoluciones="023,024">
+  <img src="imagenes/Pokemones/023.png" alt="Ekans">
+  <h3>Ekans</h3>
+  <p>Tipo: Veneno</p>
+</article>
+
+<!-- #024 Arbok -->
+<article class="pokemon-card" 
+        data-numero="024" 
+        data-nombre="arbok" 
+        data-tipo="Veneno" 
+        data-altura="3.5 m" 
+        data-peso="65.0 kg"
+        data-evoluciones="023,024">
+  <img src="imagenes/Pokemones/024.png" alt="Arbok">
+  <h3>Arbok</h3>
+  <p>Tipo: Veneno</p>
+</article>
+
+<!-- #025 Pikachu -->
+<article class="pokemon-card" 
+        data-numero="025" 
+        data-nombre="pikachu" 
+        data-tipo="Eléctrico" 
+        data-altura="0.4 m" 
+        data-peso="6.0 kg"
+        data-evoluciones="025,026">
+  <img src="imagenes/Pokemones/025.png" alt="Pikachu">
+  <h3>Pikachu</h3>
+  <p>Tipo: Eléctrico</p>
+</article>
+
+<!-- #026 Raichu -->
+<article class="pokemon-card" 
+        data-numero="026" 
+        data-nombre="raichu" 
+        data-tipo="Eléctrico" 
+        data-altura="0.8 m" 
+        data-peso="30.0 kg"
+        data-evoluciones="025,026">
+  <img src="imagenes/Pokemones/026.png" alt="Raichu">
+  <h3>Raichu</h3>
+  <p>Tipo: Eléctrico</p>
+</article>
+
+<!-- #027 Sandshrew -->
+<article class="pokemon-card" 
+        data-numero="027" 
+        data-nombre="sandshrew" 
+        data-tipo="Tierra" 
+        data-altura="0.6 m" 
+        data-peso="12.0 kg"
+        data-evoluciones="027,028">
+  <img src="imagenes/Pokemones/027.png" alt="Sandshrew">
+  <h3>Sandshrew</h3>
+  <p>Tipo: Tierra</p>
+</article>
+
+<!-- #028 Sandslash -->
+<article class="pokemon-card" 
+        data-numero="028" 
+        data-nombre="sandslash" 
+        data-tipo="Tierra" 
+        data-altura="1.0 m" 
+        data-peso="29.5 kg"
+        data-evoluciones="027,028">
+  <img src="imagenes/Pokemones/028.png" alt="Sandslash">
+  <h3>Sandslash</h3>
+  <p>Tipo: Tierra</p>
+</article>
+
+<!-- #029 Nidoran♀ -->
+<article class="pokemon-card" 
+        data-numero="029" 
+        data-nombre="nidoran♀" 
+        data-tipo="Veneno" 
+        data-altura="0.4 m" 
+        data-peso="7.0 kg"
+        data-evoluciones="029,030,031">
+  <img src="imagenes/Pokemones/029.png" alt="Nidoran♀">
+  <h3>Nidoran♀</h3>
+  <p>Tipo: Veneno</p>
+</article>
+
+<!-- #030 Nidorina -->
+<article class="pokemon-card" 
+        data-numero="030" 
+        data-nombre="nidorina" 
+        data-tipo="Veneno" 
+        data-altura="0.8 m" 
+        data-peso="20.0 kg"
+        data-evoluciones="029,030,031">
+  <img src="imagenes/Pokemones/030.png" alt="Nidorina">
+  <h3>Nidorina</h3>
+  <p>Tipo: Veneno</p>
+</article>
+<!-- #031 Nidoqueen -->
+<article class="pokemon-card" 
+        data-numero="031" 
+        data-nombre="nidoqueen" 
+        data-tipo="Veneno,Tierra" 
+        data-altura="1.3 m" 
+        data-peso="60.0 kg"
+        data-evoluciones="029,030,031">
+  <img src="imagenes/Pokemones/031.png" alt="Nidoqueen">
+  <h3>Nidoqueen</h3>
+  <p>Tipo: Veneno / Tierra</p>
+</article>
+
+<!-- #032 Nidoran♂ -->
+<article class="pokemon-card" 
+        data-numero="032" 
+        data-nombre="nidoran♂" 
+        data-tipo="Veneno" 
+        data-altura="0.5 m" 
+        data-peso="9.0 kg"
+        data-evoluciones="032,033,034">
+  <img src="imagenes/Pokemones/032.png" alt="Nidoran♂">
+  <h3>Nidoran♂</h3>
+  <p>Tipo: Veneno</p>
+</article>
+
+<!-- #033 Nidorino -->
+<article class="pokemon-card" 
+        data-numero="033" 
+        data-nombre="nidorino" 
+        data-tipo="Veneno" 
+        data-altura="0.9 m" 
+        data-peso="19.5 kg"
+        data-evoluciones="032,033,034">
+  <img src="imagenes/Pokemones/033.png" alt="Nidorino">
+  <h3>Nidorino</h3>
+  <p>Tipo: Veneno</p>
+</article>
+
+<!-- #034 Nidoking -->
+<article class="pokemon-card" 
+        data-numero="034" 
+        data-nombre="nidoking" 
+        data-tipo="Veneno,Tierra" 
+        data-altura="1.4 m" 
+        data-peso="62.0 kg"
+        data-evoluciones="032,033,034">
+  <img src="imagenes/Pokemones/034.png" alt="Nidoking">
+  <h3>Nidoking</h3>
+  <p>Tipo: Veneno / Tierra</p>
+</article>
+
+<!-- #035 Clefairy -->
+<article class="pokemon-card" 
+        data-numero="035" 
+        data-nombre="clefairy" 
+        data-tipo="Hada" 
+        data-altura="0.6 m" 
+        data-peso="7.5 kg"
+        data-evoluciones="035,036">
+  <img src="imagenes/Pokemones/035.png" alt="Clefairy">
+  <h3>Clefairy</h3>
+  <p>Tipo: Hada</p>
+</article>
+
+<!-- #036 Clefable -->
+<article class="pokemon-card" 
+        data-numero="036" 
+        data-nombre="clefable" 
+        data-tipo="Hada" 
+        data-altura="1.3 m" 
+        data-peso="40.0 kg"
+        data-evoluciones="035,036">
+  <img src="imagenes/Pokemones/036.png" alt="Clefable">
+  <h3>Clefable</h3>
+  <p>Tipo: Hada</p>
+</article>
+
+<!-- #037 Vulpix -->
+<article class="pokemon-card" 
+        data-numero="037" 
+        data-nombre="vulpix" 
+        data-tipo="Fuego" 
+        data-altura="0.6 m" 
+        data-peso="9.9 kg"
+        data-evoluciones="037,038">
+  <img src="imagenes/Pokemones/037.png" alt="Vulpix">
+  <h3>Vulpix</h3>
+  <p>Tipo: Fuego</p>
+</article>
+
+<!-- #038 Ninetales -->
+<article class="pokemon-card" 
+        data-numero="038" 
+        data-nombre="ninetales" 
+        data-tipo="Fuego" 
+        data-altura="1.1 m" 
+        data-peso="19.9 kg"
+        data-evoluciones="037,038">
+  <img src="imagenes/Pokemones/038.png" alt="Ninetales">
+  <h3>Ninetales</h3>
+  <p>Tipo: Fuego</p>
+</article>
+
+<!-- #039 Jigglypuff -->
+<article class="pokemon-card" 
+        data-numero="039" 
+        data-nombre="jigglypuff" 
+        data-tipo="Normal,Hada" 
+        data-altura="0.5 m" 
+        data-peso="5.5 kg"
+        data-evoluciones="039,040">
+  <img src="imagenes/Pokemones/039.png" alt="Jigglypuff">
+  <h3>Jigglypuff</h3>
+  <p>Tipo: Normal / Hada</p>
+</article>
+
+<!-- #040 Wigglytuff -->
+<article class="pokemon-card" 
+        data-numero="040" 
+        data-nombre="wigglytuff" 
+        data-tipo="Normal,Hada" 
+        data-altura="1.0 m" 
+        data-peso="12.0 kg"
+        data-evoluciones="039,040">
+  <img src="imagenes/Pokemones/040.png" alt="Wigglytuff">
+  <h3>Wigglytuff</h3>
+  <p>Tipo: Normal / Hada</p>
+</article>
+<!-- #041 Zubat -->
+<article class="pokemon-card" 
+        data-numero="041" 
+        data-nombre="zubat" 
+        data-tipo="Veneno,Volador" 
+        data-altura="0.8 m" 
+        data-peso="7.5 kg"
+        data-evoluciones="041,042">
+  <img src="imagenes/Pokemones/041.png" alt="Zubat">
+  <h3>Zubat</h3>
+  <p>Tipo: Veneno / Volador</p>
+</article>
+
+<!-- #042 Golbat -->
+<article class="pokemon-card" 
+        data-numero="042" 
+        data-nombre="golbat" 
+        data-tipo="Veneno,Volador" 
+        data-altura="1.6 m" 
+        data-peso="55.0 kg"
+        data-evoluciones="041,042">
+  <img src="imagenes/Pokemones/042.png" alt="Golbat">
+  <h3>Golbat</h3>
+  <p>Tipo: Veneno / Volador</p>
+</article>
+
+<!-- #043 Oddish -->
+<article class="pokemon-card" 
+        data-numero="043" 
+        data-nombre="oddish" 
+        data-tipo="Planta,Veneno" 
+        data-altura="0.5 m" 
+        data-peso="5.4 kg"
+        data-evoluciones="043,044,045">
+  <img src="imagenes/Pokemones/043.png" alt="Oddish">
+  <h3>Oddish</h3>
+  <p>Tipo: Planta / Veneno</p>
+</article>
+
+<!-- #044 Gloom -->
+<article class="pokemon-card" 
+        data-numero="044" 
+        data-nombre="gloom" 
+        data-tipo="Planta,Veneno" 
+        data-altura="0.8 m" 
+        data-peso="8.6 kg"
+        data-evoluciones="043,044,045">
+  <img src="imagenes/Pokemones/044.png" alt="Gloom">
+  <h3>Gloom</h3>
+  <p>Tipo: Planta / Veneno</p>
+</article>
+
+<!-- #045 Vileplume -->
+<article class="pokemon-card" 
+        data-numero="045" 
+        data-nombre="vileplume" 
+        data-tipo="Planta,Veneno" 
+        data-altura="1.2 m" 
+        data-peso="18.6 kg"
+        data-evoluciones="043,044,045">
+  <img src="imagenes/Pokemones/045.png" alt="Vileplume">
+  <h3>Vileplume</h3>
+  <p>Tipo: Planta / Veneno</p>
+</article>
+
+<!-- #046 Paras -->
+<article class="pokemon-card" 
+        data-numero="046" 
+        data-nombre="paras" 
+        data-tipo="Bicho,Planta" 
+        data-altura="0.3 m" 
+        data-peso="5.4 kg"
+        data-evoluciones="046,047">
+  <img src="imagenes/Pokemones/046.png" alt="Paras">
+  <h3>Paras</h3>
+  <p>Tipo: Bicho / Planta</p>
+</article>
+
+<!-- #047 Parasect -->
+<article class="pokemon-card" 
+        data-numero="047" 
+        data-nombre="parasect" 
+        data-tipo="Bicho,Planta" 
+        data-altura="1.0 m" 
+        data-peso="29.5 kg"
+        data-evoluciones="046,047">
+  <img src="imagenes/Pokemones/047.png" alt="Parasect">
+  <h3>Parasect</h3>
+  <p>Tipo: Bicho / Planta</p>
+</article>
+
+<!-- #048 Venonat -->
+<article class="pokemon-card" 
+        data-numero="048" 
+        data-nombre="venonat" 
+        data-tipo="Bicho,Veneno" 
+        data-altura="1.0 m" 
+        data-peso="30.0 kg"
+        data-evoluciones="048,049">
+  <img src="imagenes/Pokemones/048.png" alt="Venonat">
+  <h3>Venonat</h3>
+  <p>Tipo: Bicho / Veneno</p>
+</article>
+
+<!-- #049 Venomoth -->
+<article class="pokemon-card" 
+        data-numero="049" 
+        data-nombre="venomoth" 
+        data-tipo="Bicho,Veneno" 
+        data-altura="1.5 m" 
+        data-peso="12.5 kg"
+        data-evoluciones="048,049">
+  <img src="imagenes/Pokemones/049.png" alt="Venomoth">
+  <h3>Venomoth</h3>
+  <p>Tipo: Bicho / Veneno</p>
+</article>
+
+<!-- #050 Diglett -->
+<article class="pokemon-card" 
+        data-numero="050" 
+        data-nombre="diglett" 
+        data-tipo="Tierra" 
+        data-altura="0.2 m" 
+        data-peso="0.8 kg"
+        data-evoluciones="050,051">
+  <img src="imagenes/Pokemones/050.png" alt="Diglett">
+  <h3>Diglett</h3>
+  <p>Tipo: Tierra</p>
+</article>
+<!-- #051 Dugtrio -->
+<article class="pokemon-card" 
+        data-numero="051" 
+        data-nombre="dugtrio" 
+        data-tipo="Tierra" 
+        data-altura="0.7 m" 
+        data-peso="33.3 kg"
+        data-evoluciones="050,051">
+  <img src="imagenes/Pokemones/051.png" alt="Dugtrio">
+  <h3>Dugtrio</h3>
+  <p>Tipo: Tierra</p>
+</article>
+
+<!-- #052 Meowth -->
+<article class="pokemon-card" 
+        data-numero="052" 
+        data-nombre="meowth" 
+        data-tipo="Normal" 
+        data-altura="0.4 m" 
+        data-peso="4.2 kg"
+        data-evoluciones="052,053">
+  <img src="imagenes/Pokemones/052.png" alt="Meowth">
+  <h3>Meowth</h3>
+  <p>Tipo: Normal</p>
+</article>
+
+<!-- #053 Persian -->
+<article class="pokemon-card" 
+        data-numero="053" 
+        data-nombre="persian" 
+        data-tipo="Normal" 
+        data-altura="1.0 m" 
+        data-peso="32.0 kg"
+        data-evoluciones="052,053">
+  <img src="imagenes/Pokemones/053.png" alt="Persian">
+  <h3>Persian</h3>
+  <p>Tipo: Normal</p>
+</article>
+
+<!-- #054 Psyduck -->
+<article class="pokemon-card" 
+        data-numero="054" 
+        data-nombre="psyduck" 
+        data-tipo="Agua" 
+        data-altura="0.8 m" 
+        data-peso="19.6 kg"
+        data-evoluciones="054,055">
+  <img src="imagenes/Pokemones/054.png" alt="Psyduck">
+  <h3>Psyduck</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #055 Golduck -->
+<article class="pokemon-card" 
+        data-numero="055" 
+        data-nombre="golduck" 
+        data-tipo="Agua" 
+        data-altura="1.7 m" 
+        data-peso="76.6 kg"
+        data-evoluciones="054,055">
+  <img src="imagenes/Pokemones/055.png" alt="Golduck">
+  <h3>Golduck</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #056 Mankey -->
+<article class="pokemon-card" 
+        data-numero="056" 
+        data-nombre="mankey" 
+        data-tipo="Lucha" 
+        data-altura="0.5 m" 
+        data-peso="28.0 kg"
+        data-evoluciones="056,057">
+  <img src="imagenes/Pokemones/056.png" alt="Mankey">
+  <h3>Mankey</h3>
+  <p>Tipo: Lucha</p>
+</article>
+
+<!-- #057 Primeape -->
+<article class="pokemon-card" 
+        data-numero="057" 
+        data-nombre="primeape" 
+        data-tipo="Lucha" 
+        data-altura="1.0 m" 
+        data-peso="32.0 kg"
+        data-evoluciones="056,057">
+  <img src="imagenes/Pokemones/057.png" alt="Primeape">
+  <h3>Primeape</h3>
+  <p>Tipo: Lucha</p>
+</article>
+
+<!-- #058 Growlithe -->
+<article class="pokemon-card" 
+        data-numero="058" 
+        data-nombre="growlithe" 
+        data-tipo="Fuego" 
+        data-altura="0.7 m" 
+        data-peso="19.0 kg"
+        data-evoluciones="058,059">
+  <img src="imagenes/Pokemones/058.png" alt="Growlithe">
+  <h3>Growlithe</h3>
+  <p>Tipo: Fuego</p>
+</article>
+
+<!-- #059 Arcanine -->
+<article class="pokemon-card" 
+        data-numero="059" 
+        data-nombre="arcanine" 
+        data-tipo="Fuego" 
+        data-altura="1.9 m" 
+        data-peso="155.0 kg"
+        data-evoluciones="058,059">
+  <img src="imagenes/Pokemones/059.png" alt="Arcanine">
+  <h3>Arcanine</h3>
+  <p>Tipo: Fuego</p>
+</article>
+
+<!-- #060 Poliwag -->
+<article class="pokemon-card" 
+        data-numero="060" 
+        data-nombre="poliwag" 
+        data-tipo="Agua" 
+        data-altura="0.6 m" 
+        data-peso="12.4 kg"
+        data-evoluciones="060,061,062">
+  <img src="imagenes/Pokemones/060.png" alt="Poliwag">
+  <h3>Poliwag</h3>
+  <p>Tipo: Agua</p>
+</article>
+<!-- #061 Poliwhirl -->
+<article class="pokemon-card" 
+        data-numero="061" 
+        data-nombre="poliwhirl" 
+        data-tipo="Agua" 
+        data-altura="1.0 m" 
+        data-peso="20.0 kg"
+        data-evoluciones="060,061,062">
+  <img src="imagenes/Pokemones/061.png" alt="Poliwhirl">
+  <h3>Poliwhirl</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #062 Poliwrath -->
+<article class="pokemon-card" 
+        data-numero="062" 
+        data-nombre="poliwrath" 
+        data-tipo="Agua,Lucha" 
+        data-altura="1.3 m" 
+        data-peso="54.0 kg"
+        data-evoluciones="060,061,062">
+  <img src="imagenes/Pokemones/062.png" alt="Poliwrath">
+  <h3>Poliwrath</h3>
+  <p>Tipo: Agua / Lucha</p>
+</article>
+
+<!-- #063 Abra -->
+<article class="pokemon-card" 
+        data-numero="063" 
+        data-nombre="abra" 
+        data-tipo="Psíquico" 
+        data-altura="0.9 m" 
+        data-peso="19.5 kg"
+        data-evoluciones="063,064,065">
+  <img src="imagenes/Pokemones/063.png" alt="Abra">
+  <h3>Abra</h3>
+  <p>Tipo: Psíquico</p>
+</article>
+
+<!-- #064 Kadabra -->
+<article class="pokemon-card" 
+        data-numero="064" 
+        data-nombre="kadabra" 
+        data-tipo="Psíquico" 
+        data-altura="1.3 m" 
+        data-peso="56.5 kg"
+        data-evoluciones="063,064,065">
+  <img src="imagenes/Pokemones/064.png" alt="Kadabra">
+  <h3>Kadabra</h3>
+  <p>Tipo: Psíquico</p>
+</article>
+
+<!-- #065 Alakazam -->
+<article class="pokemon-card" 
+        data-numero="065" 
+        data-nombre="alakazam" 
+        data-tipo="Psíquico" 
+        data-altura="1.5 m" 
+        data-peso="48.0 kg"
+        data-evoluciones="063,064,065">
+  <img src="imagenes/Pokemones/065.png" alt="Alakazam">
+  <h3>Alakazam</h3>
+  <p>Tipo: Psíquico</p>
+</article>
+
+<!-- #066 Machop -->
+<article class="pokemon-card" 
+        data-numero="066" 
+        data-nombre="machop" 
+        data-tipo="Lucha" 
+        data-altura="0.8 m" 
+        data-peso="19.5 kg"
+        data-evoluciones="067,068">
+  <img src="imagenes/Pokemones/066.png" alt="Machop">
+  <h3>Machop</h3>
+  <p>Tipo: Lucha</p>
+</article>
+
+<!-- #067 Machoke -->
+<article class="pokemon-card" 
+        data-numero="067" 
+        data-nombre="machoke" 
+        data-tipo="Lucha" 
+        data-altura="1.5 m" 
+        data-peso="70.5 kg"
+        data-evoluciones="068">
+  <img src="imagenes/Pokemones/067.png" alt="Machoke">
+  <h3>Machoke</h3>
+  <p>Tipo: Lucha</p>
+</article>
+
+<!-- #068 Machamp -->
+<article class="pokemon-card" 
+        data-numero="068" 
+        data-nombre="machamp" 
+        data-tipo="Lucha" 
+        data-altura="1.6 m" 
+        data-peso="130.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/068.png" alt="Machamp">
+  <h3>Machamp</h3>
+  <p>Tipo: Lucha</p>
+</article>
+
+<!-- #069 Bellsprout -->
+<article class="pokemon-card" 
+        data-numero="069" 
+        data-nombre="bellsprout" 
+        data-tipo="Planta,Veneno" 
+        data-altura="0.7 m" 
+        data-peso="4.0 kg"
+        data-evoluciones="070,071">
+  <img src="imagenes/Pokemones/069.png" alt="Bellsprout">
+  <h3>Bellsprout</h3>
+  <p>Tipo: Planta / Veneno</p>
+</article>
+
+<!-- #070 Weepinbell -->
+<article class="pokemon-card" 
+        data-numero="070" 
+        data-nombre="weepinbell" 
+        data-tipo="Planta,Veneno" 
+        data-altura="1.0 m" 
+        data-peso="6.4 kg"
+        data-evoluciones="071">
+  <img src="imagenes/Pokemones/070.png" alt="Weepinbell">
+  <h3>Weepinbell</h3>
+  <p>Tipo: Planta / Veneno</p>
+</article>
+<!-- #071 Victreebel -->
+<article class="pokemon-card" 
+        data-numero="071" 
+        data-nombre="victreebel" 
+        data-tipo="Planta,Veneno" 
+        data-altura="1.7 m" 
+        data-peso="15.5 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/071.png" alt="Victreebel">
+  <h3>Victreebel</h3>
+  <p>Tipo: Planta / Veneno</p>
+</article>
+
+<!-- #072 Tentacool -->
+<article class="pokemon-card" 
+        data-numero="072" 
+        data-nombre="tentacool" 
+        data-tipo="Agua,Veneno" 
+        data-altura="0.9 m" 
+        data-peso="45.5 kg"
+        data-evoluciones="073">
+  <img src="imagenes/Pokemones/072.png" alt="Tentacool">
+  <h3>Tentacool</h3>
+  <p>Tipo: Agua / Veneno</p>
+</article>
+
+<!-- #073 Tentacruel -->
+<article class="pokemon-card" 
+        data-numero="073" 
+        data-nombre="tentacruel" 
+        data-tipo="Agua,Veneno" 
+        data-altura="1.6 m" 
+        data-peso="55.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/073.png" alt="Tentacruel">
+  <h3>Tentacruel</h3>
+  <p>Tipo: Agua / Veneno</p>
+</article>
+
+<!-- #074 Geodude -->
+<article class="pokemon-card" 
+        data-numero="074" 
+        data-nombre="geodude" 
+        data-tipo="Roca,Tierra" 
+        data-altura="0.4 m" 
+        data-peso="20.0 kg"
+        data-evoluciones="075,076">
+  <img src="imagenes/Pokemones/074.png" alt="Geodude">
+  <h3>Geodude</h3>
+  <p>Tipo: Roca / Tierra</p>
+</article>
+
+<!-- #075 Graveler -->
+<article class="pokemon-card" 
+        data-numero="075" 
+        data-nombre="graveler" 
+        data-tipo="Roca,Tierra" 
+        data-altura="1.0 m" 
+        data-peso="105.0 kg"
+        data-evoluciones="076">
+  <img src="imagenes/Pokemones/075.png" alt="Graveler">
+  <h3>Graveler</h3>
+  <p>Tipo: Roca / Tierra</p>
+</article>
+
+<!-- #076 Golem -->
+<article class="pokemon-card" 
+        data-numero="076" 
+        data-nombre="golem" 
+        data-tipo="Roca,Tierra" 
+        data-altura="1.4 m" 
+        data-peso="300.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/076.png" alt="Golem">
+  <h3>Golem</h3>
+  <p>Tipo: Roca / Tierra</p>
+</article>
+
+<!-- #077 Ponyta -->
+<article class="pokemon-card" 
+        data-numero="077" 
+        data-nombre="ponyta" 
+        data-tipo="Fuego" 
+        data-altura="1.0 m" 
+        data-peso="30.0 kg"
+        data-evoluciones="078">
+  <img src="imagenes/Pokemones/077.png" alt="Ponyta">
+  <h3>Ponyta</h3>
+  <p>Tipo: Fuego</p>
+</article>
+
+<!-- #078 Rapidash -->
+<article class="pokemon-card" 
+        data-numero="078" 
+        data-nombre="rapidash" 
+        data-tipo="Fuego" 
+        data-altura="1.7 m" 
+        data-peso="95.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/078.png" alt="Rapidash">
+  <h3>Rapidash</h3>
+  <p>Tipo: Fuego</p>
+</article>
+
+<!-- #079 Slowpoke -->
+<article class="pokemon-card" 
+        data-numero="079" 
+        data-nombre="slowpoke" 
+        data-tipo="Agua,Psíquico" 
+        data-altura="1.2 m" 
+        data-peso="36.0 kg"
+        data-evoluciones="080">
+  <img src="imagenes/Pokemones/079.png" alt="Slowpoke">
+  <h3>Slowpoke</h3>
+  <p>Tipo: Agua / Psíquico</p>
+</article>
+
+<!-- #080 Slowbro -->
+<article class="pokemon-card" 
+        data-numero="080" 
+        data-nombre="slowbro" 
+        data-tipo="Agua,Psíquico" 
+        data-altura="1.6 m" 
+        data-peso="78.5 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/080.png" alt="Slowbro">
+  <h3>Slowbro</h3>
+  <p>Tipo: Agua / Psíquico</p>
+</article>
+<!-- #081 Magnemite -->
+<article class="pokemon-card" 
+        data-numero="081" 
+        data-nombre="magnemite" 
+        data-tipo="Eléctrico,Acero" 
+        data-altura="0.3 m" 
+        data-peso="6.0 kg"
+        data-evoluciones="082">
+  <img src="imagenes/Pokemones/081.png" alt="Magnemite">
+  <h3>Magnemite</h3>
+  <p>Tipo: Eléctrico / Acero</p>
+</article>
+
+<!-- #082 Magneton -->
+<article class="pokemon-card" 
+        data-numero="082" 
+        data-nombre="magneton" 
+        data-tipo="Eléctrico,Acero" 
+        data-altura="1.0 m" 
+        data-peso="60.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/082.png" alt="Magneton">
+  <h3>Magneton</h3>
+  <p>Tipo: Eléctrico / Acero</p>
+</article>
+
+<!-- #083 Farfetch’d -->
+<article class="pokemon-card" 
+        data-numero="083" 
+        data-nombre="farfetch’d" 
+        data-tipo="Normal,Volador" 
+        data-altura="0.8 m" 
+        data-peso="15.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/083.png" alt="Farfetch’d">
+  <h3>Farfetch’d</h3>
+  <p>Tipo: Normal / Volador</p>
+</article>
+
+<!-- #084 Doduo -->
+<article class="pokemon-card" 
+        data-numero="084" 
+        data-nombre="doduo" 
+        data-tipo="Normal,Volador" 
+        data-altura="1.4 m" 
+        data-peso="39.2 kg"
+        data-evoluciones="085">
+  <img src="imagenes/Pokemones/084.png" alt="Doduo">
+  <h3>Doduo</h3>
+  <p>Tipo: Normal / Volador</p>
+</article>
+
+<!-- #085 Dodrio -->
+<article class="pokemon-card" 
+        data-numero="085" 
+        data-nombre="dodrio" 
+        data-tipo="Normal,Volador" 
+        data-altura="1.8 m" 
+        data-peso="85.2 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/085.png" alt="Dodrio">
+  <h3>Dodrio</h3>
+  <p>Tipo: Normal / Volador</p>
+</article>
+
+<!-- #086 Seel -->
+<article class="pokemon-card" 
+        data-numero="086" 
+        data-nombre="seel" 
+        data-tipo="Agua" 
+        data-altura="1.1 m" 
+        data-peso="90.0 kg"
+        data-evoluciones="087">
+  <img src="imagenes/Pokemones/086.png" alt="Seel">
+  <h3>Seel</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #087 Dewgong -->
+<article class="pokemon-card" 
+        data-numero="087" 
+        data-nombre="dewgong" 
+        data-tipo="Agua,Hielo" 
+        data-altura="1.7 m" 
+        data-peso="120.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/087.png" alt="Dewgong">
+  <h3>Dewgong</h3>
+  <p>Tipo: Agua / Hielo</p>
+</article>
+
+<!-- #088 Grimer -->
+<article class="pokemon-card" 
+        data-numero="088" 
+        data-nombre="grimer" 
+        data-tipo="Veneno" 
+        data-altura="0.9 m" 
+        data-peso="30.0 kg"
+        data-evoluciones="089">
+  <img src="imagenes/Pokemones/088.png" alt="Grimer">
+  <h3>Grimer</h3>
+  <p>Tipo: Veneno</p>
+</article>
+
+<!-- #089 Muk -->
+<article class="pokemon-card" 
+        data-numero="089" 
+        data-nombre="muk" 
+        data-tipo="Veneno" 
+        data-altura="1.2 m" 
+        data-peso="30.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/089.png" alt="Muk">
+  <h3>Muk</h3>
+  <p>Tipo: Veneno</p>
+</article>
+
+<!-- #090 Shellder -->
+<article class="pokemon-card" 
+        data-numero="090" 
+        data-nombre="shellder" 
+        data-tipo="Agua" 
+        data-altura="0.3 m" 
+        data-peso="4.0 kg"
+        data-evoluciones="091">
+  <img src="imagenes/Pokemones/090.png" alt="Shellder">
+  <h3>Shellder</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #091 Cloyster -->
+<article class="pokemon-card" 
+        data-numero="091" 
+        data-nombre="cloyster" 
+        data-tipo="Agua,Hielo" 
+        data-altura="1.5 m" 
+        data-peso="132.5 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/091.png" alt="Cloyster">
+  <h3>Cloyster</h3>
+  <p>Tipo: Agua / Hielo</p>
+</article>
+<!-- #092 Gastly -->
+<article class="pokemon-card" 
+        data-numero="092" 
+        data-nombre="gastly" 
+        data-tipo="Fantasma,Veneno" 
+        data-altura="1.3 m" 
+        data-peso="0.1 kg"
+        data-evoluciones="093,094">
+  <img src="imagenes/Pokemones/092.png" alt="Gastly">
+  <h3>Gastly</h3>
+  <p>Tipo: Fantasma / Veneno</p>
+</article>
+
+<!-- #093 Haunter -->
+<article class="pokemon-card" 
+        data-numero="093" 
+        data-nombre="haunter" 
+        data-tipo="Fantasma,Veneno" 
+        data-altura="1.6 m" 
+        data-peso="0.1 kg"
+        data-evoluciones="094">
+  <img src="imagenes/Pokemones/093.png" alt="Haunter">
+  <h3>Haunter</h3>
+  <p>Tipo: Fantasma / Veneno</p>
+</article>
+
+<!-- #094 Gengar -->
+<article class="pokemon-card" 
+        data-numero="094" 
+        data-nombre="gengar" 
+        data-tipo="Fantasma,Veneno" 
+        data-altura="1.5 m" 
+        data-peso="40.5 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/094.png" alt="Gengar">
+  <h3>Gengar</h3>
+  <p>Tipo: Fantasma / Veneno</p>
+</article>
+
+<!-- #095 Onix -->
+<article class="pokemon-card" 
+        data-numero="095" 
+        data-nombre="onix" 
+        data-tipo="Roca,Tierra" 
+        data-altura="8.8 m" 
+        data-peso="210.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/095.png" alt="Onix">
+  <h3>Onix</h3>
+  <p>Tipo: Roca / Tierra</p>
+</article>
+
+<!-- #096 Drowzee -->
+<article class="pokemon-card" 
+        data-numero="096" 
+        data-nombre="drowzee" 
+        data-tipo="Psíquico" 
+        data-altura="1.0 m" 
+        data-peso="32.4 kg"
+        data-evoluciones="097">
+  <img src="imagenes/Pokemones/096.png" alt="Drowzee">
+  <h3>Drowzee</h3>
+  <p>Tipo: Psíquico</p>
+</article>
+
+<!-- #097 Hypno -->
+<article class="pokemon-card" 
+        data-numero="097" 
+        data-nombre="hypno" 
+        data-tipo="Psíquico" 
+        data-altura="1.6 m" 
+        data-peso="75.6 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/097.png" alt="Hypno">
+  <h3>Hypno</h3>
+  <p>Tipo: Psíquico</p>
+</article>
+
+<!-- #098 Krabby -->
+<article class="pokemon-card" 
+        data-numero="098" 
+        data-nombre="krabby" 
+        data-tipo="Agua" 
+        data-altura="0.4 m" 
+        data-peso="6.5 kg"
+        data-evoluciones="099">
+  <img src="imagenes/Pokemones/098.png" alt="Krabby">
+  <h3>Krabby</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #099 Kingler -->
+<article class="pokemon-card" 
+        data-numero="099" 
+        data-nombre="kingler" 
+        data-tipo="Agua" 
+        data-altura="1.3 m" 
+        data-peso="60.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/099.png" alt="Kingler">
+  <h3>Kingler</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #100 Voltorb -->
+<article class="pokemon-card" 
+        data-numero="100" 
+        data-nombre="voltorb" 
+        data-tipo="Eléctrico" 
+        data-altura="0.5 m" 
+        data-peso="10.4 kg"
+        data-evoluciones="101">
+  <img src="imagenes/Pokemones/100.png" alt="Voltorb">
+  <h3>Voltorb</h3>
+  <p>Tipo: Eléctrico</p>
+</article>
+<!-- #101 Electrode -->
+<article class="pokemon-card" 
+        data-numero="101" 
+        data-nombre="electrode" 
+        data-tipo="Eléctrico" 
+        data-altura="1.2 m" 
+        data-peso="66.6 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/101.png" alt="Electrode">
+  <h3>Electrode</h3>
+  <p>Tipo: Eléctrico</p>
+</article>
+
+<!-- #102 Exeggcute -->
+<article class="pokemon-card" 
+        data-numero="102" 
+        data-nombre="exeggcute" 
+        data-tipo="Planta,Psíquico" 
+        data-altura="0.4 m" 
+        data-peso="2.5 kg"
+        data-evoluciones="103">
+  <img src="imagenes/Pokemones/102.png" alt="Exeggcute">
+  <h3>Exeggcute</h3>
+  <p>Tipo: Planta / Psíquico</p>
+</article>
+
+<!-- #103 Exeggutor -->
+<article class="pokemon-card" 
+        data-numero="103" 
+        data-nombre="exeggutor" 
+        data-tipo="Planta,Psíquico" 
+        data-altura="2.0 m" 
+        data-peso="120.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/103.png" alt="Exeggutor">
+  <h3>Exeggutor</h3>
+  <p>Tipo: Planta / Psíquico</p>
+</article>
+
+<!-- #104 Cubone -->
+<article class="pokemon-card" 
+        data-numero="104" 
+        data-nombre="cubone" 
+        data-tipo="Tierra" 
+        data-altura="0.4 m" 
+        data-peso="6.5 kg"
+        data-evoluciones="105">
+  <img src="imagenes/Pokemones/104.png" alt="Cubone">
+  <h3>Cubone</h3>
+  <p>Tipo: Tierra</p>
+</article>
+
+<!-- #105 Marowak -->
+<article class="pokemon-card" 
+        data-numero="105" 
+        data-nombre="marowak" 
+        data-tipo="Tierra" 
+        data-altura="1.0 m" 
+        data-peso="45.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/105.png" alt="Marowak">
+  <h3>Marowak</h3>
+  <p>Tipo: Tierra</p>
+</article>
+
+<!-- #106 Hitmonlee -->
+<article class="pokemon-card" 
+        data-numero="106" 
+        data-nombre="hitmonlee" 
+        data-tipo="Lucha" 
+        data-altura="1.5 m" 
+        data-peso="49.8 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/106.png" alt="Hitmonlee">
+  <h3>Hitmonlee</h3>
+  <p>Tipo: Lucha</p>
+</article>
+
+<!-- #107 Hitmonchan -->
+<article class="pokemon-card" 
+        data-numero="107" 
+        data-nombre="hitmonchan" 
+        data-tipo="Lucha" 
+        data-altura="1.4 m" 
+        data-peso="50.2 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/107.png" alt="Hitmonchan">
+  <h3>Hitmonchan</h3>
+  <p>Tipo: Lucha</p>
+</article>
+
+<!-- #108 Lickitung -->
+<article class="pokemon-card" 
+        data-numero="108" 
+        data-nombre="lickitung" 
+        data-tipo="Normal" 
+        data-altura="1.2 m" 
+        data-peso="65.5 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/108.png" alt="Lickitung">
+  <h3>Lickitung</h3>
+  <p>Tipo: Normal</p>
+</article>
+
+<!-- #109 Koffing -->
+<article class="pokemon-card" 
+        data-numero="109" 
+        data-nombre="koffing" 
+        data-tipo="Veneno" 
+        data-altura="0.6 m" 
+        data-peso="1.0 kg"
+        data-evoluciones="110">
+  <img src="imagenes/Pokemones/109.png" alt="Koffing">
+  <h3>Koffing</h3>
+  <p>Tipo: Veneno</p>
+</article>
+
+<!-- #110 Weezing -->
+<article class="pokemon-card" 
+        data-numero="110" 
+        data-nombre="weezing" 
+        data-tipo="Veneno" 
+        data-altura="1.2 m" 
+        data-peso="9.5 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/110.png" alt="Weezing">
+  <h3>Weezing</h3>
+  <p>Tipo: Veneno</p>
+</article>
+<!-- #111 Rhyhorn -->
+<article class="pokemon-card" 
+        data-numero="111" 
+        data-nombre="rhyhorn" 
+        data-tipo="Tierra,Roca" 
+        data-altura="1.0 m" 
+        data-peso="115.0 kg"
+        data-evoluciones="112">
+  <img src="imagenes/Pokemones/111.png" alt="Rhyhorn">
+  <h3>Rhyhorn</h3>
+  <p>Tipo: Tierra / Roca</p>
+</article>
+
+<!-- #112 Rhydon -->
+<article class="pokemon-card" 
+        data-numero="112" 
+        data-nombre="rhydon" 
+        data-tipo="Tierra,Roca" 
+        data-altura="1.9 m" 
+        data-peso="120.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/112.png" alt="Rhydon">
+  <h3>Rhydon</h3>
+  <p>Tipo: Tierra / Roca</p>
+</article>
+
+<!-- #113 Chansey -->
+<article class="pokemon-card" 
+        data-numero="113" 
+        data-nombre="chansey" 
+        data-tipo="Normal" 
+        data-altura="1.1 m" 
+        data-peso="34.6 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/113.png" alt="Chansey">
+  <h3>Chansey</h3>
+  <p>Tipo: Normal</p>
+</article>
+
+<!-- #114 Tangela -->
+<article class="pokemon-card" 
+        data-numero="114" 
+        data-nombre="tangela" 
+        data-tipo="Planta" 
+        data-altura="1.0 m" 
+        data-peso="35.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/114.png" alt="Tangela">
+  <h3>Tangela</h3>
+  <p>Tipo: Planta</p>
+</article>
+
+<!-- #115 Kangaskhan -->
+<article class="pokemon-card" 
+        data-numero="115" 
+        data-nombre="kangaskhan" 
+        data-tipo="Normal" 
+        data-altura="2.2 m" 
+        data-peso="80.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/115.png" alt="Kangaskhan">
+  <h3>Kangaskhan</h3>
+  <p>Tipo: Normal</p>
+</article>
+
+<!-- #116 Horsea -->
+<article class="pokemon-card" 
+        data-numero="116" 
+        data-nombre="horsea" 
+        data-tipo="Agua" 
+        data-altura="0.4 m" 
+        data-peso="8.0 kg"
+        data-evoluciones="117">
+  <img src="imagenes/Pokemones/116.png" alt="Horsea">
+  <h3>Horsea</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #117 Seadra -->
+<article class="pokemon-card" 
+        data-numero="117" 
+        data-nombre="seadra" 
+        data-tipo="Agua" 
+        data-altura="1.2 m" 
+        data-peso="25.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/117.png" alt="Seadra">
+  <h3>Seadra</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #118 Goldeen -->
+<article class="pokemon-card" 
+        data-numero="118" 
+        data-nombre="goldeen" 
+        data-tipo="Agua" 
+        data-altura="0.6 m" 
+        data-peso="15.0 kg"
+        data-evoluciones="119">
+  <img src="imagenes/Pokemones/118.png" alt="Goldeen">
+  <h3>Goldeen</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #119 Seaking -->
+<article class="pokemon-card" 
+        data-numero="119" 
+        data-nombre="seaking" 
+        data-tipo="Agua" 
+        data-altura="1.3 m" 
+        data-peso="39.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/119.png" alt="Seaking">
+  <h3>Seaking</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #120 Staryu -->
+<article class="pokemon-card" 
+        data-numero="120" 
+        data-nombre="staryu" 
+        data-tipo="Agua" 
+        data-altura="0.8 m" 
+        data-peso="34.5 kg"
+        data-evoluciones="121">
+  <img src="imagenes/Pokemones/120.png" alt="Staryu">
+  <h3>Staryu</h3>
+  <p>Tipo: Agua</p>
+</article>
+<!-- #121 Starmie -->
+<article class="pokemon-card" 
+        data-numero="121" 
+        data-nombre="starmie" 
+        data-tipo="Agua,Psíquico" 
+        data-altura="1.1 m" 
+        data-peso="80.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/121.png" alt="Starmie">
+  <h3>Starmie</h3>
+  <p>Tipo: Agua / Psíquico</p>
+</article>
+
+<!-- #122 Mr. Mime -->
+<article class="pokemon-card" 
+        data-numero="122" 
+        data-nombre="mr. mime" 
+        data-tipo="Psíquico,Hada" 
+        data-altura="1.3 m" 
+        data-peso="54.5 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/122.png" alt="Mr. Mime">
+  <h3>Mr. Mime</h3>
+  <p>Tipo: Psíquico / Hada</p>
+</article>
+
+<!-- #123 Scyther -->
+<article class="pokemon-card" 
+        data-numero="123" 
+        data-nombre="scyther" 
+        data-tipo="Bicho,Volador" 
+        data-altura="1.5 m" 
+        data-peso="56.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/123.png" alt="Scyther">
+  <h3>Scyther</h3>
+  <p>Tipo: Bicho / Volador</p>
+</article>
+
+<!-- #124 Jynx -->
+<article class="pokemon-card" 
+        data-numero="124" 
+        data-nombre="jynx" 
+        data-tipo="Hielo,Psíquico" 
+        data-altura="1.4 m" 
+        data-peso="40.6 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/124.png" alt="Jynx">
+  <h3>Jynx</h3>
+  <p>Tipo: Hielo / Psíquico</p>
+</article>
+
+<!-- #125 Electabuzz -->
+<article class="pokemon-card" 
+        data-numero="125" 
+        data-nombre="electabuzz" 
+        data-tipo="Eléctrico" 
+        data-altura="1.1 m" 
+        data-peso="30.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/125.png" alt="Electabuzz">
+  <h3>Electabuzz</h3>
+  <p>Tipo: Eléctrico</p>
+</article>
+
+<!-- #126 Magmar -->
+<article class="pokemon-card" 
+        data-numero="126" 
+        data-nombre="magmar" 
+        data-tipo="Fuego" 
+        data-altura="1.3 m" 
+        data-peso="44.5 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/126.png" alt="Magmar">
+  <h3>Magmar</h3>
+  <p>Tipo: Fuego</p>
+</article>
+
+<!-- #127 Pinsir -->
+<article class="pokemon-card" 
+        data-numero="127" 
+        data-nombre="pinsir" 
+        data-tipo="Bicho" 
+        data-altura="1.5 m" 
+        data-peso="55.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/127.png" alt="Pinsir">
+  <h3>Pinsir</h3>
+  <p>Tipo: Bicho</p>
+</article>
+
+<!-- #128 Tauros -->
+<article class="pokemon-card" 
+        data-numero="128" 
+        data-nombre="tauros" 
+        data-tipo="Normal" 
+        data-altura="1.4 m" 
+        data-peso="88.4 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/128.png" alt="Tauros">
+  <h3>Tauros</h3>
+  <p>Tipo: Normal</p>
+</article>
+
+<!-- #129 Magikarp -->
+<article class="pokemon-card" 
+        data-numero="129" 
+        data-nombre="magikarp" 
+        data-tipo="Agua" 
+        data-altura="0.9 m" 
+        data-peso="10.0 kg"
+        data-evoluciones="130">
+  <img src="imagenes/Pokemones/129.png" alt="Magikarp">
+  <h3>Magikarp</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #130 Gyarados -->
+<article class="pokemon-card" 
+        data-numero="130" 
+        data-nombre="gyarados" 
+        data-tipo="Agua,Volador" 
+        data-altura="6.5 m" 
+        data-peso="235.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/130.png" alt="Gyarados">
+  <h3>Gyarados</hh3>
+  <p>Tipo: Agua / Volador</p>
+</article>
+<!-- #131 Lapras -->
+<article class="pokemon-card" 
+        data-numero="131" 
+        data-nombre="lapras" 
+        data-tipo="Agua,Hielo" 
+        data-altura="2.5 m" 
+        data-peso="220.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/131.png" alt="Lapras">
+  <h3>Lapras</h3>
+  <p>Tipo: Agua / Hielo</p>
+</article>
+
+<!-- #132 Ditto -->
+<article class="pokemon-card" 
+        data-numero="132" 
+        data-nombre="ditto" 
+        data-tipo="Normal" 
+        data-altura="0.3 m" 
+        data-peso="4.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/132.png" alt="Ditto">
+  <h3>Ditto</h3>
+  <p>Tipo: Normal</p>
+</article>
+
+<!-- #133 Eevee -->
+<article class="pokemon-card" 
+        data-numero="133" 
+        data-nombre="eevee" 
+        data-tipo="Normal" 
+        data-altura="0.3 m" 
+        data-peso="6.5 kg"
+        data-evoluciones="134,135,136">
+  <img src="imagenes/Pokemones/133.png" alt="Eevee">
+  <h3>Eevee</h3>
+  <p>Tipo: Normal</p>
+</article>
+
+<!-- #134 Vaporeon -->
+<article class="pokemon-card" 
+        data-numero="134" 
+        data-nombre="vaporeon" 
+        data-tipo="Agua" 
+        data-altura="1.0 m" 
+        data-peso="29.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/134.png" alt="Vaporeon">
+  <h3>Vaporeon</h3>
+  <p>Tipo: Agua</p>
+</article>
+
+<!-- #135 Jolteon -->
+<article class="pokemon-card" 
+        data-numero="135" 
+        data-nombre="jolteon" 
+        data-tipo="Eléctrico" 
+        data-altura="0.8 m" 
+        data-peso="24.5 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/135.png" alt="Jolteon">
+  <h3>Jolteon</h3>
+  <p>Tipo: Eléctrico</p>
+</article>
+
+<!-- #136 Flareon -->
+<article class="pokemon-card" 
+        data-numero="136" 
+        data-nombre="flareon" 
+        data-tipo="Fuego" 
+        data-altura="0.9 m" 
+        data-peso="25.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/136.png" alt="Flareon">
+  <h3>Flareon</h3>
+  <p>Tipo: Fuego</p>
+</article>
+
+<!-- #137 Porygon -->
+<article class="pokemon-card" 
+        data-numero="137" 
+        data-nombre="porygon" 
+        data-tipo="Normal" 
+        data-altura="0.8 m" 
+        data-peso="36.5 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/137.png" alt="Porygon">
+  <h3>Porygon</h3>
+  <p>Tipo: Normal</p>
+</article>
+
+<!-- #138 Omanyte -->
+<article class="pokemon-card" 
+        data-numero="138" 
+        data-nombre="omanyte" 
+        data-tipo="Roca,Agua" 
+        data-altura="0.4 m" 
+        data-peso="7.5 kg"
+        data-evoluciones="139">
+  <img src="imagenes/Pokemones/138.png" alt="Omanyte">
+  <h3>Omanyte</h3>
+  <p>Tipo: Roca / Agua</p>
+</article>
+
+<!-- #139 Omastar -->
+<article class="pokemon-card" 
+        data-numero="139" 
+        data-nombre="omastar" 
+        data-tipo="Roca,Agua" 
+        data-altura="1.0 m" 
+        data-peso="35.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/139.png" alt="Omastar">
+  <h3>Omastar</h3>
+  <p>Tipo: Roca / Agua</p>
+</article>
+
+<!-- #140 Kabuto -->
+<article class="pokemon-card" 
+        data-numero="140" 
+        data-nombre="kabuto" 
+        data-tipo="Roca,Agua" 
+        data-altura="0.5 m" 
+        data-peso="11.5 kg"
+        data-evoluciones="141">
+  <img src="imagenes/Pokemones/140.png" alt="Kabuto">
+  <h3>Kabuto</h3>
+  <p>Tipo: Roca / Agua</p>
+</article>
+
+<!-- #141 Kabutops -->
+<article class="pokemon-card" 
+        data-numero="141" 
+        data-nombre="kabutops" 
+        data-tipo="Roca,Agua" 
+        data-altura="1.3 m" 
+        data-peso="40.5 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/141.png" alt="Kabutops">
+  <h3>Kabutops</h3>
+  <p>Tipo: Roca / Agua</p>
+</article>
+<!-- #142 Aerodactyl -->
+<article class="pokemon-card" 
+        data-numero="142" 
+        data-nombre="aerodactyl" 
+        data-tipo="Roca,Volador" 
+        data-altura="1.8 m" 
+        data-peso="59.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/142.png" alt="Aerodactyl">
+  <h3>Aerodactyl</h3>
+  <p>Tipo: Roca / Volador</p>
+</article>
+
+<!-- #143 Snorlax -->
+<article class="pokemon-card" 
+        data-numero="143" 
+        data-nombre="snorlax" 
+        data-tipo="Normal" 
+        data-altura="2.1 m" 
+        data-peso="460.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/143.png" alt="Snorlax">
+  <h3>Snorlax</h3>
+  <p>Tipo: Normal</p>
+</article>
+
+<!-- #144 Articuno -->
+<article class="pokemon-card" 
+        data-numero="144" 
+        data-nombre="articuno" 
+        data-tipo="Hielo,Volador" 
+        data-altura="1.7 m" 
+        data-peso="55.4 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/144.png" alt="Articuno">
+  <h3>Articuno</h3>
+  <p>Tipo: Hielo / Volador</p>
+</article>
+
+<!-- #145 Zapdos -->
+<article class="pokemon-card" 
+        data-numero="145" 
+        data-nombre="zapdos" 
+        data-tipo="Eléctrico,Volador" 
+        data-altura="1.6 m" 
+        data-peso="52.6 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/145.png" alt="Zapdos">
+  <h3>Zapdos</h3>
+  <p>Tipo: Eléctrico / Volador</p>
+</article>
+
+<!-- #146 Moltres -->
+<article class="pokemon-card" 
+        data-numero="146" 
+        data-nombre="moltres" 
+        data-tipo="Fuego,Volador" 
+        data-altura="2.0 m" 
+        data-peso="60.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/146.png" alt="Moltres">
+  <h3>Moltres</h3>
+  <p>Tipo: Fuego / Volador</p>
+</article>
+
+<!-- #147 Dratini -->
+<article class="pokemon-card" 
+        data-numero="147" 
+        data-nombre="dratini" 
+        data-tipo="Dragón" 
+        data-altura="1.8 m" 
+        data-peso="3.3 kg"
+        data-evoluciones="148,149">
+  <img src="imagenes/Pokemones/147.png" alt="Dratini">
+  <h3>Dratini</h3>
+  <p>Tipo: Dragón</p>
+</article>
+
+<!-- #148 Dragonair -->
+<article class="pokemon-card" 
+        data-numero="148" 
+        data-nombre="dragonair" 
+        data-tipo="Dragón" 
+        data-altura="4.0 m" 
+        data-peso="16.5 kg"
+        data-evoluciones="149">
+  <img src="imagenes/Pokemones/148.png" alt="Dragonair">
+  <h3>Dragonair</h3>
+  <p>Tipo: Dragón</p>
+</article>
+
+<!-- #149 Dragonite -->
+<article class="pokemon-card" 
+        data-numero="149" 
+        data-nombre="dragonite" 
+        data-tipo="Dragón,Volador" 
+        data-altura="2.2 m" 
+        data-peso="210.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/149.png" alt="Dragonite">
+  <h3>Dragonite</h3>
+  <p>Tipo: Dragón / Volador</p>
+</article>
+
+<!-- #150 Mewtwo -->
+<article class="pokemon-card" 
+        data-numero="150" 
+        data-nombre="mewtwo" 
+        data-tipo="Psíquico" 
+        data-altura="2.0 m" 
+        data-peso="122.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/150.png" alt="Mewtwo">
+  <h3>Mewtwo</h3>
+  <p>Tipo: Psíquico</p>
+</article>
+
+<!-- #151 Mew -->
+<article class="pokemon-card" 
+        data-numero="151" 
+        data-nombre="mew" 
+        data-tipo="Psíquico" 
+        data-altura="0.4 m" 
+        data-peso="4.0 kg"
+        data-evoluciones="">
+  <img src="imagenes/Pokemones/151.png" alt="Mew">
+  <h3>Mew</h3>
+  <p>Tipo: Psíquico</p>
+</article>
+
         </div>
         <p id="contador"></p>
+      </section>
+
+      <!-- Detalle de Pokémon -->
+      <section id="detallePokemon" style="display: none;">
+        <button id="btnVolver">⬅ Volver</button>
+        <div class="contenido-detalle"></div>
+        <div class="evoluciones"></div>
       </section>
     </main>
 

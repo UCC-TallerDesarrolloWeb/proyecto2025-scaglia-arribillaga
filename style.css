@@ -95,7 +95,6 @@ nav a:hover {
   color: white;
   padding: 1rem;
   border-radius: 10px;
-
 }
 
 .buscador h2 {
@@ -140,6 +139,7 @@ nav a:hover {
   border-radius: 5px;
   border: none;
 }
+
 .buscador select{
   width: 100%;
   padding: 0.5rem;
@@ -163,14 +163,14 @@ nav a:hover {
 
 /* ------------------ RESULTADOS ------------------ */
 .resultados{
-  background-color: #ffffff;
+  background-color: #000000;
   padding: 20px;
   border-radius: 5px;
   margin: 0px 15px 0px 15px;
 }
 
 .resultados h2{
-  color: #333;
+  color: #000000;
   margin: 0px 0px 15px 5px;
 }
 
@@ -180,14 +180,30 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
+/* Cartas de Pokémon más chicas */
 .pokemon-card {
   border: 2px solid #ddd;
-  border-radius: 10px;
-  padding: 1rem;
-  width: 150px;
+  border-radius: 8px;
+  padding: 0.5rem;
+  width: 120px;         /* antes 150px */
   text-align: center;
   background: white;
   transition: transform 0.2s;
+}
+
+.pokemon-card img {
+  width: 80px;          /* imagen más compacta */
+  height: auto;
+}
+
+.pokemon-card h3 {
+  font-size: 1rem;      /* título más pequeño */
+  margin: 0.5rem 0 0.2rem 0;
+}
+
+.pokemon-card p {
+  font-size: 0.9rem;    /* texto más chico */
+  margin: 0;
 }
 
 .pokemon-card:hover {
@@ -195,6 +211,85 @@ nav a:hover {
   border-color: #cc0000;
 }
 
+.contenedor-resultados {
+  display: flex;
+  gap: 2rem;
+}
+
+.lista {
+  flex: 1;
+}
+
+.detalle {
+  flex: 1;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.detalle img {
+  width: 150px;
+}
+
+.evoluciones {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.evoluciones img {
+  width: 80px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.evoluciones img:hover {
+  transform: scale(1.1);
+}
+
+.pokemon-card.seleccionado {
+  border: 3px solid #cc0000;
+  background: #ffeaea;
+}
+
+#detallePokemon {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+#detallePokemon img {
+  width: 200px;
+}
+
+#btnVolver {
+  background: #cc0000;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+/* Responsive: en pantallas chicas, aún más compactas */
+@media (max-width: 600px) {
+  .pokemon-card {
+    width: 90px;
+    padding: 0.4rem;
+  }
+  .pokemon-card img {
+    width: 60px;
+  }
+  .pokemon-card h3 {
+    font-size: 0.9rem;
+  }
+  .pokemon-card p {
+    font-size: 0.8rem;
+  }
+}
+  
 /* ------------------ FOOTER ------------------ */
 footer {
   background-color: #333;
