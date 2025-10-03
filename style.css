@@ -1,97 +1,177 @@
-/* Reset */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Roboto', sans-serif; background: #fafafa; color: #333; }
-
-/* Header */
-header {
-  background: #222;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+/* ------------------ GENERALES ------------------ */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: #f4f4f9;
 }
-header .logo { width: 50px; margin-right: 10px; }
-header h1 { font-size: 1.8rem; }
-nav ul { display: flex; gap: 20px; list-style: none; }
-nav a { text-decoration: none; color: white; font-weight: bold; transition: 0.3s; }
-nav a:hover { color: #ffcc00; }
 
-/* Hero */
-#hero {
-  background: url('imagenes/hero-burger.jpg') center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-}
-#hero h2 { font-size: 2.5rem; margin-bottom: 10px; }
-#hero p { font-size: 1.2rem; margin-bottom: 20px; }
-.btn-hero {
-  background: #ff5722; color: white; padding: 12px 25px;
-  border-radius: 5px; text-decoration: none; font-weight: bold;
-}
-.btn-hero:hover { background: #e64a19; }
-
-/* Secciones */
-section { padding: 50px 20px; text-align: center; }
-h2 { margin-bottom: 20px; font-size: 2rem; }
-
-/* Menú */
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-.menu-grid article {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-.menu-grid article:hover { transform: scale(1.05); }
-.menu-grid img { max-width: 100%; border-radius: 8px; }
-
-/* Pedido */
-form {
-  background: white;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* ------------------ LOGIN + REGISTRO ------------------ */
+#login {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-input, select, button {
-  padding: 10px; border-radius: 5px; border: 1px solid #ccc;
-}
-button {
-  background: #ff5722; color: white; border: none;
-  cursor: pointer; font-weight: bold;
-}
-button:hover { background: #e64a19; }
-#resultado { margin-top: 15px; font-weight: bold; color: green; }
 
-/* Contacto */
-#contacto { background: #f4f4f4; padding: 40px; }
-#contacto p { margin: 8px 0; }
-.redes a { margin: 0 5px; color: #ff5722; font-weight: bold; text-decoration: none; }
-.redes a:hover { text-decoration: underline; }
+#formLogin,
+#formRegistro {
+  display: none; 
+  flex-direction: column;
+  gap: 1rem;
+  border: 2px solid #ccc;
+  padding: 2rem;
+  border-radius: 10px;
+  background: white;
+  width: 320px;
+  box-sizing: border-box;
+}
 
-/* Footer */
+#formLogin h2,
+#formRegistro h2 {
+  margin: 0;
+  text-align: center;
+  color: #cc0000;
+}
+
+#formLogin input,
+#formRegistro input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#formLogin button,
+#formRegistro button {
+  background: #cc0000;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#formLogin button:hover,
+#formRegistro button:hover {
+  background: #990000;
+}
+
+#formLogin p,
+#formRegistro p {
+  text-align: center;
+  margin: 0;
+}
+
+#formLogin a,
+#formRegistro a {
+  color: #cc0000;
+  text-decoration: none;
+}
+
+#formLogin a:hover,
+#formRegistro a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------ HEADER ------------------ */
+header {
+  background-color: #cc0000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+header .logo {
+  width: 50px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------ BUSCADOR ------------------ */
+.buscador {
+  background: #333;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.buscador h2 {
+  margin-top: 0;
+}
+
+.filtros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.buscador input,
+.buscador select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.buscador button {
+  background: orange;
+  border: none;
+  padding: 0.7rem 1rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buscador button:hover {
+  background: darkorange;
+}
+
+/* ------------------ RESULTADOS ------------------ */
+.lista {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pokemon-card {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 150px;
+  text-align: center;
+  background: white;
+  transition: transform 0.2s;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+  border-color: #cc0000;
+}
+
+/* ------------------ FOOTER ------------------ */
 footer {
-  background: #222; color: rgb(12, 12, 12); text-align: center;
-  padding: 15px; margin-top: 30px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  header { flex-direction: column; gap: 10px; }
-  nav ul { flex-wrap: wrap; justify-content: center; }
-  #hero h2 { font-size: 1.8rem; }
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
 }
