@@ -2,7 +2,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background: #f4f4f9;
+  background: #333;
 }
 
 /* ------------------ INTRO ------------------ */
@@ -95,11 +95,31 @@ nav a:hover {
   color: white;
   padding: 1rem;
   border-radius: 10px;
-  margin-bottom: 2rem;
+
 }
 
 .buscador h2 {
   margin-top: 0;
+}
+
+.abrirFiltro{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.abrirFiltro h5{
+  text-align: center;
+  margin: 0px;
+}
+
+.abrirFiltro img{
+  width: 20px;
+  height: 20px;
+  margin: 0px;
 }
 
 .filtros {
@@ -109,8 +129,18 @@ nav a:hover {
   margin-bottom: 1rem;
 }
 
-.buscador input,
-.buscador select {
+.buscador .busqueda label{
+  display: block;
+}
+
+.buscador .busqueda input{
+  width: 15%;
+  padding: 0.5rem;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+}
+.buscador select{
   width: 100%;
   padding: 0.5rem;
   border-radius: 5px;
@@ -132,6 +162,18 @@ nav a:hover {
 }
 
 /* ------------------ RESULTADOS ------------------ */
+.resultados{
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0px 15px 0px 15px;
+}
+
+.resultados h2{
+  color: #333;
+  margin: 0px 0px 15px 5px;
+}
+
 .lista {
   display: flex;
   gap: 1rem;
