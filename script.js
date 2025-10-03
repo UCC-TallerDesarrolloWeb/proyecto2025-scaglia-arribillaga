@@ -92,9 +92,7 @@ const buscarPokemon = (e) => {
         intro.style.display = "none";
         contenido.classList.add("active");
       }, 500);
-=======
 
->>>>>>> 65a0e5d367e0328368ec3230620d9e3b76db00f0
     }
   });
 
