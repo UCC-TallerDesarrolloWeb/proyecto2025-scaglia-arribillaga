@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const intro = document.getElementById("intro");
   const contenido = document.getElementById("contenido");
 
-  // Evento de intro
+  // Intro: Enter para continuar
   document.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       intro.classList.add("hide");
@@ -13,9 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /**
-   * Buscar Pokémon por nombre, tipo, altura o peso
-   */
+  // Buscar Pokémon
   const buscarPokemon = (e) => {
     e.preventDefault();
 
@@ -28,10 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let contador = 0;
 
     pokemons.forEach(pokemon => {
-      const nombrePokemon = pokemon.dataset.nombre;
-      const tipoPokemon = pokemon.dataset.tipo;
-      const alturaPokemon = pokemon.dataset.altura;
-      const pesoPokemon = pokemon.dataset.peso;
+      const { nombre: nombrePokemon, tipo: tipoPokemon, altura: alturaPokemon, peso: pesoPokemon } = pokemon.dataset;
 
       if (
         (!nombre || nombrePokemon.includes(nombre)) &&
@@ -49,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("contador").textContent = `Se encontraron ${contador} Pokémon.`;
   };
 
-  // Evento del buscador
   document.getElementById("formBusquedaAvanzada")
           .addEventListener("submit", buscarPokemon);
 });
