@@ -34,11 +34,14 @@
     <main id="pokedex">
       <!-- Buscador avanzado -->
       <section class="buscador">
-        <h2>Busca tu Pokémon</h2>
         <form id="formBusquedaPrincipal">
+          <h2>Busca tu Pokémon</h2>
           <div class="busqueda">
               <label for="nombre">Nombre o Número:</label>
-              <input type="text" id="nombre" placeholder="Ej: Bulbasaur o 001">
+              <div class="botonesBusqueda">
+                <input type="text" id="nombre" placeholder="Ej: Bulbasaur o 001">
+                <button type="submit" id="btnLupa"><img src="imagenes/lupa.png" alt="Lupa"></button>
+              </div>
           </div>
         </form>
         <div class="abrirFiltro">
@@ -47,39 +50,55 @@
         </div>
         <form id="formBusquedaAvanzada">
           <div class="filtros">
-            <div>
-              <label for="tipo">Tipo:</label>
-              <select id="tipo">
-                <option value="">--Selecciona un tipo--</option>
-                <option value="planta">Planta</option>
-                <option value="fuego">Fuego</option>
-                <option value="agua">Agua</option>
-                <option value="electrico">Eléctrico</option>
-                <option value="tierra">Tierra</option>
-              </select>
+            <div class="filtroTipo">
+              <h4>Tipo</h4>
+              <div class="tipos">
+                <div class="acero">Acero</div>
+                <div class="fuego">Fuego</div>
+                <div class="psiquico">Psíquico</div>
+                <div class="agua">Agua</div>
+                <div class="hada">Hada</div>
+                <div class="roca">Roca</div>
+                <div class="bicho">Bicho</div>
+                <div class="hielo">Hielo</div>
+                <div class="siniestro">Siniestro</div>
+                <div class="dragon">Dragón</div>
+                <div class="lucha">Lucha</div>
+                <div class="tierra">Tierra</div>
+                <div class="electrico">Eléctrico</div>
+                <div class="normal">Normal</div>
+                <div class="fantasma">Fantasma</div>
+                <div class="veneno">Veneno</div>
+                <div class="planta">Planta</div>
+                <div class="volador">Volador</div>
+              </div>
             </div>
 
-            <div>
-              <label for="altura">Altura:</label>
-              <select id="altura">
-                <option value="">Todas</option>
-                <option value="bajo">Bajo</option>
-                <option value="medio">Medio</option>
-                <option value="alto">Alto</option>
-              </select>
+            <div class="filtroTamanos">
+              <div class="filtroAltura">
+                <h4>Altura</h4>
+                <div class="alturas">
+                  <div class="bajo"><img src="imagenes/pokemon-pequeño.png" alt="Pokemon Alta"></div>
+                  <div class="mediano"><img src="imagenes/pokemon-mediano.png" alt="Pokemon mediano"></div>
+                  <div class="alto"><img src="imagenes/pokemon-alto.png" alt="Pokemon Alto"></div>
+                </div>
+              </div>
+  
+              <div class="filtroPeso">
+                <h4>Peso</h4>
+                <div class="pesos">
+                  <div class="liviano"><img src="imagenes/pluma.png" alt="Pluma"></div>
+                  <div class="intermedio"><img src="imagenes/hombre.png" alt="Persona"></div>
+                  <div class="pesado"><img src="imagenes/tanque-de-guerra.png" alt="Tanque"></div>
+                </div>
+              </div>  
             </div>
-
-            <div>
-              <label for="peso">Peso:</label>
-              <select id="peso">
-                <option value="">Todos</option>
-                <option value="ligero">Ligero</option>
-                <option value="medio">Medio</option>
-                <option value="pesado">Pesado</option>
-              </select>
-            </div>
+    
           </div>
-          <button type="submit" id="btnBuscar">Buscar</button>
+          <div class="botonesFiltro">
+            <button type="submit" id="btnBuscar">Buscar</button>
+            <button type="reset" id="btnResetear">Restablecer</button>
+          </div>
         </form>
       </section>
 
@@ -87,19 +106,19 @@
       <section class="resultados">
         <h2>Resultados</h2>
         <div id="listaPokemons" class="lista">
-          <article class="pokemon-card" data-nombre="bulbasaur" data-tipo="planta" data-altura="bajo" data-peso="medio">
+          <article class="pokemon-card" data-nombre="bulbasaur" data-num="1" data-tipo="planta" data-altura="bajo" data-peso="medio">
             <img src="imagenes/bulbasaur.png" alt="Bulbasaur">
             <h3>Bulbasaur</h3>
             <p>Tipo: Planta</p>
           </article>
 
-          <article class="pokemon-card" data-nombre="charmander" data-tipo="fuego" data-altura="medio" data-peso="ligero">
+          <article class="pokemon-card" data-nombre="charmander" data-num="4" data-tipo="fuego" data-altura="medio" data-peso="ligero">
             <img src="imagenes/charmander.png" alt="Charmander">
             <h3>Charmander</h3>
             <p>Tipo: Fuego</p>
           </article>
 
-          <article class="pokemon-card" data-nombre="squirtle" data-tipo="agua" data-altura="bajo" data-peso="pesado">
+          <article class="pokemon-card" data-nombre="squirtle" data-num="7" data-tipo="agua" data-altura="bajo" data-peso="pesado">
             <img src="imagenes/squirtle.png" alt="Squirtle">
             <h3>Squirtle</h3>
             <p>Tipo: Agua</p>
