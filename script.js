@@ -82,27 +82,27 @@ document.addEventListener("DOMContentLoaded", () => {
     resultados.style.display = "none";
     detalle.style.display = "block";
 
-  const { numero, nombre, tipo, altura, peso, evoluciones, hp, atk, def, atkesp, defesp, vel } = card.dataset;
+    const { numero, nombre, tipo, altura, peso, evoluciones, hp, atk, def, atkesp, defesp, vel } = card.dataset;
 
-  // Info principal
-  detalle.querySelector("#detalleImg").src = `imagenes/Pokemones/${numero}.png`;
-  detalle.querySelector("#detalleTitulo").textContent =
-    `#${numero} ${nombre.charAt(0).toUpperCase() + nombre.slice(1)}`;
-  detalle.querySelector("#detalleTipo").textContent = "Tipo: " + tipo;
-  detalle.querySelector("#detalleAltura").textContent = "Altura: " + altura;
-  detalle.querySelector("#detallePeso").textContent = "Peso: " + peso;
-  detalle.querySelector("#statHP").textContent = hp;
-  detalle.querySelector("#barraHP").innerHTML = "<div class='barraHP' style='width: calc(" + hp + "% / 1.2);'></div>";
-  detalle.querySelector("#statAtk").textContent = atk;
-  detalle.querySelector("#barraAtk").innerHTML = "<div class='barraAtk' style='width: calc(" + atk + "% / 1.2);'></div>";
-  detalle.querySelector("#statDef").textContent = def;
-  detalle.querySelector("#barraDef").innerHTML = "<div class='barraDef' style='width: calc(" + def + "% / 1.2);'></div>";
-  detalle.querySelector("#statAtkEsp").textContent = atkesp;
-  detalle.querySelector("#barraAtkEsp").innerHTML = "<div class='barraAtkEsp' style='width: calc(" + atkesp + "% / 1.2);'></div>";
-  detalle.querySelector("#statDefEsp").textContent = defesp;
-  detalle.querySelector("#barraDefEsp").innerHTML = "<div class='barraDefEsp' style='width: calc(" + defesp + "% / 1.2);'></div>";
-  detalle.querySelector("#statVel").textContent = vel;
-  detalle.querySelector("#barraVel").innerHTML = "<div class='barraVel' style='width: calc(" + vel + "% / 1.2);'></div>";
+    // Info principal
+    detalle.querySelector("#detalleImg").src = `imagenes/Pokemones/${numero}.png`;
+    detalle.querySelector("#detalleTitulo").textContent =
+      `#${numero} ${nombre.charAt(0).toUpperCase() + nombre.slice(1)}`;
+    detalle.querySelector("#detalleTipo").textContent = "Tipo: " + tipo;
+    detalle.querySelector("#detalleAltura").textContent = "Altura: " + altura;
+    detalle.querySelector("#detallePeso").textContent = "Peso: " + peso;
+    detalle.querySelector("#statHP").textContent = hp;
+    detalle.querySelector("#barraHP").innerHTML = "<div class='barraHP' style='width: calc(" + hp + "% / 1.2);'></div>";
+    detalle.querySelector("#statAtk").textContent = atk;
+    detalle.querySelector("#barraAtk").innerHTML = "<div class='barraAtk' style='width: calc(" + atk + "% / 1.2);'></div>";
+    detalle.querySelector("#statDef").textContent = def;
+    detalle.querySelector("#barraDef").innerHTML = "<div class='barraDef' style='width: calc(" + def + "% / 1.2);'></div>";
+    detalle.querySelector("#statAtkEsp").textContent = atkesp;
+    detalle.querySelector("#barraAtkEsp").innerHTML = "<div class='barraAtkEsp' style='width: calc(" + atkesp + "% / 1.2);'></div>";
+    detalle.querySelector("#statDefEsp").textContent = defesp;
+    detalle.querySelector("#barraDefEsp").innerHTML = "<div class='barraDefEsp' style='width: calc(" + defesp + "% / 1.2);'></div>";
+    detalle.querySelector("#statVel").textContent = vel;
+    detalle.querySelector("#barraVel").innerHTML = "<div class='barraVel' style='width: calc(" + vel + "% / 1.2);'></div>";
 
     const evoContainer = detalle.querySelector("#detalleEvoluciones");
     evoContainer.innerHTML = "";
@@ -202,14 +202,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-    // Efecto neón rojo visual
-if (div.classList.contains("activo")) {
-  div.style.boxShadow = "0 0 5px 3px rgba(255, 255, 255, 0.8)"; // rojo
-  div.style.border = "1px solid white";
-} else {
-  div.style.boxShadow = "none";
-  div.style.border = "none";
-}
+      // Efecto neón rojo visual
+      if (div.classList.contains("activo")) {
+        div.style.boxShadow = "0 0 5px 3px rgba(255, 255, 255, 0.8)";
+        div.style.border = "1px solid white";
+      } else {
+        div.style.boxShadow = "none";
+        div.style.border = "none";
+      }
     });
   });
 
@@ -278,5 +278,15 @@ if (div.classList.contains("activo")) {
       card.style.display = "block";
     });
     document.getElementById("contador").textContent = "Se muestran todos los Pokémon.";
+  });
+
+  /* ------------------ HEADER ANIMADO CON SCROLL ------------------ */
+  const header = document.querySelector("header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
   });
 });
