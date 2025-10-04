@@ -2506,11 +2506,60 @@
       </section>
 
       <!-- Detalle de Pokémon -->
-      <section id="detallePokemon" style="display: none;">
-        <button id="btnVolver">⬅ Volver</button>
-        <div class="contenido-detalle"></div>
-        <div class="evoluciones"></div>
-      </section>
+<section id="detallePokemon" style="display: none;">
+  <button id="btnVolver">⬅ Volver</button>
+  
+  <div class="paginaPokemon">
+    <!-- Flecha anterior -->
+    <div class="pokemonAnterior">
+      <button id="btnAnterior">⬅</button>
+    </div>
+
+    <!-- Info general -->
+    <div class="pokemonInfoGeneral">
+      <div class="imgYDescripcion">
+        <img id="detalleImg" src="imagenes/Pokemones/001.png" alt="Bulbasaur">
+        <div class="descripcion">
+          <h2 id="detalleTitulo">#001 Bulbasaur</h2>
+          <p id="detalleDescripcion">Un Pokémon de tipo Planta/Veneno. Nace con una semilla en el lomo que crece con el tiempo.</p>
+        </div>
+      </div>
+
+      <div class="pokemonDatos">
+        <p><strong>Tipo:</strong> <span id="detalleTipo">Planta, Veneno</span></p>
+        <p><strong>Altura:</strong> <span id="detalleAltura">0.7 m</span></p>
+        <p><strong>Peso:</strong> <span id="detallePeso">6.9 kg</span></p>
+      </div>
+    </div>
+
+    <!-- Stats y Evoluciones -->
+    <div class="pokemonStatsYEvos">
+      <div class="pokemonEstadisticas">
+        <h3>Estadísticas</h3>
+        <ul>
+          <li>HP: <span id="statHP">45</span></li>
+          <li>Ataque: <span id="statAtk">49</span></li>
+          <li>Defensa: <span id="statDef">49</span></li>
+          <li>Velocidad: <span id="statVel">45</span></li>
+        </ul>
+      </div>
+
+    <div class="pokemonLineaEvolutiva">
+     <h3>Línea Evolutiva</h3>
+    <div class="evo-carousel">
+
+    <div class="evo-chain" id="detalleEvoluciones">
+ </div>
+
+    </div>
+
+    <!-- Flecha siguiente -->
+    <div class="pokemonPosterior">
+      <button id="btnSiguiente">➡</button>
+    </div>
+  </div>
+</section>
+
     </main>
 
     <footer id="contacto">

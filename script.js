@@ -1,18 +1,19 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { 
   const intro = document.getElementById("intro");
   const contenido = document.getElementById("contenido");
-
   const lista = document.getElementById("listaPokemons");
   const detalle = document.getElementById("detallePokemon");
   const resultados = document.getElementById("resultadosPokedex");
   const btnVolver = document.getElementById("btnVolver");
-  const formBusquedaPrincipal = document.getElementById("formBusquedaPrincipal");
+  const btnAnterior = document.getElementById("btnAnterior");
+  const btnSiguiente = document.getElementById("btnSiguiente");
+  const formBusqueda = document.getElementById("formBusquedaPrincipal");
   const formBusquedaAvanzada = document.getElementById("formBusquedaAvanzada");
 
   let pokemonSeleccionado = null;
 
-  /* ------------------ INTRO ------------------ */
-  document.addEventListener("keydown", function introHandler(e) {
+  /* ------------------ INTRO: Enter para continuar ------------------ */
+  const introHandler = (e) => {
     if (e.key === "Enter") {
       intro.classList.add("hide");
       setTimeout(() => {
@@ -21,35 +22,31 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 500);
       document.removeEventListener("keydown", introHandler);
     }
-  });
+  };
+  document.addEventListener("keydown", introHandler);
 
-  /* ------------------ FUNCIÓN DE BÚSQUEDA ------------------ */
-  function buscarPokemon(e) {
+  /* ------------------ BUSCADOR ------------------ */
+  const buscarPokemon = (e) => {
     e.preventDefault();
 
     const nombre = document.getElementById("nombre").value.trim().toLowerCase();
-    const tipo = document.getElementById("tipo")?.value || "";
-    const altura = document.getElementById("altura")?.value || "";
-    const peso = document.getElementById("peso")?.value || "";
 
+    const pokemons = document.querySelectorAll(".pokemon-card");
     let contador = 0;
-    document.querySelectorAll(".pokemon-card").forEach(card => {
-      const { nombre: n, numero, tipo: t, altura: a, peso: p } = card.dataset;
-      const nombreCoincide = !nombre || n.includes(nombre) || numero === nombre.padStart(3, "0");
-      const tipoCoincide = !tipo || t.toLowerCase() === tipo.toLowerCase();
-      const alturaCoincide = !altura || a.toLowerCase().includes(altura.toLowerCase());
-      const pesoCoincide = !peso || p.toLowerCase().includes(peso.toLowerCase());
 
-      if (nombreCoincide && tipoCoincide && alturaCoincide && pesoCoincide) {
-        card.style.display = "block";
+    pokemons.forEach(pokemon => {
+      const { nombre: nombrePokemon } = pokemon.dataset;
+
+      if (!nombre || nombrePokemon.includes(nombre)) {
+        pokemon.style.display = "block";
         contador++;
       } else {
-        card.style.display = "none";
+        pokemon.style.display = "none";
       }
     });
 
     document.getElementById("contador").textContent = `Se encontraron ${contador} Pokémon.`;
-  }
+  };
 
   /* --- BOTONES --- */
 // lupa: búsqueda por nombre/número
@@ -89,47 +86,60 @@ document.getElementById("btnResetear").addEventListener("click", () => {
   
   /* ------------------ MOSTRAR DETALLE ------------------ */
   function mostrarDetalle(card) {
-    pokemonSeleccionado = card.dataset.numero;
+  if (!card) return;
 
-    resultados.style.display = "none";
-    detalle.style.display = "block";
+  pokemonSeleccionado = card.dataset.numero;
 
-    const { numero, nombre, tipo, altura, peso, evoluciones } = card.dataset;
+  resultados.style.display = "none";
+  detalle.style.display = "block";
 
-    // Render detalle
-    detalle.querySelector(".contenido-detalle").innerHTML = `
-      <h3>#${numero} ${nombre.charAt(0).toUpperCase() + nombre.slice(1)}</h3>
-      <img src="imagenes/Pokemones/${numero}.png" alt="${nombre}">
-      <p><strong>Tipo:</strong> ${tipo}</p>
-      <p><strong>Altura:</strong> ${altura}</p>
-      <p><strong>Peso:</strong> ${peso}</p>
-    `;
+  const { numero, nombre, tipo, altura, peso, evoluciones } = card.dataset;
 
-    // Render evoluciones clickeables
-    const evoContainer = detalle.querySelector(".evoluciones");
-    evoContainer.innerHTML = "<h4>Evoluciones</h4>";
-    evoluciones.split(",").forEach(evo => {
-      evoContainer.innerHTML += `
-        <img src="imagenes/Pokemones/${evo}.png" alt="Evolución ${evo}" data-numero="${evo}">
-      `;
+  // Info principal
+  detalle.querySelector("#detalleImg").src = `imagenes/Pokemones/${numero}.png`;
+  detalle.querySelector("#detalleTitulo").textContent =
+    `#${numero} ${nombre.charAt(0).toUpperCase() + nombre.slice(1)}`;
+  detalle.querySelector("#detalleTipo").textContent = tipo;
+  detalle.querySelector("#detalleAltura").textContent = altura;
+  detalle.querySelector("#detallePeso").textContent = peso;
+
+  // Evoluciones SOLO imágenes en círculos
+  const evoContainer = detalle.querySelector("#detalleEvoluciones");
+  evoContainer.innerHTML = "";
+
+  if (evoluciones && evoluciones.trim() !== "") {
+    const evoList = evoluciones.split(",");
+    evoList.forEach(evo => {
+      const evoCard = [...document.querySelectorAll(".pokemon-card")]
+        .find(c => c.dataset.numero === evo);
+
+      if (evoCard) {
+        const evoDiv = document.createElement("div");
+        evoDiv.classList.add("evo");
+        evoDiv.innerHTML = `
+          <div class="evo-circle">
+            <img src="imagenes/Pokemones/${evo}.png" alt="${evoCard.dataset.nombre}">
+          </div>
+        `;
+        evoContainer.appendChild(evoDiv);
+
+        // Click en evolución → abre su detalle
+        evoDiv.addEventListener("click", () => mostrarDetalle(evoCard));
+      }
     });
-
-    // Clic en evolución → abre detalle
-    evoContainer.querySelectorAll("img").forEach(img => {
-      img.addEventListener("click", () => {
-        const evoCard = [...document.querySelectorAll(".pokemon-card")]
-          .find(c => c.dataset.numero === img.dataset.numero);
-        if (evoCard) mostrarDetalle(evoCard);
-      });
-    });
+  } else {
+    evoContainer.innerHTML = "<p>Este Pokémon no tiene evoluciones.</p>";
   }
 
+  }
+
+  // Click en tarjeta → detalle
   lista.addEventListener("click", (e) => {
     const card = e.target.closest(".pokemon-card");
     if (card) mostrarDetalle(card);
   });
 
-  /* ------------------ VOLVER ------------------ */
+  // Botón volver
   btnVolver.addEventListener("click", () => {
     detalle.style.display = "none";
     resultados.style.display = "block";
@@ -141,6 +151,23 @@ document.getElementById("btnResetear").addEventListener("click", () => {
     const seleccionado = document.querySelector(".pokemon-card.seleccionado");
     if (seleccionado) {
       seleccionado.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  });
+
+  /* ------------------ FLECHAS ROJAS ------------------ */
+  btnAnterior.addEventListener("click", () => {
+    const cards = [...document.querySelectorAll(".pokemon-card")];
+    let index = cards.findIndex(c => c.dataset.numero === pokemonSeleccionado);
+    if (index > 0) {
+      mostrarDetalle(cards[index - 1]);
+    }
+  });
+
+  btnSiguiente.addEventListener("click", () => {
+    const cards = [...document.querySelectorAll(".pokemon-card")];
+    let index = cards.findIndex(c => c.dataset.numero === pokemonSeleccionado);
+    if (index < cards.length - 1) {
+      mostrarDetalle(cards[index + 1]);
     }
   });
 });
