@@ -51,9 +51,42 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("contador").textContent = `Se encontraron ${contador} Pokémon.`;
   }
 
-  formBusquedaPrincipal.addEventListener("submit", buscarPokemon);
-  formBusquedaAvanzada.addEventListener("submit", buscarPokemon);
+  /* --- BOTONES --- */
+// lupa: búsqueda por nombre/número
+document.getElementById("btnLupa").addEventListener("click", buscarPokemon);
 
+// reset filtros
+document.getElementById("btnResetear").addEventListener("click", () => {
+  document.querySelectorAll("#formBusquedaAvanzada .activo").forEach(div => {
+    div.classList.remove("activo");
+  });
+});
+
+  /* ------------------ DESPLIEGUE MENU DE FILTROS ------------------ */
+  
+  const abrirFiltro = document.querySelector(".abrirFiltro");
+  const abrirFiltroTexto = abrirFiltro.querySelector("h5");
+  const abrirFiltroFlecha = abrirFiltro.querySelector("img");
+
+  abrirFiltro.addEventListener("click", () => {
+    formBusquedaAvanzada.classList.toggle("active");
+
+    if (formBusquedaAvanzada.classList.contains("active")) {
+      abrirFiltroTexto.textContent = "Ocultar búsqueda avanzada";
+      abrirFiltroFlecha.src = "imagenes/chevron-arriba.png"; // cambias a flecha arriba
+    } else {
+      abrirFiltroTexto.textContent = "Mostrar búsqueda avanzada";
+      abrirFiltroFlecha.src = "imagenes/chevron-abajo.png"; // vuelve a flecha abajo
+    }
+  });
+  
+  document.querySelectorAll("#formBusquedaAvanzada .tipos div, #formBusquedaAvanzada .alturas div, #formBusquedaAvanzada .pesos div")
+  .forEach(div => {
+    div.addEventListener("click", () => {
+      div.classList.toggle("activo"); // activa/desactiva
+    });
+  });
+  
   /* ------------------ MOSTRAR DETALLE ------------------ */
   function mostrarDetalle(card) {
     pokemonSeleccionado = card.dataset.numero;

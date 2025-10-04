@@ -214,6 +214,22 @@ nav a:hover {
   justify-content: center;
 }
 
+.filtros .tipos div, .alturas div, .pesos div {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.filtros .tipos div:hover, .alturas div:hover, .pesos div:hover {
+  outline: 2px solid #cc0000;  /* borde rojo */
+  transform: scale(1.05);      /* un poco más grande */
+}
+
+.filtros .tipos div.activo, .alturas div.activo, .pesos div.activo {
+  outline: 2px solid #cc0000;  /* borde rojo */
+  transform: scale(1.05);      /* un poco más grande */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
 .alturas img{
   width: 80px;
   height: 80px;
@@ -272,7 +288,7 @@ nav a:hover {
   margin: 30px 0px 15px 0px;
 }
 
-#btnBuscar{
+#btnBusqueda{
   background: #cc0000;
   border: none;
   padding: 0.7rem 1rem;
@@ -292,13 +308,29 @@ nav a:hover {
   cursor: pointer;
 }
 
-#btnBuscar:hover {
+#btnBusqueda:hover {
   background: #990000;
 }
 
 #btnResetear:hover {
   background: rgb(100, 100, 100);
 }
+
+#formBusquedaAvanzada {
+  display: block;            /* siempre ocupa lugar en el flujo */
+  max-height: 0;             /* empieza cerrado */
+  opacity: 0;                /* invisible */
+  overflow: hidden;          /* oculta lo que sobra */
+  transform: scaleY(0.95);   /* un poquito comprimido */
+  transition: max-height 1s ease, opacity 1s ease, transform 1s ease;
+}
+
+#formBusquedaAvanzada.active {
+  max-height: 600px;  /* dale un valor mayor a la altura real del formulario */
+  opacity: 1;
+  transform: scaleY(1);
+}
+
 
 /* ------------------ RESULTADOS ------------------ */
 #resultadosPokedex{
