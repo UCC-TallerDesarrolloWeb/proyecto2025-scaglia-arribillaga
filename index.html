@@ -9,6 +9,9 @@
   <link rel="icon" type="image/png" href="imagenes/logo.png">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Pantalla de bienvenida -->
@@ -39,17 +42,12 @@
           <div class="busqueda">
               <label for="nombre">Nombre o Número:</label>
               <div class="botonesBusqueda">
-                <input type="text" id="nombre" placeholder="Ej: Bulbasaur o 001">
+                <input type="text" id="nombre" maxlength="15" size="5" placeholder="Ej: Bulbasaur o 001">
                 <button type="submit" id="btnLupa"><img src="imagenes/lupa.png" alt="Lupa"></button>
               </div>
           </div>
         </form>
-
-        <div class="abrirFiltro">
-          <h5>Mostrar búsqueda avanzada</h5>
-          <img src="imagenes/chevron-abajo.png" alt="Flecha hacia abajo">
-        </div>
-
+        
      <form id="formBusquedaAvanzada">
   <div class="filtros">
     <div class="filtroTipos">
@@ -120,6 +118,10 @@
 </form>
 </section>
 
+<div class="abrirFiltro">
+          <h5>Mostrar búsqueda avanzada</h5>
+          <img src="imagenes/chevron-abajo.png" alt="Flecha hacia abajo">
+        </div>
 
       <!-- Resultados -->
       <section id="resultadosPokedex">
@@ -3361,42 +3363,45 @@
       <button id="btnAnterior">⬅</button>
     </div>
 
-    <!-- Info general -->
-    <div class="pokemonInfoGeneral">
-      <div class="imgYDescripcion">
-        <img id="detalleImg" src="imagenes/Pokemones/001.png" alt="Bulbasaur">
-        <div class="descripcion">
-          <h2 id="detalleTitulo">#001 Bulbasaur</h2>
-          <p id="detalleDescripcion">Un Pokémon de tipo Planta/Veneno. Nace con una semilla en el lomo que crece con el tiempo.</p>
+    <div class="allDetallePokemon">
+
+      <!-- Info general -->
+      <div class="pokemonInfoGeneral">
+        <div class="imgYDescripcion">
+          <img id="detalleImg" src="imagenes/Pokemones/001.png" alt="Bulbasaur">
+          <div class="descripcion">
+            <h2 id="detalleTitulo">#001 Bulbasaur</h2>
+            <p id="detalleDescripcion">Un Pokémon de tipo Planta/Veneno. Nace con una semilla en el lomo que crece con el tiempo.</p>
+          </div>
+        </div>
+        
+        <div class="pokemonDatos">
+          <h3>Informacion general</h3>
+          <div id="detalleTipo"></div>
+          <div id="detalleAltura"></div>
+          <div id="detallePeso"></div>
         </div>
       </div>
-
-      <div class="pokemonDatos">
-        <h3>Informacion general</h3>
-        <div id="detalleTipo"></div>
-        <div id="detalleAltura"></div>
-        <div id="detallePeso"></div>
-      </div>
-    </div>
-
-    <!-- Stats y Evoluciones -->
-    <div class="pokemonStatsYEvos">
-      <div class="pokemonEstadisticas">
-        <h3>Estadísticas</h3>
-        <div class="stats">
-          <div class="palabraHP">HP:</div><div id="statHP"></div><div id="barraHP"></div>
-          <div class="palabraAtk">Ataque:</div><div id="statAtk"></div><div id="barraAtk"></div>
-          <div class="palabraDef">Defensa:</div><div id="statDef"></div><div id="barraDef"></div>
-          <div class="palabraAtkEsp">Ataque Esp:</div><div id="statAtkEsp"></div><div id="barraAtkEsp"></div>
-          <div class="palabraDefEsp">Defensa Esp:</div><div id="statDefEsp"></div><div id="barraDefEsp"></div>
-          <div class="palabraVel">Velocidad:</div><div id="statVel"></div><div id="barraVel"></div>
+      
+      <!-- Stats y Evoluciones -->
+      <div class="pokemonStatsYEvos">
+        <div class="pokemonEstadisticas">
+          <h3>Estadísticas</h3>
+          <div class="stats">
+            <div class="palabraHP">HP:</div><div id="statHP"></div><div id="barraHP"></div>
+            <div class="palabraAtk">Ataque:</div><div id="statAtk"></div><div id="barraAtk"></div>
+            <div class="palabraDef">Defensa:</div><div id="statDef"></div><div id="barraDef"></div>
+            <div class="palabraAtkEsp">Ataque Esp:</div><div id="statAtkEsp"></div><div id="barraAtkEsp"></div>
+            <div class="palabraDefEsp">Defensa Esp:</div><div id="statDefEsp"></div><div id="barraDefEsp"></div>
+            <div class="palabraVel">Velocidad:</div><div id="statVel"></div><div id="barraVel"></div>
+          </div>
         </div>
-      </div>
-
-
-      <div class="pokemonLineaEvolutiva">
-        <h3>Línea Evolutiva</h3>
-        <div id="detalleEvoluciones"></div>
+        
+        
+        <div class="pokemonLineaEvolutiva">
+          <h3>Línea Evolutiva</h3>
+          <div id="detalleEvoluciones"></div>
+        </div>
       </div>
     </div>
 

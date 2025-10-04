@@ -1,8 +1,16 @@
 /* ------------------ GENERALES ------------------ */
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Smooch Sans", sans-serif;
+  font-weight: 600; /* o el valor que prefieras: 100, 300, 600, etc. */
+  font-optical-sizing: auto;
+  font-style: normal;
   margin: 0;
   background: #333;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 /* ------------------ INTRO ------------------ */
@@ -103,6 +111,7 @@ nav a:hover {
 
 .buscador h2 {
   margin-top: 0;
+  font-size: 30px;
 }
 
 .abrirFiltro{
@@ -114,9 +123,25 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
+@media (max-width: 200px){
+  .abrirFiltro h5{
+    width: 120px;
+    gap: 0px;
+  }
+}
+
+@media (max-width: 175px){
+  .abrirFiltro h5{
+    width: 70px;
+    gap: 0px;
+  }
+}
+
 .abrirFiltro h5{
+  color: white;
   text-align: center;
   margin: 0px;
+  font-size: 15px;
 }
 
 .abrirFiltro img{
@@ -127,7 +152,7 @@ nav a:hover {
 
 .filtros {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
   gap: 1rem;
   margin-bottom: 1rem;
 }
@@ -141,15 +166,35 @@ nav a:hover {
   margin: 10px 0px;
 }
 
-.filtroTipo, .filtroAltura, .filtroPeso{
+@media (max-width: 500px) {
+  .tipos {
+    grid-template-columns: repeat(2, 150px);
+  }
+}
+
+@media (max-width: 900px) {
+  .filtros {
+      grid-template-columns: repeat(1, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 330px) {
+  .tipos {
+    grid-template-columns: repeat(1, 150px);
+  }
+}
+
+.filtroTipos, .filtroAltura, .filtroPeso{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 
-.filtroTipo h4{
+.filtroTipos h4{
   margin: 0px;
+  text-align: center;
+  font-size: 20px;
 }
 
 .tipos div{
@@ -192,16 +237,25 @@ nav a:hover {
 
 .filtroTamanos h4{
   margin: 0px;
+  font-size: 20px;
 }
 
 .alturas, .pesos{
-  width: 100%;
+  min-width: 400px;
   height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   margin: 5px 0px;
+}
+
+@media(max-width: 450px){
+  .alturas, .pesos{
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px 0px;
+  }
 }
 
 .alturas div, .pesos div{
@@ -214,9 +268,10 @@ nav a:hover {
   justify-content: center;
 }
 
-.filtros .tipos div, .alturas div, .pesos div {
+.tipos div, .alturas div, .pesos div {
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 17px;
 }
 
 .filtros .tipos div:hover, .alturas div:hover, .pesos div:hover {
@@ -242,6 +297,7 @@ nav a:hover {
 .buscador .busqueda label{
   display: block;
   margin-bottom: 5px;
+  font-size: 20px;
 }
 
 .botonesBusqueda{
@@ -286,6 +342,13 @@ nav a:hover {
   margin: 30px 0px 15px 0px;
 }
 
+@media (max-width: 300px) {
+  .botonesFiltro{
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
 #btnBusqueda{
   background: #cc0000;
   border: none;
@@ -324,14 +387,14 @@ nav a:hover {
 }
 
 #formBusquedaAvanzada.active {
-  max-height: 600px;  /* dale un valor mayor a la altura real del formulario */
+  max-height: 1700px;  /* dale un valor mayor a la altura real del formulario */
   opacity: 1;
   transform: scaleY(1);
 }
 
 
 /* ------------------ RESULTADOS ------------------ */
-#resultadosPokedex{
+#resultadosPokedex, #detallePokemon {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
@@ -463,12 +526,6 @@ nav a:hover {
   background: #ffeaea;
 }
 
-#detallePokemon {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 10px;
-}
-
 #detallePokemon img {
   width: 200px;
 }
@@ -499,6 +556,22 @@ nav a:hover {
     font-size: 0.8rem;
   }
 }
+
+@media (max-height: 600px) {
+  .pokemon-card {
+    width: 90px;
+    padding: 0.4rem;
+  }
+  .pokemon-card img {
+    width: 60px;
+  }
+  .pokemon-card h3 {
+    font-size: 0.9rem;
+  }
+  .pokemon-card p {
+    font-size: 0.8rem;
+  }
+}
   
 /* ------------------ DETALLE DE POKÉMON ------------------ */
 .paginaPokemon {
@@ -509,6 +582,16 @@ nav a:hover {
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  padding-bottom: 10px;
+}
+
+.allDetallePokemon{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .pokemonAnterior, .pokemonPosterior {
@@ -573,7 +656,9 @@ nav a:hover {
   flex-direction: column;
   gap: 1rem;
   height: 100%;
-  width: 40%;
+  width: 46%;
+  min-width: 410px;
+  margin-bottom: 1rem;
 }
 
 .pokemonDatos h3, .pokemonLineaEvolutiva h3, .pokemonEstadisticas h3{

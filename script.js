@@ -92,17 +92,17 @@ document.addEventListener("DOMContentLoaded", () => {
   detalle.querySelector("#detalleAltura").textContent = "Altura: " + altura;
   detalle.querySelector("#detallePeso").textContent = "Peso: " + peso;
   detalle.querySelector("#statHP").textContent = hp;
-  detalle.querySelector("#barraHP").innerHTML = "<div class='barraHP' style='width: " + hp/5 + "vw;'></div>";
+  detalle.querySelector("#barraHP").innerHTML = "<div class='barraHP' style='width: calc(" + hp + "% / 1.2);'></div>";
   detalle.querySelector("#statAtk").textContent = atk;
-  detalle.querySelector("#barraAtk").innerHTML = "<div class='barraAtk' style='width: " + atk/5 + "vw;'></div>";
+  detalle.querySelector("#barraAtk").innerHTML = "<div class='barraAtk' style='width: calc(" + atk + "% / 1.2);'></div>";
   detalle.querySelector("#statDef").textContent = def;
-  detalle.querySelector("#barraDef").innerHTML = "<div class='barraDef' style='width: " + def/5 + "vw;'></div>";
+  detalle.querySelector("#barraDef").innerHTML = "<div class='barraDef' style='width: calc(" + def + "% / 1.2);'></div>";
   detalle.querySelector("#statAtkEsp").textContent = atkesp;
-  detalle.querySelector("#barraAtkEsp").innerHTML = "<div class='barraAtkEsp' style='width: " + atkesp/5 + "vw;'></div>";
+  detalle.querySelector("#barraAtkEsp").innerHTML = "<div class='barraAtkEsp' style='width: calc(" + atkesp + "% / 1.2);'></div>";
   detalle.querySelector("#statDefEsp").textContent = defesp;
-  detalle.querySelector("#barraDefEsp").innerHTML = "<div class='barraDefEsp' style='width: " + defesp/5 + "vw;'></div>";
+  detalle.querySelector("#barraDefEsp").innerHTML = "<div class='barraDefEsp' style='width: calc(" + defesp + "% / 1.2);'></div>";
   detalle.querySelector("#statVel").textContent = vel;
-  detalle.querySelector("#barraVel").innerHTML = "<div class='barraVel' style='width: " + vel/5 + "vw;'></div>";
+  detalle.querySelector("#barraVel").innerHTML = "<div class='barraVel' style='width: calc(" + vel + "% / 1.2);'></div>";
 
     const evoContainer = detalle.querySelector("#detalleEvoluciones");
     evoContainer.innerHTML = "";
