@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resultados.style.display = "none";
     detalle.style.display = "block";
 
-    const { numero, nombre, tipo, altura, peso, evoluciones, hp, atk, def, atkesp, defesp, vel } = card.dataset;
+    const { numero, nombre, tipo, altura, peso, evoluciones, hp, atk, def, atkesp, defesp, vel, descripcion } = card.dataset;
 
     // Info principal
     detalle.querySelector("#detalleImg").src = `imagenes/Pokemones/${numero}.png`;
@@ -97,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     detalle.querySelector("#detalleTipo").textContent = "Tipo: " + tipo;
     detalle.querySelector("#detalleAltura").textContent = "Altura: " + altura;
     detalle.querySelector("#detallePeso").textContent = "Peso: " + peso;
+    detalle.querySelector("#detalleDescripcion").textContent = descripcion;
     detalle.querySelector("#statHP").textContent = hp;
     detalle.querySelector("#barraHP").innerHTML = "<div class='barraHP' style='width: calc(" + hp + "% / 1.2);'></div>";
     detalle.querySelector("#statAtk").textContent = atk;
@@ -109,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     detalle.querySelector("#barraDefEsp").innerHTML = "<div class='barraDefEsp' style='width: calc(" + defesp + "% / 1.2);'></div>";
     detalle.querySelector("#statVel").textContent = vel;
     detalle.querySelector("#barraVel").innerHTML = "<div class='barraVel' style='width: calc(" + vel + "% / 1.2);'></div>";
+
 
     const evoContainer = detalle.querySelector("#detalleEvoluciones");
     evoContainer.innerHTML = "";
