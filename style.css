@@ -504,15 +504,17 @@ nav a:hover {
   
 /* ------------------ DETALLE DE POKÉMON ------------------ */
 .paginaPokemon {
-  display: grid;
-  grid-template-columns: 50px 1fr 1fr 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   gap: 1rem;
-  align-items: start;
-  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .pokemonAnterior, .pokemonPosterior {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -529,12 +531,6 @@ nav a:hover {
 }
 .pokemonAnterior button:hover, .pokemonPosterior button:hover {
   background: #a00000;
-}
-
-.pokemonInfoGeneral {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 }
 
 .imgYDescripcion {
@@ -558,10 +554,12 @@ nav a:hover {
   padding: 0.5rem 1rem;
 }
 
-.pokemonStatsYEvos {
+.pokemonInfoGeneral, .pokemonStatsYEvos {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  height: 100%;
+  width: 40%;
 }
 
 .pokemonEstadisticas {
@@ -571,7 +569,7 @@ nav a:hover {
 }
 
 .pokemonLineaEvolutiva {
-  background: #f9f9f9;
+  background: #f1f1f1;
   border-radius: 8px;
   padding: 1rem;
 }
