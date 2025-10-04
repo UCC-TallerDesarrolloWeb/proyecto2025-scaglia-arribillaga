@@ -26,27 +26,29 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", introHandler);
 
   /* ------------------ BUSCADOR ------------------ */
-  const buscarPokemon = (e) => {
-    e.preventDefault();
+ const buscarPokemon = (e) => {
+  e.preventDefault();
 
-    const nombre = document.getElementById("nombre").value.trim().toLowerCase();
+  const termino = document.getElementById("nombre").value.trim().toLowerCase();
+  const pokemons = document.querySelectorAll(".pokemon-card");
+  let contador = 0;
 
-    const pokemons = document.querySelectorAll(".pokemon-card");
-    let contador = 0;
+  pokemons.forEach(pokemon => {
+    const { nombre, numero } = pokemon.dataset;
 
-    pokemons.forEach(pokemon => {
-      const { nombre: nombrePokemon } = pokemon.dataset;
+    // Coincide si el texto buscado aparece en el nombre o en el número
+    if (!termino || nombre.includes(termino) || numero.includes(termino)) {
+      pokemon.style.display = "block";
+      contador++;
+    } else {
+      pokemon.style.display = "none";
+    }
+  });
 
-      if (!nombre || nombrePokemon.includes(nombre)) {
-        pokemon.style.display = "block";
-        contador++;
-      } else {
-        pokemon.style.display = "none";
-      }
-    });
+  document.getElementById("contador").textContent =
+    `Se encontraron ${contador} Pokémon.`;
+};
 
-    document.getElementById("contador").textContent = `Se encontraron ${contador} Pokémon.`;
-  };
 
   /* --- BOTONES --- */
 // lupa: búsqueda por nombre/número
