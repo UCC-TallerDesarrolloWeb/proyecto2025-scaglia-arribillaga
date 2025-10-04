@@ -141,7 +141,7 @@ nav a:hover {
   color: white;
   text-align: center;
   margin: 0px;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .abrirFiltro img{
@@ -430,7 +430,7 @@ nav a:hover {
 }
 
 .pokemon-card h3 {
-  font-size: 1rem;      /* título más pequeño */
+  font-size: 1.25rem;      /* título más pequeño */
   margin: 0.5rem 0 0.2rem 0;
 }
 
@@ -450,7 +450,7 @@ nav a:hover {
   border: 1px solid #ddd;
   width: 60px;
   height: 18px;
-  font-size: 11px;
+  font-size: 0.85rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -541,7 +541,7 @@ nav a:hover {
 }
 
 /* Responsive: en pantallas chicas, aún más compactas */
-@media (max-width: 600px) {
+@media (max-width: 615px) {
   .pokemon-card {
     width: 90px;
     padding: 0.4rem;
@@ -551,6 +551,9 @@ nav a:hover {
   }
   .pokemon-card h3 {
     font-size: 0.9rem;
+  }
+  .tiposCard div{
+    font-size: 0.75rem;
   }
   .pokemon-card p {
     font-size: 0.8rem;
@@ -567,6 +570,9 @@ nav a:hover {
   }
   .pokemon-card h3 {
     font-size: 0.9rem;
+  }
+  .tiposCard div{
+    font-size: 0.075rem;
   }
   .pokemon-card p {
     font-size: 0.8rem;
@@ -601,16 +607,59 @@ nav a:hover {
   justify-content: center;
 }
 
-.pokemonAnterior button, .pokemonPosterior button {
+.botonesMediaChica {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0px 20px 0px;
+  max-height: 0;             /* empieza cerrado */
+  opacity: 0;                /* invisible */
+  overflow: hidden;          /* oculta lo que sobra */
+}
+
+.botonesMediaChica button {
   background: #cc0000;
   color: white;
   border: none;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 630px) {
+  .botonesMediaChica{
+    max-height: 300px;
+    opacity: 1;
+
+  }
+  .pokemonAnterior, .pokemonPosterior {
+    opacity: 0;
+    max-width: 0px;
+    overflow: hidden;
+  }
+  .paginaPokemon{
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+  }
+
+}
+
+.pokemonAnterior button, .pokemonPosterior button{
+  background: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 10px;
   font-size: 2rem;
   width: 50px;
   height: 50px;
   cursor: pointer;
 }
-.pokemonAnterior button:hover, .pokemonPosterior button:hover {
+
+.pokemonAnterior button:hover, .pokemonPosterior button:hover, .botonesMediaChica button:hover {
   background: #a00000;
 }
 
@@ -657,14 +706,28 @@ nav a:hover {
   gap: 1rem;
   height: 100%;
   width: 46%;
-  min-width: 410px;
+  min-width: 402px;
   margin-bottom: 1rem;
 }
 
-.pokemonDatos h3, .pokemonLineaEvolutiva h3, .pokemonEstadisticas h3{
+.pokemonLineaEvolutiva h3, .pokemonEstadisticas h3{
   width: 100%;
   text-align: center;
   margin: 5px 0px 10px 0px;
+  font-size: 24px;
+}
+
+.pokemonDatos h3{
+  width: 100%;
+  text-align: start;
+  margin: 5px 0px 10px 0px;
+  padding-left: 40px;
+  font-size: 24px;
+}
+
+.pokemonDatos div{
+  width: auto;
+  margin-bottom: 5px;
 }
 
 .pokemonEstadisticas .stats{
@@ -675,6 +738,7 @@ nav a:hover {
 
 .stats div{
   width: 100px;
+  font-size: 18px;
 }
 
 .stats > div:nth-child(3n + 1) {
@@ -694,6 +758,15 @@ nav a:hover {
 .barraHP, .barraAtk, .barraDef, .barraAtkEsp, .barraDefEsp, .barraVel{
   height: 10px;
   background-color: #000000;
+}
+
+#detalleTipo, #detalleAltura, #detallePeso, #detalleDescripcion{
+  font-size: 18px;
+}
+
+#detalleDescripcion{
+  padding: 0px 20px;
+  margin: 0px;
 }
 
 #detalleEvoluciones img {

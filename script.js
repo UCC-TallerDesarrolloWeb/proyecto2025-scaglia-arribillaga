@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnVolver = document.getElementById("btnVolver");
   const btnAnterior = document.getElementById("btnAnterior");
   const btnSiguiente = document.getElementById("btnSiguiente");
+  const btnAnteriorPantallaChica = document.getElementById("btnAnteriorMediaChica");
+  const btnSiguientePantallaChica = document.getElementById("btnSiguienteMediaChica");
   const formBusqueda = document.getElementById("formBusquedaPrincipal");
   const formBusquedaAvanzada = document.getElementById("formBusquedaAvanzada");
 
@@ -159,6 +161,20 @@ document.addEventListener("DOMContentLoaded", () => {
     let index = cards.findIndex(c => c.dataset.numero === pokemonSeleccionado);
     if (index < cards.length - 1) mostrarDetalle(cards[index + 1]);
   });
+
+    btnAnteriorPantallaChica.addEventListener("click", () => {
+    const cards = [...document.querySelectorAll(".pokemon-card")];
+    let index = cards.findIndex(c => c.dataset.numero === pokemonSeleccionado);
+    if (index > 0) mostrarDetalle(cards[index - 1]);
+});
+
+
+  btnSiguientePantallaChica.addEventListener("click", () => {
+    const cards = [...document.querySelectorAll(".pokemon-card")];
+    let index = cards.findIndex(c => c.dataset.numero === pokemonSeleccionado);
+    if (index < cards.length - 1) mostrarDetalle(cards[index + 1]);
+});
+
 
   /* ------------------ FILTROS AVANZADOS ------------------ */
   const botonesTipo = document.querySelectorAll("#formBusquedaAvanzada .tipos div");
