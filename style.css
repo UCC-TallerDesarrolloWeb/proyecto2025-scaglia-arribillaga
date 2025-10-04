@@ -69,13 +69,22 @@ html, body {
 
 /* ------------------ HEADER ------------------ */
 header {
-  background-color: #cc0000;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+
+  /* Fondo */
+  background-image: url("imagenes/logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%,50%; 
+  background-color: #990000;
+  min-height: 180px; 
+  color: white;
+  font-size: medium;
 }
+
 
 header .logo {
   width: 50px;
@@ -95,6 +104,50 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
+}
+/* ===== HEADER INTERACTIVO ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Color inicial */
+header {
+  background-color: #990000; /* rojo base */
+}
+
+/* Color y efecto al hacer scroll */
+header.scrolled {
+  background: linear-gradient(90deg, #ff0000, #ff9900);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Estilo para los links del menú */
+header nav a {
+  font-size: 1.4rem;  /* Más grande */
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+}
+
+header nav a:hover::after {
+  width: 100%;
 }
 
 /* ------------------ BUSCADOR ------------------ */
@@ -824,6 +877,20 @@ nav a:hover {
     box-shadow: 0 0 20px 5px rgba(255, 0, 0, 1);
   }
 }
+
+/* ===== FORZAR CURSOR DE POKEBOLA EN TODOS LOS ELEMENTOS INTERACTIVOS ===== */
+*, a, button, input, select, textarea, label,
+.tipos div, .alturas div, .pesos div,
+#btnLupa, #btnBusqueda, #btnResetear,
+.pokemonAnterior button, .pokemonPosterior button,
+#detalleEvoluciones img, .evoluciones img {
+  cursor: url("imagenes/Pokemon\ Pokeball--cursor--Sweezy.png") 16 16, auto !important;
+}
+/* Forzar cursor pokebola SOLO para el botón Buscar */
+#btnBusqueda {
+  cursor: url("imagenes/Pokemon\ Pokeball--cursor--Sweezy.png") 16 16, auto !important;
+}
+
 
 /* ------------------ FOOTER ------------------ */
 footer {
