@@ -50,58 +50,73 @@
           <img src="imagenes/chevron-abajo.png" alt="Flecha hacia abajo">
         </div>
 
-        <form id="formBusquedaAvanzada">
-          <div class="filtros">
-            <div class="filtroTipo">
-              <h4>Tipo</h4>
-              <div class="tipos">
-                <div class="acero">Acero</div>
-                <div class="fuego">Fuego</div>
-                <div class="psiquico">Psíquico</div>
-                <div class="agua">Agua</div>
-                <div class="hada">Hada</div>
-                <div class="roca">Roca</div>
-                <div class="bicho">Bicho</div>
-                <div class="hielo">Hielo</div>
-                <div class="siniestro">Siniestro</div>
-                <div class="dragon">Dragón</div>
-                <div class="lucha">Lucha</div>
-                <div class="tierra">Tierra</div>
-                <div class="electrico">Eléctrico</div>
-                <div class="normal">Normal</div>
-                <div class="fantasma">Fantasma</div>
-                <div class="veneno">Veneno</div>
-                <div class="planta">Planta</div>
-                <div class="volador">Volador</div>
-              </div>
-            </div>
+     <form id="formBusquedaAvanzada">
+  <div class="filtros">
+    <h4>Tipo</h4>
+    <div class="tipos">
+      <div class="acero" data-tipo="acero">Acero</div>
+      <div class="fuego" data-tipo="fuego">Fuego</div>
+      <div class="psiquico" data-tipo="psiquico">Psíquico</div>
+      <div class="agua" data-tipo="agua">Agua</div>
+      <div class="hada" data-tipo="hada">Hada</div>
+      <div class="roca" data-tipo="roca">Roca</div>
+      <div class="bicho" data-tipo="bicho">Bicho</div>
+      <div class="hielo" data-tipo="hielo">Hielo</div>
+      <div class="siniestro" data-tipo="siniestro">Siniestro</div>
+      <div class="dragon" data-tipo="dragon">Dragón</div>
+      <div class="lucha" data-tipo="lucha">Lucha</div>
+      <div class="tierra" data-tipo="tierra">Tierra</div>
+      <div class="electrico" data-tipo="electrico">Eléctrico</div>
+      <div class="normal" data-tipo="normal">Normal</div>
+      <div class="fantasma" data-tipo="fantasma">Fantasma</div>
+      <div class="veneno" data-tipo="veneno">Veneno</div>
+      <div class="planta" data-tipo="planta">Planta</div>
+      <div class="volador" data-tipo="volador">Volador</div>
+    </div>
 
-            <div class="filtroTamanos">
-              <div class="filtroAltura">
-                <h4>Altura</h4>
-                <div class="alturas">
-                  <div class="bajo"><img src="imagenes/pokemon-pequeño.png" alt="Pokemon Alta"></div>
-                  <div class="mediano"><img src="imagenes/pokemon-mediano.png" alt="Pokemon mediano"></div>
-                  <div class="alto"><img src="imagenes/pokemon-alto.png" alt="Pokemon Alto"></div>
-                </div>
-              </div>
-  
-              <div class="filtroPeso">
-                <h4>Peso</h4>
-                <div class="pesos">
-                  <div class="liviano"><img src="imagenes/pluma.png" alt="Pluma"></div>
-                  <div class="intermedio"><img src="imagenes/hombre.png" alt="Persona"></div>
-                  <div class="pesado"><img src="imagenes/tanque-de-guerra.png" alt="Tanque"></div>
-                </div>
-              </div>
-            </div>  
-          </div>  
-          <div class="botonesFiltro">
-            <button type="submit" id="btnBusqueda">Buscar</button>
-            <button type="reset" id="btnResetear">Restablecer</button>
+    <div class="filtroTamanos">
+      <!-- ALTURA -->
+      <div class="filtroAltura">
+        <h4>Altura</h4>
+        <div class="alturas">
+          <div class="bajo" data-altura="bajo">
+            <img src="imagenes/pokemon-pequeño.png" alt="Pokémon Pequeño">
           </div>
-        </form>
-      </section>
+          <div class="mediano" data-altura="medio">
+            <img src="imagenes/pokemon-mediano.png" alt="Pokémon Mediano">
+          </div>
+          <div class="alto" data-altura="alto">
+            <img src="imagenes/pokemon-alto.png" alt="Pokémon Alto">
+          </div>
+        </div>
+      </div>
+
+      <!-- PESO -->
+      <div class="filtroPeso">
+        <h4>Peso</h4>
+        <div class="pesos">
+          <div class="liviano" data-peso="liviano">
+            <img src="imagenes/pluma.png" alt="Pluma (liviano)">
+          </div>
+          <div class="intermedio" data-peso="medio">
+            <img src="imagenes/hombre.png" alt="Persona (medio)">
+          </div>
+          <div class="pesado" data-peso="pesado">
+            <img src="imagenes/tanque-de-guerra.png" alt="Tanque (pesado)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTONES -->
+  <div class="botonesFiltro">
+    <button type="button" id="btnBusqueda">Buscar</button>
+    <button type="button" id="btnResetear">Restablecer</button>
+  </div>
+</form>
+</section>
+
 
       <!-- Resultados -->
       <section id="resultadosPokedex">
