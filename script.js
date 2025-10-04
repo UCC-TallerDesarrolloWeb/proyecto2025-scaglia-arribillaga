@@ -33,11 +33,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const pokemons = document.querySelectorAll(".pokemon-card");
   let contador = 0;
 
+  // Si el término es numérico, lo pasamos al formato 3 dígitos (001, 025, etc.)
+  let terminoFormateado = termino;
+  if (!isNaN(termino) && termino !== "") {
+    terminoFormateado = termino.padStart(3, "0");
+  }
+
   pokemons.forEach(pokemon => {
     const { nombre, numero } = pokemon.dataset;
+    const nombreLower = nombre.toLowerCase();
 
-    // Coincide si el texto buscado aparece en el nombre o en el número
-    if (!termino || nombre.includes(termino) || numero.includes(termino)) {
+    // Coincide si busca por nombre o por número (ya formateado)
+    if (
+      !termino ||
+      nombreLower.includes(termino) ||
+      numero === terminoFormateado
+    ) {
       pokemon.style.display = "block";
       contador++;
     } else {
