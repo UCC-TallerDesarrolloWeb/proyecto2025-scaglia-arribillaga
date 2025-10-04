@@ -301,15 +301,15 @@ nav a:hover {
 }
 
 /* ------------------ RESULTADOS ------------------ */
-.resultados{
-  background-color: #ffffff;
+#resultadosPokedex{
+  background-color: white;
   padding: 20px;
   border-radius: 5px;
   margin: 0px 15px 0px 15px;
 }
 
-.resultados h2{
-  color: #333;
+#resultadosPokedex h2{
+  color: #000000;
   margin: 0px 0px 15px 5px;
 }
 
@@ -317,23 +317,159 @@ nav a:hover {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* Cartas de Pokémon más chicas */
 .pokemon-card {
   border: 2px solid #ddd;
-  border-radius: 10px;
-  padding: 1rem;
-  width: 150px;
+  border-radius: 8px;
+  padding: 0.5rem;
+  width: 170px;         /* antes 150px */
   text-align: center;
   background: white;
   transition: transform 0.2s;
 }
+
+.pokemon-card img {
+  width: 160px;          /* imagen más compacta */
+  height: auto;
+}
+
+.pokemon-card h3 {
+  font-size: 1rem;      /* título más pequeño */
+  margin: 0.5rem 0 0.2rem 0;
+}
+
+.pokemon-card p {
+  font-size: 0.9rem;    /* texto más chico */
+  margin: 0;
+}
+
+.tiposCard{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.tiposCard div{
+  border: 1px solid #ddd;
+  width: 60px;
+  height: 18px;
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.aguaCard { background: #6390F0; color: white; }
+.fuegoCard { background: #EE8130; color: white; }
+.plantaCard { background: #7AC74C; color: white; }
+.electricoCard { background: #F7D02C; color: #333;}
+.tierraCard { background: #E2BF65; color: #333}
+.rocaCard { background: #B6A136; color: white; }
+.psiquicoCard { background: #F95587; color: white; }
+.luchaCard { background: #C22E28; color: white; }
+.fantasmaCard { background: #735797; color: white; }
+.hieloCard { background: #96D9D6; color: #333}
+.venenoCard { background: #A33EA1; color: white; }
+.voladorCard { background: #A98FF3; color: #333}
+.normalCard { background: #A8A77A; color: #333}
+.dragonCard { background: #6F35FC; color: white; }
+.bichoCard { background: #A6B91A; color: #333}
+.siniestroCard { background: #705746; color: white}
+.hadaCard { background: #D685AD; color: #333}
+.aceroCard { background: #B7B7CE; color: #333}
+
+
 
 .pokemon-card:hover {
   transform: scale(1.05);
   border-color: #cc0000;
 }
 
+.contenedor-resultados {
+  display: flex;
+  gap: 2rem;
+}
+
+.lista {
+  flex: 1;
+}
+
+.detalle {
+  flex: 1;
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.detalle img {
+  width: 150px;
+}
+
+.evoluciones {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.evoluciones img {
+  width: 80px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.evoluciones img:hover {
+  transform: scale(1.1);
+}
+
+.pokemon-card.seleccionado {
+  border: 3px solid #cc0000;
+  background: #ffeaea;
+}
+
+#detallePokemon {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+#detallePokemon img {
+  width: 200px;
+}
+
+#btnVolver {
+  background: #cc0000;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+/* Responsive: en pantallas chicas, aún más compactas */
+@media (max-width: 600px) {
+  .pokemon-card {
+    width: 90px;
+    padding: 0.4rem;
+  }
+  .pokemon-card img {
+    width: 60px;
+  }
+  .pokemon-card h3 {
+    font-size: 0.9rem;
+  }
+  .pokemon-card p {
+    font-size: 0.8rem;
+  }
+}
+  
 /* ------------------ FOOTER ------------------ */
 footer {
   background-color: #333;

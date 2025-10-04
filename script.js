@@ -2,48 +2,112 @@ document.addEventListener("DOMContentLoaded", () => {
   const intro = document.getElementById("intro");
   const contenido = document.getElementById("contenido");
 
-  // Intro: Enter para continuar
-  document.addEventListener("keydown", (e) => {
+  const lista = document.getElementById("listaPokemons");
+  const detalle = document.getElementById("detallePokemon");
+  const resultados = document.getElementById("resultadosPokedex");
+  const btnVolver = document.getElementById("btnVolver");
+  const formBusquedaPrincipal = document.getElementById("formBusquedaPrincipal");
+  const formBusquedaAvanzada = document.getElementById("formBusquedaAvanzada");
+
+  let pokemonSeleccionado = null;
+
+  /* ------------------ INTRO ------------------ */
+  document.addEventListener("keydown", function introHandler(e) {
     if (e.key === "Enter") {
       intro.classList.add("hide");
       setTimeout(() => {
         intro.style.display = "none";
         contenido.classList.add("active");
       }, 500);
+      document.removeEventListener("keydown", introHandler);
     }
   });
 
-  // Buscar Pokémon
-  const buscarPokemon = (e) => {
+  /* ------------------ FUNCIÓN DE BÚSQUEDA ------------------ */
+  function buscarPokemon(e) {
     e.preventDefault();
 
     const nombre = document.getElementById("nombre").value.trim().toLowerCase();
-    const tipo = document.getElementById("tipo").value;
-    const altura = document.getElementById("altura").value;
-    const peso = document.getElementById("peso").value;
+    const tipo = document.getElementById("tipo")?.value || "";
+    const altura = document.getElementById("altura")?.value || "";
+    const peso = document.getElementById("peso")?.value || "";
 
-    const pokemons = document.querySelectorAll(".pokemon-card");
     let contador = 0;
+    document.querySelectorAll(".pokemon-card").forEach(card => {
+      const { nombre: n, numero, tipo: t, altura: a, peso: p } = card.dataset;
+      const nombreCoincide = !nombre || n.includes(nombre) || numero === nombre.padStart(3, "0");
+      const tipoCoincide = !tipo || t.toLowerCase() === tipo.toLowerCase();
+      const alturaCoincide = !altura || a.toLowerCase().includes(altura.toLowerCase());
+      const pesoCoincide = !peso || p.toLowerCase().includes(peso.toLowerCase());
 
-    pokemons.forEach(pokemon => {
-      const { nombre: nombrePokemon, tipo: tipoPokemon, altura: alturaPokemon, peso: pesoPokemon } = pokemon.dataset;
-
-      if (
-        (!nombre || nombrePokemon.includes(nombre)) &&
-        (!tipo || tipoPokemon === tipo) &&
-        (!altura || alturaPokemon === altura) &&
-        (!peso || pesoPokemon === peso)
-      ) {
-        pokemon.style.display = "block";
+      if (nombreCoincide && tipoCoincide && alturaCoincide && pesoCoincide) {
+        card.style.display = "block";
         contador++;
       } else {
-        pokemon.style.display = "none";
+        card.style.display = "none";
       }
     });
 
     document.getElementById("contador").textContent = `Se encontraron ${contador} Pokémon.`;
-  };
+  }
 
-  document.getElementById("formBusquedaAvanzada")
-          .addEventListener("submit", buscarPokemon);
+  formBusquedaPrincipal.addEventListener("submit", buscarPokemon);
+  formBusquedaAvanzada.addEventListener("submit", buscarPokemon);
+
+  /* ------------------ MOSTRAR DETALLE ------------------ */
+  function mostrarDetalle(card) {
+    pokemonSeleccionado = card.dataset.numero;
+
+    resultados.style.display = "none";
+    detalle.style.display = "block";
+
+    const { numero, nombre, tipo, altura, peso, evoluciones } = card.dataset;
+
+    // Render detalle
+    detalle.querySelector(".contenido-detalle").innerHTML = `
+      <h3>#${numero} ${nombre.charAt(0).toUpperCase() + nombre.slice(1)}</h3>
+      <img src="imagenes/Pokemones/${numero}.png" alt="${nombre}">
+      <p><strong>Tipo:</strong> ${tipo}</p>
+      <p><strong>Altura:</strong> ${altura}</p>
+      <p><strong>Peso:</strong> ${peso}</p>
+    `;
+
+    // Render evoluciones clickeables
+    const evoContainer = detalle.querySelector(".evoluciones");
+    evoContainer.innerHTML = "<h4>Evoluciones</h4>";
+    evoluciones.split(",").forEach(evo => {
+      evoContainer.innerHTML += `
+        <img src="imagenes/Pokemones/${evo}.png" alt="Evolución ${evo}" data-numero="${evo}">
+      `;
+    });
+
+    // Clic en evolución → abre detalle
+    evoContainer.querySelectorAll("img").forEach(img => {
+      img.addEventListener("click", () => {
+        const evoCard = [...document.querySelectorAll(".pokemon-card")]
+          .find(c => c.dataset.numero === img.dataset.numero);
+        if (evoCard) mostrarDetalle(evoCard);
+      });
+    });
+  }
+
+  lista.addEventListener("click", (e) => {
+    const card = e.target.closest(".pokemon-card");
+    if (card) mostrarDetalle(card);
+  });
+
+  /* ------------------ VOLVER ------------------ */
+  btnVolver.addEventListener("click", () => {
+    detalle.style.display = "none";
+    resultados.style.display = "block";
+
+    document.querySelectorAll(".pokemon-card").forEach(card => {
+      card.classList.toggle("seleccionado", card.dataset.numero === pokemonSeleccionado);
+    });
+
+    const seleccionado = document.querySelector(".pokemon-card.seleccionado");
+    if (seleccionado) {
+      seleccionado.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  });
 });
