@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnVolver = document.getElementById("btnVolver");
   const btnAnterior = document.getElementById("btnAnterior");
   const btnSiguiente = document.getElementById("btnSiguiente");
+  const btnAnteriorPantallaChica = document.getElementById("btnAnteriorMediaChica");
+  const btnSiguientePantallaChica = document.getElementById("btnSiguienteMediaChica");
   const formBusqueda = document.getElementById("formBusquedaPrincipal");
   const formBusquedaAvanzada = document.getElementById("formBusquedaAvanzada");
 
@@ -54,6 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("contador").textContent =
       `Se encontraron ${contador} Pokémon.`;
+    resultados.style.display = "block";
+    detalle.style.display = "none";
+    document.getElementById("resultadosPokedex").scrollIntoView({ behavior: "smooth" });
+
   };
 
   document.getElementById("btnLupa").addEventListener("click", buscarPokemonTexto);
@@ -160,6 +166,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (index < cards.length - 1) mostrarDetalle(cards[index + 1]);
   });
 
+    btnAnteriorPantallaChica.addEventListener("click", () => {
+    const cards = [...document.querySelectorAll(".pokemon-card")];
+    let index = cards.findIndex(c => c.dataset.numero === pokemonSeleccionado);
+    if (index > 0) mostrarDetalle(cards[index - 1]);
+});
+
+
+  btnSiguientePantallaChica.addEventListener("click", () => {
+    const cards = [...document.querySelectorAll(".pokemon-card")];
+    let index = cards.findIndex(c => c.dataset.numero === pokemonSeleccionado);
+    if (index < cards.length - 1) mostrarDetalle(cards[index + 1]);
+});
+
+
   /* ------------------ FILTROS AVANZADOS ------------------ */
   const botonesTipo = document.querySelectorAll("#formBusquedaAvanzada .tipos div");
   const botonesAltura = document.querySelectorAll("#formBusquedaAvanzada .alturas div");
@@ -264,6 +284,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("contador").textContent = `Se encontraron ${contador} Pokémon.`;
+
+    resultados.style.display = "block";
+    detalle.style.display = "none";
+    document.getElementById("resultadosPokedex").scrollIntoView({ behavior: "smooth" });
   });
 
   /* ------------------ BOTÓN RESTABLECER ------------------ */

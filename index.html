@@ -3942,6 +3942,10 @@
       <!-- Detalle de Pokémon -->
 <section id="detallePokemon" style="display: none;">
   <button id="btnVolver">⬅ Volver</button>
+    <div class="botonesMediaChica">
+    <button id="btnAnteriorMediaChica">Anterior</button>
+    <button id="btnSiguienteMediaChica">Posterior</button>
+  </div>
   
   <div class="paginaPokemon">
     <!-- Flecha anterior -->
@@ -3956,16 +3960,16 @@
         <div class="imgYDescripcion">
           <img id="detalleImg" src="imagenes/Pokemones/001.png" alt="Bulbasaur">
           <div class="descripcion">
-            <h2 id="detalleTitulo">#001 Bulbasaur</h2>
-            <p id="detalleDescripcion">Un Pokémon de tipo Planta/Veneno. Nace con una semilla en el lomo que crece con el tiempo.</p>
+            <h2 id="detalleTitulo"></h2>
+            <div id="detalleTipo"></div>
+            <div id="detalleAltura"></div>
+            <div id="detallePeso"></div>
           </div>
         </div>
         
         <div class="pokemonDatos">
-          <h3>Informacion general</h3>
-          <div id="detalleTipo"></div>
-          <div id="detalleAltura"></div>
-          <div id="detallePeso"></div>
+          <h3>Descripción</h3>
+          <p id="detalleDescripcion">Un Pokémon de tipo Planta/Veneno. Nace con una semilla en el lomo que crece con el tiempo.</p>
         </div>
       </div>
       
@@ -3996,6 +4000,7 @@
       <button id="btnSiguiente">➡</button>
     </div>
   </div>
+
 </section>
 
     </main>
