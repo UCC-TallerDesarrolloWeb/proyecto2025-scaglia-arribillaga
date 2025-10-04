@@ -56,6 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("contador").textContent =
       `Se encontraron ${contador} Pokémon.`;
+    resultados.style.display = "block";
+    detalle.style.display = "none";
+    document.getElementById("resultadosPokedex").scrollIntoView({ behavior: "smooth" });
+
   };
 
   document.getElementById("btnLupa").addEventListener("click", buscarPokemonTexto);
@@ -280,6 +284,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("contador").textContent = `Se encontraron ${contador} Pokémon.`;
+
+    resultados.style.display = "block";
+    detalle.style.display = "none";
+    document.getElementById("resultadosPokedex").scrollIntoView({ behavior: "smooth" });
   });
 
   /* ------------------ BOTÓN RESTABLECER ------------------ */
