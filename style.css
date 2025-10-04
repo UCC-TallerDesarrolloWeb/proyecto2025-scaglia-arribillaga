@@ -225,9 +225,7 @@ nav a:hover {
 }
 
 .filtros .tipos div.activo, .alturas div.activo, .pesos div.activo {
-  outline: 2px solid #cc0000;  /* borde rojo */
   transform: scale(1.05);      /* un poco más grande */
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .alturas img{
@@ -634,6 +632,39 @@ nav a:hover {
   justify-content: center;
   gap: 30px;
   margin-top: 20px;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+#seleccionInfo {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid red;
+  box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.7);
+  animation: glow 1.5s infinite alternate;
+}
+
+#seleccionInfo b {
+  color: #ff4d4d;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px 2px rgba(255, 0, 0, 0.5);
+  }
+  to {
+    box-shadow: 0 0 20px 5px rgba(255, 0, 0, 1);
+  }
 }
 
 /* ------------------ FOOTER ------------------ */
