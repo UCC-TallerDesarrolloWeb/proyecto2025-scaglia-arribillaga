@@ -9,7 +9,8 @@ body {
   background: #333;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -31,24 +32,16 @@ html, body {
   font-size: 3rem;
   margin-bottom: 20px;
   font-weight: bold;
-  color: #ffffff; 
-  text-shadow: 
-    0 0 5px #ff0000,
-    0 0 10px #ff0000,
-    0 0 20px #ff0000,
-    0 0 40px #ff0000,
-    0 0 80px #ff0000;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000,
+    0 0 40px #ff0000, 0 0 80px #ff0000;
 }
 
 #intro p {
   font-size: 1.2rem;
-  color: #ffffff; 
-  text-shadow: 
-    0 0 5px #ff0000,
-    0 0 10px #ff0000,
-    0 0 20px #ff0000,
-    0 0 40px #ff0000,
-    0 0 80px #ff0000;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000,
+    0 0 40px #ff0000, 0 0 80px #ff0000;
 }
 
 #intro.hide {
@@ -68,27 +61,24 @@ html, body {
 }
 
 /* ------------------ HEADER ------------------ */
-header {
+.logoPrincipal {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0.7rem;
   margin-bottom: 10px;
-  background-size: 20%,50%; 
   background-color: red;
-  min-height: 100px; 
+  min-height: 100px;
   color: white;
   font-size: medium;
   align-items: center;
   justify-content: center;
 }
 
-header img{
+.logoPrincipal img {
   width: 200px;
 }
 
 /* ------------------ BUSCADOR ------------------ */
-#formBusquedaPrincipal{
+#formBusquedaPrincipal {
   margin-left: 7.7%;
 }
 
@@ -99,12 +89,12 @@ header img{
   border-radius: 10px;
 }
 
-.buscador h2 {
+.buscador h1 {
   margin-top: 0;
   font-size: 30px;
 }
 
-.abrirFiltro{
+.abrirFiltro {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -113,28 +103,28 @@ header img{
   margin-bottom: 10px;
 }
 
-@media (max-width: 200px){
-  .abrirFiltro h5{
+@media (max-width: 200px) {
+  .abrirFiltro h5 {
     width: 120px;
     gap: 0px;
   }
 }
 
-@media (max-width: 175px){
-  .abrirFiltro h5{
+@media (max-width: 175px) {
+  .abrirFiltro h5 {
     width: 70px;
     gap: 0px;
   }
 }
 
-.abrirFiltro h5{
+.abrirFiltro h5 {
   color: white;
   text-align: center;
   margin: 0px;
   font-size: 16px;
 }
 
-.abrirFiltro img{
+.abrirFiltro img {
   width: 20px;
   height: 20px;
   margin: 0px;
@@ -147,7 +137,7 @@ header img{
   margin-bottom: 1rem;
 }
 
-.tipos{
+.tipos {
   display: grid;
   grid-template-columns: repeat(3, 150px);
   gap: 15px;
@@ -164,7 +154,7 @@ header img{
 
 @media (max-width: 900px) {
   .filtros {
-      grid-template-columns: repeat(1, minmax(180px, 1fr));
+    grid-template-columns: repeat(1, minmax(180px, 1fr));
   }
 }
 
@@ -174,20 +164,22 @@ header img{
   }
 }
 
-.filtroTipos, .filtroAltura, .filtroPeso{
+.filtroTipos,
+.filtroAltura,
+.filtroPeso {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 
-.filtroTipos h4{
+.filtroTipos h4 {
   margin: 0px;
   text-align: center;
   font-size: 20px;
 }
 
-.tipos div{
+.tipos div {
   border: 1px solid #ddd;
   width: 100px;
   height: 22px;
@@ -198,26 +190,98 @@ header img{
   text-align: center;
 }
 
-.agua { background: #6390F0; color: white; }
-.fuego { background: #EE8130; color: white; }
-.planta { background: #7AC74C; color: white; }
-.electrico { background: #F7D02C; color: #333;}
-.tierra { background: #E2BF65; color: #333}
-.roca { background: #B6A136; color: white; }
-.psiquico { background: #F95587; color: white; }
-.lucha { background: #C22E28; color: white; }
-.fantasma { background: #735797; color: white; }
-.hielo { background: #96D9D6; color: #333}
-.veneno { background: #A33EA1; color: white; }
-.volador { background: #A98FF3; color: #333}
-.normal { background: #A8A77A; color: #333}
-.dragon { background: #6F35FC; color: white; }
-.bicho { background: #A6B91A; color: #333}
-.siniestro { background: #705746; color: white}
-.hada { background: #D685AD; color: #333}
-.acero { background: #B7B7CE; color: #333}
+.agua,
+.aguaCard {
+  background: #6390f0;
+  color: white;
+}
+.fuego,
+.fuegoCard {
+  background: #ee8130;
+  color: white;
+}
+.planta,
+.plantaCard {
+  background: #7ac74c;
+  color: white;
+}
+.electrico,
+.electricoCard {
+  background: #f7d02c;
+  color: #333;
+}
+.tierra,
+.tierraCard {
+  background: #e2bf65;
+  color: #333;
+}
+.roca,
+.rocaCard {
+  background: #b6a136;
+  color: white;
+}
+.psiquico,
+.psiquicoCard {
+  background: #f95587;
+  color: white;
+}
+.lucha,
+.luchaCard {
+  background: #c22e28;
+  color: white;
+}
+.fantasma,
+.fantasmaCard {
+  background: #735797;
+  color: white;
+}
+.hielo,
+.hieloCard {
+  background: #96d9d6;
+  color: #333;
+}
+.veneno,
+.venenoCard {
+  background: #a33ea1;
+  color: white;
+}
+.volador,
+.voladorCard {
+  background: #a98ff3;
+  color: #333;
+}
+.normal,
+.normalCard {
+  background: #a8a77a;
+  color: #333;
+}
+.dragon,
+.dragonCard {
+  background: #6f35fc;
+  color: white;
+}
+.bicho,
+.bichoCard {
+  background: #a6b91a;
+  color: #333;
+}
+.siniestro,
+.siniestroCard {
+  background: #705746;
+  color: white;
+}
+.hada,
+.hadaCard {
+  background: #d685ad;
+  color: #333;
+}
+.acero,
+.aceroCard {
+  background: #b7b7ce;
+  color: #333;
+}
 
-.filtroTamanos{
+.filtroTamanos {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -225,12 +289,13 @@ header img{
   gap: 10px;
 }
 
-.filtroTamanos h4{
+.filtroTamanos h4 {
   margin: 0px;
   font-size: 20px;
 }
 
-.alturas, .pesos{
+.alturas,
+.pesos {
   min-width: 400px;
   height: 100%;
   display: flex;
@@ -240,8 +305,9 @@ header img{
   margin: 5px 0px;
 }
 
-@media(max-width: 450px){
-  .alturas, .pesos{
+@media (max-width: 450px) {
+  .alturas,
+  .pesos {
     flex-direction: column;
     gap: 15px;
     margin: 10px 0px;
@@ -249,31 +315,37 @@ header img{
 }
 
 @media (max-width: 460px) {
-  .imgYDescripcion, .pokemonDatos, .pokemonEstadisticas, .pokemonLineaEvolutiva {
+  .imgYDescripcion,
+  .pokemonDatos,
+  .pokemonEstadisticas,
+  .pokemonLineaEvolutiva {
     width: 60%;
   }
-  .pokemonInfoGeneral, .pokemonStatsYEvos {
+  .pokemonInfoGeneral,
+  .pokemonStatsYEvos {
     align-items: center;
   }
-  .imgYDescripcion{
+  .imgYDescripcion {
     height: 300px !important;
     flex-direction: column;
     padding-bottom: 10px !important;
   }
-  .imgYDescripcion #detalleImg{
+  .imgYDescripcion #detalleImg {
     width: 170px;
   }
-  .imgYDescripcion #detalleTitulo{
+  .imgYDescripcion #detalleTitulo {
     margin: 0px;
   }
-  .pokemonDatos{
+  .pokemonDatos {
     height: 130px !important;
   }
-  .pokemonDatos h3, .pokemonEstadisticas h3, .pokemonLineaEvolutiva h3{
+  .pokemonDatos h3,
+  .pokemonEstadisticas h3,
+  .pokemonLineaEvolutiva h3 {
     margin-top: 0px !important;
   }
 
-.pokemonEstadisticas .stats {
+  .pokemonEstadisticas .stats {
     width: 100%;
     display: grid;
     grid-template-columns: 20% 10% 70% !important; /* 3 columnas: nombre corto, valor numérico y barra */
@@ -304,7 +376,7 @@ header img{
     margin-left: 7px !important;
   }
 
-  .pokemonLineaEvolutiva{
+  .pokemonLineaEvolutiva {
     height: 120px !important;
   }
 
@@ -319,7 +391,8 @@ header img{
   }
 }
 
-.alturas div, .pesos div{
+.alturas div,
+.pesos div {
   background-color: white;
   width: 100px;
   height: 100px;
@@ -329,39 +402,44 @@ header img{
   justify-content: center;
 }
 
-.tipos div, .alturas div, .pesos div {
+.tipos div,
+.alturas div,
+.pesos div {
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
   font-size: 17px;
 }
 
-.filtros .tipos div:hover, .alturas div:hover, .pesos div:hover {
-  outline: 2px solid #cc0000;  /* borde rojo */
-  transform: scale(1.05);      /* un poco más grande */
+.filtros .tipos div:hover,
+.alturas div:hover,
+.pesos div:hover {
+  outline: 2px solid #cc0000; /* borde rojo */
+  transform: scale(1.05); /* un poco más grande */
 }
 
-.filtros .tipos div.activo, .alturas div.activo, .pesos div.activo {
-  transform: scale(1.05);      /* un poco más grande */
+.filtros .tipos div.activo,
+.alturas div.activo,
+.pesos div.activo {
+  transform: scale(1.05); /* un poco más grande */
 }
 
-.alturas img{
+.alturas img {
   width: 80px;
   height: 80px;
 }
 
-.pesos img{
+.pesos img {
   width: 60px;
   height: 60px;
-
 }
 
-.buscador .busqueda label{
+.buscador .busqueda label {
   display: block;
   margin-bottom: 5px;
   font-size: 20px;
 }
 
-.botonesBusqueda{
+.botonesBusqueda {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -369,14 +447,14 @@ header img{
   margin-bottom: 20px;
 }
 
-.buscador .busqueda input{
+.buscador .busqueda input {
   width: 250px;
   padding: 0.5rem;
   border-radius: 5px;
   border: none;
 }
 
-#btnLupa{
+#btnLupa {
   background: #cc0000;
   border: none;
   padding: 7px;
@@ -389,12 +467,12 @@ header img{
   justify-content: center;
 }
 
-#btnLupa img{
+#btnLupa img {
   width: 24px;
   height: 23px;
 }
 
-.botonesFiltro{
+.botonesFiltro {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -404,13 +482,13 @@ header img{
 }
 
 @media (max-width: 300px) {
-  .botonesFiltro{
+  .botonesFiltro {
     flex-direction: column;
     gap: 15px;
   }
 }
 
-#btnBusqueda{
+#btnBusqueda {
   background: #cc0000;
   border: none;
   padding: 0.7rem 1rem;
@@ -420,7 +498,7 @@ header img{
   cursor: pointer;
 }
 
-#btnResetear{
+#btnResetear {
   background: grey;
   border: none;
   padding: 0.7rem 1rem;
@@ -439,30 +517,34 @@ header img{
 }
 
 #formBusquedaAvanzada {
-  display: block;            /* siempre ocupa lugar en el flujo */
-  max-height: 0;             /* empieza cerrado */
-  opacity: 0;                /* invisible */
-  overflow: hidden;          /* oculta lo que sobra */
-  transform: scaleY(0.95);   /* un poquito comprimido */
+  display: block; /* siempre ocupa lugar en el flujo */
+  max-height: 0; /* empieza cerrado */
+  opacity: 0; /* invisible */
+  overflow: hidden; /* oculta lo que sobra */
+  transform: scaleY(0.95); /* un poquito comprimido */
   transition: max-height 1s ease, opacity 1s ease, transform 1s ease;
 }
 
 #formBusquedaAvanzada.active {
-  max-height: 1700px;  /* dale un valor mayor a la altura real del formulario */
+  max-height: 1700px; /* dale un valor mayor a la altura real del formulario */
   opacity: 1;
   transform: scaleY(1);
 }
 
-
 /* ------------------ RESULTADOS ------------------ */
-#resultadosPokedex, #detallePokemon {
+#resultadosPokedex,
+#detallePokemon {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
   margin: 0px 15px 0px 15px;
 }
 
-#resultadosPokedex h2{
+#detallePokemon {
+  display: none;
+}
+
+#resultadosPokedex h2 {
   color: #000000;
   margin: 0px 0px 15px 5px;
 }
@@ -479,35 +561,35 @@ header img{
   border: 2px solid #ddd;
   border-radius: 8px;
   padding: 0.5rem;
-  width: 170px;         /* antes 150px */
+  width: 170px; /* antes 150px */
   text-align: center;
   background: white;
   transition: transform 0.2s;
 }
 
 .pokemon-card img {
-  width: 160px;          /* imagen más compacta */
+  width: 160px; /* imagen más compacta */
   height: auto;
 }
 
 .pokemon-card h3 {
-  font-size: 1.25rem;      /* título más pequeño */
+  font-size: 1.25rem; /* título más pequeño */
   margin: 0.5rem 0 0.2rem 0;
 }
 
 .pokemon-card p {
-  font-size: 0.9rem;    /* texto más chico */
+  font-size: 0.9rem; /* texto más chico */
   margin: 0;
 }
 
-.tiposCard{
+.tiposCard {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-bottom: 5px;
 }
 
-.tiposCard div{
+.tiposCard div {
   border: 1px solid #ddd;
   width: 60px;
   height: 18px;
@@ -518,27 +600,6 @@ header img{
   border-radius: 3px;
   text-align: center;
 }
-
-.aguaCard { background: #6390F0; color: white; }
-.fuegoCard { background: #EE8130; color: white; }
-.plantaCard { background: #7AC74C; color: white; }
-.electricoCard { background: #F7D02C; color: #333;}
-.tierraCard { background: #E2BF65; color: #333}
-.rocaCard { background: #B6A136; color: white; }
-.psiquicoCard { background: #F95587; color: white; }
-.luchaCard { background: #C22E28; color: white; }
-.fantasmaCard { background: #735797; color: white; }
-.hieloCard { background: #96D9D6; color: #333}
-.venenoCard { background: #A33EA1; color: white; }
-.voladorCard { background: #A98FF3; color: #333}
-.normalCard { background: #A8A77A; color: #333}
-.dragonCard { background: #6F35FC; color: white; }
-.bichoCard { background: #A6B91A; color: #333}
-.siniestroCard { background: #705746; color: white}
-.hadaCard { background: #D685AD; color: #333}
-.aceroCard { background: #B7B7CE; color: #333}
-
-
 
 .pokemon-card:hover {
   transform: scale(1.05);
@@ -613,7 +674,7 @@ header img{
   .pokemon-card h3 {
     font-size: 0.9rem;
   }
-  .tiposCard div{
+  .tiposCard div {
     font-size: 0.75rem;
   }
   .pokemon-card p {
@@ -632,14 +693,14 @@ header img{
   .pokemon-card h3 {
     font-size: 0.9rem;
   }
-  .tiposCard div{
+  .tiposCard div {
     font-size: 0.075rem;
   }
   .pokemon-card p {
     font-size: 0.8rem;
   }
 }
-  
+
 /* ------------------ DETALLE DE POKÉMON ------------------ */
 .paginaPokemon {
   width: 100%;
@@ -652,7 +713,7 @@ header img{
   padding-bottom: 10px;
 }
 
-.allDetallePokemon{
+.allDetallePokemon {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -661,7 +722,8 @@ header img{
   gap: 5px;
 }
 
-.pokemonAnterior, .pokemonPosterior {
+.pokemonAnterior,
+.pokemonPosterior {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -674,9 +736,9 @@ header img{
   align-items: center;
   justify-content: space-between;
   margin: 10px 0px 20px 0px;
-  max-height: 0;             /* empieza cerrado */
-  opacity: 0;                /* invisible */
-  overflow: hidden;          /* oculta lo que sobra */
+  max-height: 0; /* empieza cerrado */
+  opacity: 0; /* invisible */
+  overflow: hidden; /* oculta lo que sobra */
 }
 
 .botonesMediaChica button {
@@ -691,25 +753,25 @@ header img{
 }
 
 @media (max-width: 630px) {
-  .botonesMediaChica{
+  .botonesMediaChica {
     max-height: 300px;
     opacity: 1;
-
   }
-  .pokemonAnterior, .pokemonPosterior {
+  .pokemonAnterior,
+  .pokemonPosterior {
     opacity: 0;
     max-width: 0px;
     overflow: hidden;
   }
-  .paginaPokemon{
+  .paginaPokemon {
     align-items: center;
     justify-content: center;
     gap: 0px;
   }
-
 }
 
-.pokemonAnterior button, .pokemonPosterior button{
+.pokemonAnterior button,
+.pokemonPosterior button {
   background: #cc0000;
   color: white;
   border: none;
@@ -720,11 +782,16 @@ header img{
   cursor: pointer;
 }
 
-.pokemonAnterior button:hover, .pokemonPosterior button:hover, .botonesMediaChica button:hover {
+.pokemonAnterior button:hover,
+.pokemonPosterior button:hover,
+.botonesMediaChica button:hover {
   background: #a00000;
 }
 
-.imgYDescripcion, .pokemonDatos, .pokemonEstadisticas, .pokemonLineaEvolutiva {
+.imgYDescripcion,
+.pokemonDatos,
+.pokemonEstadisticas,
+.pokemonLineaEvolutiva {
   background: #f1f1f1;
   border-radius: 8px;
   padding: 1rem;
@@ -737,18 +804,19 @@ header img{
   align-items: center;
 }
 
-.pokemonDatos, .pokemonLineaEvolutiva{
+.pokemonDatos,
+.pokemonLineaEvolutiva {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.pokemonEstadisticas{
+.pokemonEstadisticas {
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: center;  
+  justify-content: center;
   overflow: hidden; /* evita que las barras se salgan visualmente */
 }
 
@@ -756,8 +824,8 @@ header img{
   max-width: 300px;
 }
 
-
-.pokemonInfoGeneral, .pokemonStatsYEvos {
+.pokemonInfoGeneral,
+.pokemonStatsYEvos {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -767,14 +835,15 @@ header img{
   margin-bottom: 1rem;
 }
 
-.pokemonLineaEvolutiva h3, .pokemonEstadisticas h3{
+.pokemonLineaEvolutiva h3,
+.pokemonEstadisticas h3 {
   width: 100%;
   text-align: center;
   margin: 5px 0px 10px 0px;
   font-size: 24px;
 }
 
-.pokemonDatos h3{
+.pokemonDatos h3 {
   width: 100%;
   text-align: start;
   margin: 5px 0px 10px 0px;
@@ -782,19 +851,19 @@ header img{
   font-size: 24px;
 }
 
-.pokemonDatos div{
+.pokemonDatos div {
   width: auto;
   margin-bottom: 5px;
 }
 
-.pokemonEstadisticas .stats{
+.pokemonEstadisticas .stats {
   width: 100%;
   display: grid;
   grid-template-columns: 20% 5% 75%;
   align-items: center;
 }
 
-.stats div{
+.stats div {
   font-size: 18px;
   white-space: nowrap;
 }
@@ -811,22 +880,30 @@ header img{
 .stats > div:nth-child(4n + 3) {
   margin-left: 7px;
   text-align: end;
-} 
+}
 
-.stats > div:nth-child(4n + 4){
+.stats > div:nth-child(4n + 4) {
   margin-left: 20px;
 }
 
-.barraHP, .barraAtk, .barraDef, .barraAtkEsp, .barraDefEsp, .barraVel{
+.barraHP,
+.barraAtk,
+.barraDef,
+.barraAtkEsp,
+.barraDefEsp,
+.barraVel {
   height: 10px;
   background-color: #000000;
 }
 
-#detalleTipo, #detalleAltura, #detallePeso, #detalleDescripcion{
+#detalleTipo,
+#detalleAltura,
+#detallePeso,
+#detalleDescripcion {
   font-size: 18px;
 }
 
-#detalleDescripcion{
+#detalleDescripcion {
   padding: 0px 20px;
   margin: 0px;
 }
@@ -855,11 +932,21 @@ header img{
 }
 
 @keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  50% { transform: translateX(4px); }
-  75% { transform: translateX(-4px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 #seleccionInfo {
   margin-top: 15px;
@@ -887,20 +974,6 @@ header img{
   }
 }
 
-/* ===== FORZAR CURSOR DE POKEBOLA EN TODOS LOS ELEMENTOS INTERACTIVOS ===== */
-*, a, button, input, select, textarea, label,
-.tipos div, .alturas div, .pesos div,
-#btnLupa, #btnBusqueda, #btnResetear,
-.pokemonAnterior button, .pokemonPosterior button,
-#detalleEvoluciones img, .evoluciones img {
-  cursor: url("imagenes/Pokemon\ Pokeball--cursor--Sweezy.png") 16 16, auto !important;
-}
-/* Forzar cursor pokebola SOLO para el botón Buscar */
-#btnBusqueda {
-  cursor: url("imagenes/Pokemon\ Pokeball--cursor--Sweezy.png") 16 16, auto !important;
-}
-
-
 /* ------------------ FOOTER ------------------ */
 footer {
   background-color: #333;
@@ -908,5 +981,3 @@ footer {
   text-align: center;
   padding: 1rem;
 }
-
-
