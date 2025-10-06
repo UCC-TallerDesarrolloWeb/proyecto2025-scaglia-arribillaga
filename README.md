@@ -69,7 +69,7 @@ git clone https://github.com/tuusuario/tu-repositorio.git
 
 ## Publicación con GitHub Pages
 
--
+(https://ucc-tallerdesarrolloweb.github.io/proyecto2025-scaglia-arribillaga/)
 ---
 
 ## Autores
