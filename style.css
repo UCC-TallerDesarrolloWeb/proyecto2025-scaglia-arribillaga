@@ -974,31 +974,6 @@ body {
   }
 }
 
-/* ===== FORZAR CURSOR DE POKEBOLA EN TODOS LOS ELEMENTOS INTERACTIVOS ===== */
-*,
-a,
-button,
-input,
-select,
-textarea,
-label,
-.tipos div,
-.alturas div,
-.pesos div,
-#btnLupa,
-#btnBusqueda,
-#btnResetear,
-.pokemonAnterior button,
-.pokemonPosterior button,
-#detalleEvoluciones img,
-.evoluciones img {
-  cursor: url("imagenes/Pokemon\ Pokeball--cursor--Sweezy.png") 16 16, auto !important;
-}
-/* Forzar cursor pokebola SOLO para el botón Buscar */
-#btnBusqueda {
-  cursor: url("imagenes/Pokemon\ Pokeball--cursor--Sweezy.png") 16 16, auto !important;
-}
-
 /* ------------------ FOOTER ------------------ */
 footer {
   background-color: #333;
