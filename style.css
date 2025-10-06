@@ -72,82 +72,19 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
-
-  /* Fondo */
-  background-image: url("imagenes/logo.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+  padding: 0.7rem;
+  margin-bottom: 10px;
   background-size: 20%,50%; 
-  background-color: #990000;
-  min-height: 180px; 
+  background-color: red;
+  min-height: 100px; 
   color: white;
   font-size: medium;
+  align-items: center;
+  justify-content: center;
 }
 
-
-header .logo {
-  width: 50px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-/* ===== HEADER INTERACTIVO ===== */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: background 0.5s ease, box-shadow 0.5s ease;
-}
-
-/* Color inicial */
-header {
-  background-color: #990000; /* rojo base */
-}
-
-/* Color y efecto al hacer scroll */
-header.scrolled {
-  background: linear-gradient(90deg, #ff0000, #ff9900);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-
-/* Estilo para los links del menú */
-header nav a {
-  font-size: 1.4rem;  /* Más grande */
-  position: relative;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-header nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  transition: width 0.3s;
-}
-
-header nav a:hover::after {
-  width: 100%;
+header img{
+  width: 200px;
 }
 
 /* ------------------ BUSCADOR ------------------ */
@@ -308,6 +245,77 @@ header nav a:hover::after {
     flex-direction: column;
     gap: 15px;
     margin: 10px 0px;
+  }
+}
+
+@media (max-width: 460px) {
+  .imgYDescripcion, .pokemonDatos, .pokemonEstadisticas, .pokemonLineaEvolutiva {
+    width: 60%;
+  }
+  .pokemonInfoGeneral, .pokemonStatsYEvos {
+    align-items: center;
+  }
+  .imgYDescripcion{
+    height: 300px !important;
+    flex-direction: column;
+    padding-bottom: 10px !important;
+  }
+  .imgYDescripcion #detalleImg{
+    width: 170px;
+  }
+  .imgYDescripcion #detalleTitulo{
+    margin: 0px;
+  }
+  .pokemonDatos{
+    height: 130px !important;
+  }
+  .pokemonDatos h3, .pokemonEstadisticas h3, .pokemonLineaEvolutiva h3{
+    margin-top: 0px !important;
+  }
+
+.pokemonEstadisticas .stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 10% 70% !important; /* 3 columnas: nombre corto, valor numérico y barra */
+    align-items: center;
+  }
+
+  /* Ocultamos las palabras largas */
+  .stats > div:nth-child(4n + 1) {
+    display: none !important;
+  }
+
+  /* Mostramos las palabras cortas */
+  .stats > div:nth-child(4n + 2) {
+    display: block !important;
+    opacity: 1;
+    width: auto;
+    text-align: end;
+  }
+
+  /* Valor numérico */
+  .stats > div:nth-child(4n + 3) {
+    margin-left: 0 !important;
+    text-align: end;
+  }
+
+  /* Barra */
+  .stats > div:nth-child(4n + 4) {
+    margin-left: 7px !important;
+  }
+
+  .pokemonLineaEvolutiva{
+    height: 120px !important;
+  }
+
+  #detalleEvoluciones {
+    margin-top: 0px !important;
+    gap: 15px !important;
+  }
+
+  #detalleEvoluciones img {
+    width: 50px !important;
+    height: 50px !important;
   }
 }
 
@@ -741,11 +749,7 @@ header nav a:hover::after {
   flex-direction: column;
   align-items: start;
   justify-content: center;  
-}
-
-.imgYDescripcion img {
-  width: 180px;
-  border-radius: 10px;
+  overflow: hidden; /* evita que las barras se salgan visualmente */
 }
 
 .descripcion {
@@ -784,27 +788,32 @@ header nav a:hover::after {
 }
 
 .pokemonEstadisticas .stats{
+  width: 100%;
   display: grid;
-  grid-template-columns: 40% 10% 50%;
+  grid-template-columns: 20% 5% 75%;
   align-items: center;
 }
 
 .stats div{
-  width: 100px;
   font-size: 18px;
+  white-space: nowrap;
 }
 
-.stats > div:nth-child(3n + 1) {
+.stats > div:nth-child(4n + 1) {
+  display: block;
   text-align: end;
 }
 
-.stats > div:nth-child(3n + 2) {
-  width: 30px;
+.stats > div:nth-child(4n + 2) {
+  display: none;
+}
+
+.stats > div:nth-child(4n + 3) {
   margin-left: 7px;
   text-align: end;
-}
+} 
 
-.stats > div:nth-child(3n + 3){
+.stats > div:nth-child(4n + 4){
   margin-left: 20px;
 }
 
