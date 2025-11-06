@@ -37,7 +37,6 @@ Permite buscar, filtrar y explorar Pokémon de manera dinámica, con una interfa
 
 ## Estructura del proyecto
 
-<<<<<<< HEAD
 ```
 📦 proyecto-pokedex
  ┣ 📂 imagenes
