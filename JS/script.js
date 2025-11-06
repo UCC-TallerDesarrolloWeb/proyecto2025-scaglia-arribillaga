@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let pokemonSeleccionado = null;
 
-  /* ------------------ FUNCIÓN: QUITAR ACENTOS ------------------ */
   /**
    * Elimina los acentos o tildes de un texto para facilitar las comparaciones.
    * @method quitarAcentos
@@ -253,6 +252,16 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       evoContainer.innerHTML = "<p>Este Pokémon no tiene evoluciones.</p>";
     }
+
+    const totalPokemons = document.querySelectorAll(".pokemon-card").length;
+    const num = Number(numero);
+    
+    btnAnterior.style.visibility = num === 1 ? "hidden" : "visible";
+    btnSiguiente.style.visibility = num === totalPokemons ? "hidden" : "visible";
+
+    btnAnteriorPantallaChica.style.visibility = num === 1 ? "hidden" : "visible";
+    btnSiguientePantallaChica.style.visibility =
+    num === totalPokemons ? "hidden" : "visible";
   };
 
   lista.addEventListener("click", (e) => {
