@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="author" content="Arribillaga Scaglia" />
     <meta name="description" content="Pokédex interactiva" />
-    <meta name="keywords" content="pokédex, pokemon, búsqueda, tipos, evoluciones, estadísticas">
+    <meta
+      name="keywords"
+      content="pokédex, pokemon, búsqueda, tipos, evoluciones, estadísticas"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokédex</title>
     <link rel="icon" type="image/png" href="imagenes/logo.png" />
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <script defer src="JS/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,10 +31,9 @@
     <div id="contenido">
       <header>
         <div class="logoPrincipal">
-          <img src="imagenes/logo.svg" alt="Logo Pokédex">
+          <img src="imagenes/logo.svg" alt="Logo Pokédex" />
         </div>
-        
-        
+
         <!-- Buscador -->
         <section class="buscador">
           <form id="formBusquedaPrincipal">
@@ -40,12 +42,12 @@
               <label for="nombre">Nombre o Número:</label>
               <div class="botonesBusqueda">
                 <input
-                type="text"
-                id="nombre"
-                maxlength="15"
-                size="5"
-                autocomplete="off"
-                placeholder="Ej: Bulbasaur o 001"
+                  type="text"
+                  id="nombre"
+                  maxlength="15"
+                  size="5"
+                  autocomplete="off"
+                  placeholder="Ej: Bulbasaur o 001"
                 />
                 <button type="submit" id="btnLupa">
                   <img src="imagenes/lupa.png" alt="Lupa" />
@@ -53,7 +55,7 @@
               </div>
             </div>
           </form>
-          
+
           <form id="formBusquedaAvanzada">
             <div class="filtros">
               <div class="filtroTipos">
@@ -79,7 +81,7 @@
                   <div class="volador" data-tipo="volador">Volador</div>
                 </div>
               </div>
-              
+
               <div class="filtroTamanos">
                 <!-- ALTURA -->
                 <div class="filtroAltura">
@@ -87,8 +89,8 @@
                   <div class="alturas">
                     <div class="bajo" data-altura="bajo">
                       <img
-                      src="imagenes/pokemon-pequeño.png"
-                      alt="Pokémon Pequeño"
+                        src="imagenes/pokemon-pequeño.png"
+                        alt="Pokémon Pequeño"
                       />
                     </div>
                     <div class="mediano" data-altura="medio">
@@ -102,7 +104,7 @@
                     </div>
                   </div>
                 </div>
-                
+
                 <!-- PESO -->
                 <div class="filtroPeso">
                   <h4>Peso</h4>
@@ -115,7 +117,7 @@
                     </div>
                     <div class="pesado" data-peso="pesado">
                       <img
-                      src="imagenes/tanque-de-guerra.png"
+                        src="imagenes/tanque-de-guerra.png"
                         alt="Tanque (pesado)"
                       />
                     </div>
@@ -123,7 +125,7 @@
                 </div>
               </div>
             </div>
-            
+
             <!-- BOTONES -->
             <div class="botonesFiltro">
               <button type="button" id="btnBusqueda">Buscar</button>
@@ -131,7 +133,7 @@
             </div>
           </form>
         </section>
-        
+
         <div class="abrirFiltro">
           <h5>Mostrar búsqueda avanzada</h5>
           <img src="imagenes/chevron-abajo.png" alt="Flecha hacia abajo" />
