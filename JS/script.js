@@ -22,17 +22,29 @@ const traduccionTipos = {
 
   // ✅ Obtener la descripción en español
   async function obtenerDescripcion(id) {
-    const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
-    const data = await res.json();
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+  const data = await res.json();
 
-    const entradaES = data.flavor_text_entries.find(
-      (e) => e.language.name === "es"
-    );
+  // español primero
+  const entradaES = data.flavor_text_entries.find(
+    e => e.language.name === "es"
+  );
 
-    return entradaES
-      ? entradaES.flavor_text.replace(/\n/g, " ").replace(/\f/g, " ")
-      : "Descripción no disponible.";
+  if (entradaES) {
+    return entradaES.flavor_text.replace(/\n/g, " ").replace(/\f/g, " ");
   }
+
+  // fallback al inglés
+  const entradaEN = data.flavor_text_entries.find(
+    e => e.language.name === "en"
+  );
+
+  if (entradaEN) {
+    return entradaEN.flavor_text.replace(/\n/g, " ").replace(/\f/g, " ");
+  }
+
+  return "Descripción no disponible.";
+}
 
   async function obtenerNombreEspanol(id) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
