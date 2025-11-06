@@ -49,7 +49,8 @@ Permite buscar, filtrar y explorar Pokémon de manera dinámica, con una interfa
 
 ## Estructura del proyecto
 
-```plaintext
+
+```
 📦 proyecto-pokedex
  ┣ 📂 imagenes
  ┃ ┣ logo.png / logo.svg
