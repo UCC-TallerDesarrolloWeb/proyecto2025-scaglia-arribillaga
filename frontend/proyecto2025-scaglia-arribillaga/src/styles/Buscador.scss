@@ -1,0 +1,57 @@
+/* ------------------ BUSCADOR ------------------ */
+#formBusquedaPrincipal {
+  margin-left: 7.7%;
+}
+
+.buscador {
+  background: #333;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.buscador h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.buscador .busqueda label {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
+
+.buscador .busqueda input {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+
+.botonesBusqueda {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+
+#btnLupa {
+  background: #cc0000;
+  border: none;
+  padding: 7px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#btnLupa img {
+  width: 24px;
+  height: 23px;
+}
+
+

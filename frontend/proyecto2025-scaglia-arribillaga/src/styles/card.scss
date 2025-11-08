@@ -1,0 +1,312 @@
+.agua,
+.aguaCard {
+  background: #6390f0;
+  color: white;
+}
+.fuego,
+.fuegoCard {
+  background: #ee8130;
+  color: white;
+}
+.planta,
+.plantaCard {
+  background: #7ac74c;
+  color: white;
+}
+.electrico,
+.electricoCard {
+  background: #f7d02c;
+  color: #333;
+}
+.tierra,
+.tierraCard {
+  background: #e2bf65;
+  color: #333;
+}
+.roca,
+.rocaCard {
+  background: #b6a136;
+  color: white;
+}
+.psiquico,
+.psiquicoCard {
+  background: #f95587;
+  color: white;
+}
+.lucha,
+.luchaCard {
+  background: #c22e28;
+  color: white;
+}
+.fantasma,
+.fantasmaCard {
+  background: #735797;
+  color: white;
+}
+.hielo,
+.hieloCard {
+  background: #96d9d6;
+  color: #333;
+}
+.veneno,
+.venenoCard {
+  background: #a33ea1;
+  color: white;
+}
+.volador,
+.voladorCard {
+  background: #a98ff3;
+  color: #333;
+}
+.normal,
+.normalCard {
+  background: #a8a77a;
+  color: #333;
+}
+.dragon,
+.dragonCard {
+  background: #6f35fc;
+  color: white;
+}
+.bicho,
+.bichoCard {
+  background: #a6b91a;
+  color: #333;
+}
+.siniestro,
+.siniestroCard {
+  background: #705746;
+  color: white;
+}
+.hada,
+.hadaCard {
+  background: #d685ad;
+  color: #333;
+}
+.acero,
+.aceroCard {
+  background: #b7b7ce;
+  color: #333;
+}
+
+.filtroTamanos {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.filtroTamanos h4 {
+  margin: 0px;
+  font-size: 20px;
+}
+
+.alturas,
+.pesos {
+  min-width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5px 0px;
+}
+
+@media (max-width: 450px) {
+  .alturas,
+  .pesos {
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px 0px;
+  }
+}
+
+@media (max-width: 460px) {
+  .imgYDescripcion,
+  .pokemonDatos,
+  .pokemonEstadisticas,
+  .pokemonLineaEvolutiva {
+    width: 60%;
+  }
+  .pokemonInfoGeneral,
+  .pokemonStatsYEvos {
+    align-items: center;
+  }
+  #detallePokemon .imgYDescripcion {
+    height: 300px;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+  .imgYDescripcion #detalleImg {
+    width: 170px;
+  }
+  .imgYDescripcion #detalleTitulo {
+    margin: 0px;
+  }
+  #detallePokemon .pokemonDatos {
+    height: 130px;
+  }
+  #detallePokemon .pokemonDatos h3,
+  #detallePokemon .pokemonEstadisticas h3,
+  #detallePokemon .pokemonLineaEvolutiva h3 {
+    margin-top: 0px;
+  }
+
+  #detallePokemon .pokemonEstadisticas .stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 10% 70%; /* 3 columnas: nombre corto, valor numérico y barra */
+    align-items: center;
+  }
+
+  /* Ocultamos las palabras largas */
+  #detallePokemon .stats > div:nth-child(4n + 1) {
+    display: none;
+  }
+
+  /* Mostramos las palabras cortas */
+  #detallePokemon .stats > div:nth-child(4n + 2) {
+    display: block;
+    opacity: 1;
+    width: auto;
+    text-align: end;
+  }
+
+  /* Valor numérico */
+  #detallePokemon .stats > div:nth-child(4n + 3) {
+    margin-left: 0;
+    text-align: end;
+  }
+
+  /* Barra */
+  #detallePokemon .stats > div:nth-child(4n + 4) {
+    margin-left: 7px;
+  }
+
+  #detallePokemon .pokemonLineaEvolutiva {
+    height: 120px;
+  }
+
+  #detallePokemon #detalleEvoluciones {
+    margin-top: 0px;
+    gap: 15px;
+  }
+
+  #detallePokemon #detalleEvoluciones img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.alturas div,
+.pesos div {
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tipos div,
+.alturas div,
+.pesos div {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 17px;
+}
+
+.filtros .tipos div:hover,
+.alturas div:hover,
+.pesos div:hover {
+  outline: 2px solid #cc0000; /* borde rojo */
+  transform: scale(1.05); /* un poco más grande */
+}
+
+.filtros .tipos div.activo,
+.alturas div.activo,
+.pesos div.activo {
+  transform: scale(1.05); /* un poco más grande */
+}
+
+.alturas img {
+  width: 80px;
+  height: 80px;
+}
+
+.pesos img {
+  width: 60px;
+  height: 60px;
+}
+.pokemon-card.seleccionado {
+  border: 3px solid #cc0000;
+  background: #ffeaea;
+}
+/* Cartas de Pokémon más chicas */
+.pokemon-card {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem;
+  width: 170px; /* antes 150px */
+  text-align: center;
+  background: white;
+  transition: transform 0.2s;
+}
+
+.pokemon-card img {
+  width: 160px; /* imagen más compacta */
+  height: auto;
+}
+
+.pokemon-card h3 {
+  font-size: 1.25rem; /* título más pequeño */
+  margin: 0.5rem 0 0.2rem 0;
+}
+
+.pokemon-card p {
+  font-size: 0.9rem; /* texto más chico */
+  margin: 0;
+}
+
+.tiposCard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.tiposCard div {
+  border: 1px solid #ddd;
+  width: 60px;
+  height: 18px;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+  border-color: #cc0000;
+}
+/* ------------------ RESULTADOS ------------------ */
+#resultadosPokedex,
+#detallePokemon {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0px 15px 0px 15px;
+}
+
+#detallePokemon {
+  display: none;
+}
+
+#resultadosPokedex h2 {
+  color: #000000;
+  margin: 0px 0px 15px 5px;
+}

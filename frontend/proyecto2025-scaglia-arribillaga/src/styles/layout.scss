@@ -1,0 +1,173 @@
+/* ------------------ BUSQUEDA AVANZADA ------------------ */
+
+.botonAbrirAvanzado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.botonAbrirAvanzado h5 {
+  margin: 0;
+  font-size: 16px;
+  color: white;
+}
+
+.botonAbrirAvanzado img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* contenedor principal */
+#busquedaAvanzada {
+  background: #333;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin-top: 20px;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: scaleY(0.95);
+  transition: max-height 0.8s ease, opacity 0.8s ease, transform 0.8s ease;
+}
+
+#busquedaAvanzada.active {
+  max-height: 2000px;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* TITULITOS “Tipo — Altura — Peso” */
+.filaFiltrosTitulos {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filaFiltrosTitulos h3 {
+  font-family: "Teko", sans-serif;
+  font-size: 32px;
+  color: white;
+  margin: 0;
+}
+
+/* grid de tipos */
+.filtrosTipos {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  gap: 12px;
+}
+
+.filtrosTipos div {
+  padding: 6px;
+  border-radius: 8px;
+  font-family: "Teko", sans-serif;
+  font-size: 23px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.filtrosTipos div.activo {
+  box-shadow: 0 0 8px 4px rgba(255,255,255,0.7);
+  border-color: white;
+}
+
+/* ALTURA / PESO */
+.filaAlturaPeso {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.contenedorAltura,
+.contenedorPeso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.alturas,
+.pesos {
+  display: flex;
+  gap: 40px;
+}
+
+.alturas div,
+.pesos div {
+  width: 110px;
+  height: 110px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.alturas div img,
+.pesos div img {
+  width: 70%;
+  height: auto;
+}
+
+.alturas div.activo,
+.pesos div.activo {
+  box-shadow: 0 0 8px 4px rgba(255,255,255,0.7);
+  border: 2px solid white;
+}
+
+/* BOTONES BUSCAR / RESET */
+.botonesBusquedaAvanzada {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+
+.btnBuscarAv {
+  background:#cc0000;
+  color:white;
+  padding: 0.7rem 1.4rem;
+  border:none;
+  border-radius: 6px;
+  cursor:pointer;
+  font-family:"Teko";
+  font-size:25px;
+}
+
+.btnResetAv {
+  background:gray;
+  color:white;
+  padding: 0.7rem 1.4rem;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-family:"Teko";
+  font-size:25px;
+}
+
+.btnBuscarAv:hover {
+  background:#990000;
+}
+
+.btnResetAv:hover {
+  background:#7c7c7c;
+}
+
+/* animación límite clásicos */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
