@@ -1,8 +1,8 @@
 import "@styles/card.scss";
 
-export default function PokemonCard({ pokemon }) {
+export default function PokemonCard({ pokemon, onClick }) {
   return (
-    <article className="pokemon-card">
+    <article className="pokemon-card" onClick={onClick}>
       <img src={pokemon.img} alt={pokemon.nombreES} />
 
       <h3>{pokemon.nombreES}</h3>

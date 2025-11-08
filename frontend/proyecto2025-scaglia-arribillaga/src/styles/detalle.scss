@@ -1,0 +1,135 @@
+/* ***** CONTENEDOR GENERAL ***** */
+#detallePokemon {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 40px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* Botón volver */
+#btnVolver {
+  background: #cc0000;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Flechas laterales */
+.pokemonAnterior,
+.pokemonPosterior {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pokemonAnterior {
+  left: 20px;
+}
+
+.pokemonPosterior {
+  right: 20px;
+}
+
+.pokemonAnterior button,
+.pokemonPosterior button {
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  border-radius: 12px;
+  background: #cc0000;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* CONTENEDOR CENTRAL */
+.paginaPokemon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* GRID PRINCIPAL EN 2x2 */
+.detalleGrid {
+  display: grid;
+  width: 85%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 25px;
+}
+
+/* ***** TARJETAS ***** */
+.detalleCard {
+  background: #e9e9e9;
+  border-radius: 12px;
+  padding: 25px;
+  border: 2px solid #dcdcdc;
+}
+
+/* Imagen + datos */
+.detallePrincipal {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.detallePrincipal img {
+  width: 240px;
+}
+
+/* Texto de info */
+.detalleTexto {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* Estadísticas */
+.stats {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.statBar {
+  height: 10px;
+  background: black;
+}
+
+/* Descripción */
+.descripcionTitulo {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+/* Evoluciones */
+#detalleEvoluciones {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+#detalleEvoluciones img {
+  width: 100px;
+  border-radius: 50%;
+  padding: 8px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#detalleEvoluciones img:hover {
+  transform: scale(1.1);
+}
