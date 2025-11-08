@@ -5,136 +5,79 @@ export default function Filtros({ onFiltrar }) {
   const [altura, setAltura] = useState("");
   const [peso, setPeso] = useState("");
 
-  // ✅ Manejar selección de tipos (máx 2)
   const toggleTipo = (tipo) => {
     if (tipos.includes(tipo)) {
       setTipos(tipos.filter((t) => t !== tipo));
       return;
     }
-
-    if (tipos.length >= 2) {
-      return; // no más de 2
-    }
-
+    if (tipos.length >= 2) return;
     setTipos([...tipos, tipo]);
   };
 
-  // ✅ Selección única para altura
-  const seleccionarAltura = (valor) => {
-    setAltura(valor === altura ? "" : valor);
-  };
-
-  // ✅ Selección única para peso
-  const seleccionarPeso = (valor) => {
-    setPeso(valor === peso ? "" : valor);
-  };
-
-  // ✅ Enviar filtros
-  const buscar = () => {
-    onFiltrar({
-      tipos,
-      altura,
-      peso,
-    });
-  };
-
-  // ✅ Resetear filtros
-  const resetear = () => {
-    setTipos([]);
-    setAltura("");
-    setPeso("");
-
-    onFiltrar({
-      tipos: [],
-      altura: "",
-      peso: "",
-    });
-  };
+  const buscar = () => onFiltrar({ tipos, altura, peso });
+  const resetear = () =>
+    onFiltrar({ tipos: [], altura: "", peso: "" }) ||
+    (setTipos([]), setAltura(""), setPeso(""));
 
   return (
-    <div className="filtros-container">
+    <form id="formBusquedaAvanzada" className="active">
       <div className="filtros">
 
-        {/* ✅ Tipos */}
         <div className="filtroTipos">
           <h4>Tipo</h4>
           <div className="tipos">
             {[
-              "acero", "fuego", "psiquico", "agua", "hada", "roca",
-              "bicho", "hielo", "siniestro", "dragon", "lucha", "tierra",
-              "electrico", "normal", "veneno", "fantasma", "planta", "volador"
-            ].map((tipo) => (
+              "acero","fuego","psiquico","agua","hada","roca",
+              "bicho","hielo","siniestro","dragon","lucha","tierra",
+              "electrico","normal","veneno","fantasma","planta","volador",
+            ].map((t) => (
               <div
-                key={tipo}
-                className={`tipoBtn ${tipo} ${tipos.includes(tipo) ? "activo" : ""}`}
-                onClick={() => toggleTipo(tipo)}
+                key={t}
+                className={`${t} ${tipos.includes(t) ? "activo" : ""}`}
+                onClick={() => toggleTipo(t)}
               >
-                {tipo.charAt(0).toUpperCase() + tipo.slice(1)}
+                {t.charAt(0).toUpperCase() + t.slice(1)}
               </div>
             ))}
           </div>
         </div>
 
-        {/* ✅ Altura */}
         <div className="filtroTamanos">
           <h4>Altura</h4>
           <div className="alturas">
-            <div
-              className={`bajo ${altura === "bajo" ? "activo" : ""}`}
-              onClick={() => seleccionarAltura("bajo")}
-            >
-              <img src="/pokemon-pequeno.png" alt="Pequeño" />
+            <div className={`bajo ${altura==="bajo"?"activo":""}`} onClick={() => setAltura(altura==="bajo"?"": "bajo")}>
+              <img src="/pokemon-pequeno.png" />
             </div>
-
-            <div
-              className={`mediano ${altura === "medio" ? "activo" : ""}`}
-              onClick={() => seleccionarAltura("medio")}
-            >
-              <img src="/pokemon-mediano.png" alt="Mediano" />
+            <div className={`mediano ${altura==="medio"?"activo":""}`} onClick={() => setAltura(altura==="medio"?"": "medio")}>
+              <img src="/pokemon-mediano.png" />
             </div>
-
-            <div
-              className={`alto ${altura === "alto" ? "activo" : ""}`}
-              onClick={() => seleccionarAltura("alto")}
-            >
-              <img src="/pokemon-alto.png" alt="Alto" />
+            <div className={`alto ${altura==="alto"?"activo":""}`} onClick={() => setAltura(altura==="alto"?"": "alto")}>
+              <img src="/pokemon-alto.png" />
             </div>
           </div>
         </div>
 
-        {/* ✅ Peso */}
         <div className="filtroPeso">
           <h4>Peso</h4>
           <div className="pesos">
-            <div
-              className={`liviano ${peso === "liviano" ? "activo" : ""}`}
-              onClick={() => seleccionarPeso("liviano")}
-            >
-              <img src="/pluma.png" alt="Liviano" />
+            <div className={`liviano ${peso==="liviano"?"activo":""}`} onClick={() => setPeso(peso==="liviano"?"": "liviano")}>
+              <img src="/pluma.png" />
             </div>
-
-            <div
-              className={`intermedio ${peso === "medio" ? "activo" : ""}`}
-              onClick={() => seleccionarPeso("medio")}
-            >
-              <img src="/hombre.png" alt="Intermedio" />
+            <div className={`intermedio ${peso==="medio"?"activo":""}`} onClick={() => setPeso(peso==="medio"?"": "medio")}>
+              <img src="/hombre.png" />
             </div>
-
-            <div
-              className={`pesado ${peso === "pesado" ? "activo" : ""}`}
-              onClick={() => seleccionarPeso("pesado")}
-            >
-              <img src="/tanque-de-guerra.png" alt="Pesado" />
+            <div className={`pesado ${peso==="pesado"?"activo":""}`} onClick={() => setPeso(peso==="pesado"?"": "pesado")}>
+              <img src="/tanque-de-guerra.png" />
             </div>
           </div>
         </div>
+
       </div>
 
-      {/* ✅ Botones */}
       <div className="botonesFiltro">
-        <button type="button" onClick={buscar}>Buscar</button>
-        <button type="button" onClick={resetear}>Restablecer</button>
+        <button type="button" id="btnBusqueda" onClick={buscar}>Buscar</button>
+        <button type="button" id="btnResetear" onClick={resetear}>Restablecer</button>
       </div>
-    </div>
+    </form>
   );
 }

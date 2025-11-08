@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import { getAllPokemon } from "@api/pokemon";
+import PokemonCard from "@components/PokemonCard";
 
-import PokemonCard from "@components/PokemonCard"; // ✅ lo crearemos luego
-
-export default function PokemonCardPage() {
+export default function PokemonCardPage({ onBuscar, onFiltrar }) {
   const [pokemons, setPokemons] = useState([]);
   const [filtrados, setFiltrados] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // ✅ Cargar al principio
+  const { setBuscar, setFiltrar } = useOutletContext();
+
   useEffect(() => {
     async function cargar() {
       setLoading(true);
@@ -21,48 +22,53 @@ export default function PokemonCardPage() {
     cargar();
   }, []);
 
-  // ✅ Buscar texto (nombre o número)
-  const buscarPokemon = (valor) => {
-    const texto = valor.toLowerCase().trim();
-    if (texto === "") {
-      setFiltrados(pokemons);
-      return;
-    }
+  const buscarPokemon =
+    onBuscar ||
+    ((valor) => {
+      const texto = valor.toLowerCase().trim();
 
-    const resultado = pokemons.filter((p) => {
-      return (
-        p.nombre.toLowerCase().includes(texto) ||
-        p.numero.includes(texto)
-      );
+      if (texto === "") {
+        setFiltrados(pokemons);
+        return;
+      }
+
+      const resultado = pokemons.filter((p) => {
+        return (
+          p.nombre.toLowerCase().includes(texto) ||
+          p.numero.includes(texto)
+        );
+      });
+
+      setFiltrados(resultado);
     });
 
-    setFiltrados(resultado);
-  };
+  const aplicarFiltros =
+    onFiltrar ||
+    (({ tipos, altura, peso }) => {
+      let lista = [...pokemons];
 
-  // ✅ Filtros avanzados
-  const aplicarFiltros = ({ tipos, altura, peso }) => {
-    let lista = [...pokemons];
+      if (tipos.length > 0) {
+        lista = lista.filter((p) => {
+          const tiposPokemon = p.tipos.map((t) => t.toLowerCase());
+          return tipos.every((t) => tiposPokemon.includes(t));
+        });
+      }
 
-    // ✅ TIPOS (permitir 1 o 2)
-    if (tipos.length > 0) {
-      lista = lista.filter((p) => {
-        const tiposPokemon = p.tipos.map((t) => t.toLowerCase());
-        return tipos.every((t) => tiposPokemon.includes(t));
-      });
-    }
+      if (altura) {
+        lista = lista.filter((p) => p.alturaCategoria === altura);
+      }
 
-    // ✅ ALTURA
-    if (altura) {
-      lista = lista.filter((p) => p.alturaCategoria === altura);
-    }
+      if (peso) {
+        lista = lista.filter((p) => p.pesoCategoria === peso);
+      }
 
-    // ✅ PESO
-    if (peso) {
-      lista = lista.filter((p) => p.pesoCategoria === peso);
-    }
+      setFiltrados(lista);
+    });
 
-    setFiltrados(lista);
-  };
+  useEffect(() => {
+    setBuscar(() => buscarPokemon);
+    setFiltrar(() => aplicarFiltros);
+  }, [pokemons]);
 
   return (
     <div className="pokedex-page">
@@ -83,7 +89,9 @@ export default function PokemonCardPage() {
               ))}
             </div>
 
-            <p id="contador">Se encontraron {filtrados.length} Pokémon.</p>
+            <p id="contador">
+              Se encontraron {filtrados.length} Pokémon.
+            </p>
           </>
         )}
       </section>
