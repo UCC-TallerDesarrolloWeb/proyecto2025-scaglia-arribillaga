@@ -1,0 +1,33 @@
+#intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  background: url("/pokestop.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  transition: opacity 0.5s ease;
+
+  &.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+#intro h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000,
+    0 0 40px #ff0000, 0 0 80px #ff0000;
+}
+
+#intro p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000,
+    0 0 40px #ff0000, 0 0 80px #ff0000;
+}

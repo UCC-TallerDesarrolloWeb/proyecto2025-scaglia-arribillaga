@@ -1,22 +1,26 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import "@styles/intro.scss";
 
-export default function Intro() {
-  const navigate = useNavigate();
+export default function Intro({ onFinish }) {
+  const [hide, setHide] = useState(false);
 
   useEffect(() => {
-    function handleKey(e) {
-      if (e.key === "Enter") navigate("/home");
-    }
+    const handleEnter = (e) => {
+      if (e.key === "Enter") {
+        setHide(true);
+        setTimeout(() => onFinish(), 500); 
+      }
+    };
 
-    document.addEventListener("keydown", handleKey);
-    return () => document.removeEventListener("keydown", handleKey);
-  }, []);
+    document.addEventListener("keydown", handleEnter);
+    return () => document.removeEventListener("keydown", handleEnter);
+  }, [onFinish]);
 
   return (
-    <div id="intro">
+    <section id="intro" className={hide ? "hide" : ""}>
       <h1>Bienvenido a la Pokédex</h1>
-      <h3>Presiona ENTER para comenzar</h3>
-    </div>
+      <p>Presiona <strong>Enter</strong> para continuar</p>
+    </section>
   );
 }
+
