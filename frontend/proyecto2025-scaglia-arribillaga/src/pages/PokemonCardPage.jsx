@@ -13,6 +13,9 @@ export default function PokemonCardPage() {
   const [filtrados, setFiltrados] = useState([]);
   const [pokemonSeleccionado, setPokemonSeleccionado] = useState(null);
 
+  // ✅ NUEVO: mensaje de error
+  const [mensajeError, setMensajeError] = useState("");
+
   useEffect(() => {
     getPokemons(1025).then((data) => {
       setPokemons(data);
@@ -24,6 +27,7 @@ export default function PokemonCardPage() {
   const buscar = (texto) => {
     if (!texto) {
       setFiltrados(pokemons);
+      setMensajeError(""); // limpia error al buscar normal
       return;
     }
 
@@ -37,9 +41,16 @@ export default function PokemonCardPage() {
     });
 
     setFiltrados(resultados);
+
+    // ✅ mensaje error búsqueda normal
+    if (resultados.length === 0) {
+      setMensajeError("No existe ningún Pokémon con las características ingresadas.");
+    } else {
+      setMensajeError("");
+    }
   };
 
-  // ✅ BÚSQUEDA AVANZADA
+  // ✅ BÚSQUEDA AVANZADA — REEMPLAZADA COMPLETA
   const filtrarAvanzado = ({ tipos, altura, peso }) => {
     let resultado = pokemons;
 
@@ -66,6 +77,13 @@ export default function PokemonCardPage() {
     }
 
     setFiltrados(resultado);
+
+    // ✅ mensaje error búsqueda avanzada
+    if (resultado.length === 0) {
+      setMensajeError("No existe ningún Pokémon con las características ingresadas.");
+    } else {
+      setMensajeError("");
+    }
   };
 
   // ✅ SELECCIONAR POKÉMON
@@ -73,10 +91,10 @@ export default function PokemonCardPage() {
     setPokemonSeleccionado({
       ...p,
 
-      // ✅ IMPORTANTE: mantener array de tipos
+      // ✅ mantener array de tipos
       tipos: p.tipos,
 
-      // ✅ Para que evoluciones funcione
+      // ✅ Para evoluciones
       listaCompleta: pokemons,
 
       cambiarPokemon: (num) => {
@@ -96,6 +114,21 @@ export default function PokemonCardPage() {
 
       <Buscador onBuscar={buscar} />
       <BusquedaAvanzada onFiltrar={filtrarAvanzado} />
+
+      {/* ✅ MENSAJE DE ERROR */}
+      {mensajeError && (
+        <p
+          style={{
+            color: "red",
+            textAlign: "center",
+            marginTop: "15px",
+            fontSize: "18px",
+            fontWeight: "bold",
+          }}
+        >
+          {mensajeError}
+        </p>
+      )}
 
       {/* ✅ Lista de pokémon */}
       {!pokemonSeleccionado && (

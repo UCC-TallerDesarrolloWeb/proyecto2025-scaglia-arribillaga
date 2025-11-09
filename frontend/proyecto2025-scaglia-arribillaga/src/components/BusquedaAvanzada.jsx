@@ -13,10 +13,15 @@ export default function BusquedaAvanzada({ onFiltrar }) {
     setTipos([...tipos, t]);
   };
 
-  const aplicar = () => onFiltrar({ tipos, altura, peso });
+  // ✅ APLICAR: ahora devuelve también un "modoBusquedaAvanzada"
+  const aplicar = () =>
+    onFiltrar({ tipos, altura, peso, mostrarMensajeSiVacio: true });
+
   const reset = () => {
-    setTipos([]); setAltura(null); setPeso(null);
-    onFiltrar({ tipos: [], altura: null, peso: null });
+    setTipos([]);
+    setAltura(null);
+    setPeso(null);
+    onFiltrar({ tipos: [], altura: null, peso: null, mostrarMensajeSiVacio: false });
   };
 
   return (
@@ -25,6 +30,7 @@ export default function BusquedaAvanzada({ onFiltrar }) {
       {/* FORMULARIO */}
       <form id="formBusquedaAvanzada" className={mostrar ? "active" : ""}>
         <div className="filtros">
+
           {/* TIPOS */}
           <div className="filtroTipos">
             <h4>Tipo</h4>
@@ -49,13 +55,13 @@ export default function BusquedaAvanzada({ onFiltrar }) {
           <div className="filtroAltura">
             <h4>Altura</h4>
             <div className="alturas">
-              <div className={altura === "bajo" ? "activo" : ""}  onClick={() => setAltura("bajo")}  >
+              <div className={altura === "bajo" ? "activo" : ""} onClick={() => setAltura("bajo")}>
                 <img src="/pokemon-pequeño.png" alt="Pequeño" />
               </div>
-              <div className={altura === "medio" ? "activo" : ""} onClick={() => setAltura("medio")} >
+              <div className={altura === "medio" ? "activo" : ""} onClick={() => setAltura("medio")}>
                 <img src="/pokemon-mediano.png" alt="Mediano" />
               </div>
-              <div className={altura === "alto" ? "activo" : ""}  onClick={() => setAltura("alto")}  >
+              <div className={altura === "alto" ? "activo" : ""} onClick={() => setAltura("alto")}>
                 <img src="/pokemon-alto.png" alt="Alto" />
               </div>
             </div>
@@ -76,6 +82,7 @@ export default function BusquedaAvanzada({ onFiltrar }) {
               </div>
             </div>
           </div>
+
         </div>
 
         {/* BOTONES */}
@@ -85,7 +92,7 @@ export default function BusquedaAvanzada({ onFiltrar }) {
         </div>
       </form>
 
-      {/* BOTÓN MOSTRAR/OCULTAR – AHORA ABAJO */}
+      {/* BOTÓN MOSTRAR/OCULTAR */}
       <div className="abrirFiltro" onClick={() => setMostrar(!mostrar)}>
         <h5>{mostrar ? "Ocultar búsqueda avanzada" : "Mostrar búsqueda avanzada"}</h5>
         <img src={mostrar ? "/chevron-arriba.png" : "/chevron-abajo.png"} alt="Toggle" />

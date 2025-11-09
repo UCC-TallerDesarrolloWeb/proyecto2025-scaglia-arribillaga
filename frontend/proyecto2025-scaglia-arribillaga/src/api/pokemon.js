@@ -19,11 +19,11 @@ const traduccionTipos = {
   dark: "siniestro",
 };
 
-// ✅ CACHE para species y cadenas evolutivas (ultra importante)
+// CACHE para species y cadenas evolutivas (ultra importante)
 const speciesCache = {};
 const chainCache = {};
 
-// ✅ Obtener species ES (nombre + descripción)
+//Obtener species ES (nombre + descripción)
 async function getSpecies(id) {
   if (speciesCache[id]) return speciesCache[id];
 
@@ -41,7 +41,7 @@ async function getSpecies(id) {
   const nombreES =
     data.names.find((n) => n.language.name === "es")?.name || data.name;
 
-  // ✅ guardar en cache
+  // guardar en cache
   speciesCache[id] = {
     descripcion,
     nombreES,
@@ -51,7 +51,7 @@ async function getSpecies(id) {
   return speciesCache[id];
 }
 
-// ✅ Obtener cadena evolutiva completa optimizada
+// Obtener cadena evolutiva completa optimizada
 async function getEvolutionChain(url) {
   if (chainCache[url]) return chainCache[url];
 
@@ -75,7 +75,7 @@ async function getEvolutionChain(url) {
   return lista;
 }
 
-// ✅ Obtener un Pokémon completo (rápido y con cache)
+// Obtener un Pokémon completo (rápido y con cache)
 async function obtenerPokemon(id) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   const d = await res.json();
@@ -106,7 +106,7 @@ async function obtenerPokemon(id) {
   };
 }
 
-// ✅ Obtener los 151 super rápido
+// Obtener los 151 super rápido
 export async function getPokemons(limit = 1025) {
   const promesas = [];
 

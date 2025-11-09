@@ -17,7 +17,7 @@ export default function PokemonDetail({
         .map((s) => s.trim())
         .filter(Boolean);
 
-  // Evoluciones: vienen como ["001","002","003"] -> las mapeo a objetos usando la lista completa
+  // Evoluciones: vienen como ["001","002","003"] -> las mapeo usando listaCompleta
   const evoObjs = (pokemon.evoluciones || [])
     .map((num) =>
       (pokemon.listaCompleta || []).find((p) => p.numero === num)
@@ -26,27 +26,36 @@ export default function PokemonDetail({
 
   return (
     <section id="detallePokemon" className="detalle-activo">
+      
       {/* Volver */}
-      <button id="btnVolver" onClick={onVolver}>
-        ⬅ Volver
-      </button>
+       <button id="btnVolver" onClick={onVolver}>⬅ Volver</button>
 
-      {/* Flechas laterales */}
-      <div className="pokemonAnterior">
-        <button onClick={onAnterior}>⬅</button>
-      </div>
-      <div className="pokemonPosterior">
-        <button onClick={onSiguiente}>➡</button>
-      </div>
+      {/* ✅ Flecha izquierda SOLO si no es el primer Pokémon */}
+      {Number(pokemon.numero) > 1 && (
+        <button
+          className="flechaNav flechaIzquierda"
+          onClick={onAnterior}
+        >
+          ⬅
+        </button>
+      )}
+
+      {/* Flecha derecha SOLO si no es el último Pokémon */}
+      {Number(pokemon.numero) < 1025 && (
+        <button
+          className="flechaNav flechaDerecha"
+          onClick={onSiguiente}
+        >
+          ➡
+        </button>
+      )}
 
       <div className="paginaPokemon">
         <div className="detalleGrid">
-          {/* 1) Imagen + datos */}
+
+          {/* === 1) Imagen + datos === */}
           <div className="detalleCard detallePrincipal">
-            <img
-              src={pokemon.img}
-              alt={pokemon.nombreES || pokemon.nombre}
-            />
+            <img src={pokemon.img} alt={pokemon.nombreES || pokemon.nombre} />
 
             <div className="detalleTexto">
               <h2>
@@ -66,40 +75,82 @@ export default function PokemonDetail({
             </div>
           </div>
 
-          {/* 2) Stats */}
+          {/* === 2) Estadísticas === */}
           <div className="detalleCard">
             <h2>Estadísticas</h2>
 
             <div className="stats">
-              {[
-                ["HP", pokemon.hp, "barraHP"],
-                ["Ataque", pokemon.atk, "barraAtk"],
-                ["Defensa", pokemon.def, "barraDef"],
-                ["Ataque Esp", pokemon.atkesp, "barraAtkEsp"],
-                ["Defensa Esp", pokemon.defesp, "barraDefEsp"],
-                ["Velocidad", pokemon.vel, "barraVel"],
-              ].map(([label, val, cls]) => (
-                <div key={cls} className="statItem">
-                  <span>{label}:</span>
-                  <strong>{val}</strong>
-                  <div className="statBar">
-                    <div
-                      className={cls}
-                      style={{ width: `calc((${val}/250)*100%)` }}
-                    />
-                  </div>
-                </div>
-              ))}
+
+              {/* HP */}
+              <div className="statLabel">HP:</div>
+              <div className="statValue">{pokemon.hp}</div>
+              <div className="statBarContainer">
+                <div
+                  className="statBar"
+                  style={{ width: `${(pokemon.hp / 250) * 100}%` }}
+                ></div>
+              </div>
+
+              {/* Ataque */}
+              <div className="statLabel">Ataque:</div>
+              <div className="statValue">{pokemon.atk}</div>
+              <div className="statBarContainer">
+                <div
+                  className="statBar"
+                  style={{ width: `${(pokemon.atk / 250) * 100}%` }}
+                ></div>
+              </div>
+
+              {/* Defensa */}
+              <div className="statLabel">Defensa:</div>
+              <div className="statValue">{pokemon.def}</div>
+              <div className="statBarContainer">
+                <div
+                  className="statBar"
+                  style={{ width: `${(pokemon.def / 250) * 100}%` }}
+                ></div>
+              </div>
+
+              {/* Ataque Especial */}
+              <div className="statLabel">Ataque Esp:</div>
+              <div className="statValue">{pokemon.atkesp}</div>
+              <div className="statBarContainer">
+                <div
+                  className="statBar"
+                  style={{ width: `${(pokemon.atkesp / 250) * 100}%` }}
+                ></div>
+              </div>
+
+              {/* Defensa Especial */}
+              <div className="statLabel">Defensa Esp:</div>
+              <div className="statValue">{pokemon.defesp}</div>
+              <div className="statBarContainer">
+                <div
+                  className="statBar"
+                  style={{ width: `${(pokemon.defesp / 250) * 100}%` }}
+                ></div>
+              </div>
+
+              {/* Velocidad */}
+              <div className="statLabel">Velocidad:</div>
+              <div className="statValue">{pokemon.vel}</div>
+              <div className="statBarContainer">
+                <div
+                  className="statBar"
+                  style={{ width: `${(pokemon.vel / 250) * 100}%` }}
+                ></div>
+              </div>
+
             </div>
           </div>
 
-          {/* 3) Descripción */}
+          {/* === 3) Descripción === */}
           <div className="detalleCard">
             <h2 className="descripcionTitulo">Descripción</h2>
             <p>{pokemon.descripcion}</p>
           </div>
 
-          {/* 4) Evoluciones */}
+          {/* === 4) Evoluciones === */}
           <div className="detalleCard">
             <h2>Línea Evolutiva</h2>
 
@@ -118,6 +169,7 @@ export default function PokemonDetail({
               )}
             </div>
           </div>
+
         </div>
       </div>
     </section>

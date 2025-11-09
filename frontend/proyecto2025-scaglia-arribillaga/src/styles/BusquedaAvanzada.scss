@@ -44,11 +44,11 @@
   display: grid;
   grid-template-columns: 520px 1fr;
   grid-template-rows: auto auto;
-  column-gap: 100px;
+  column-gap: 250px;
   row-gap: 0px; 
   align-items: center;
-  max-width: 1500px;
-
+  max-width: 1500px;       
+  justify-content: center;
 }
 
 /* TIPOS ocupa toda la izquierda */
@@ -84,65 +84,146 @@
   color: white;
 }
 
-/* ====== TIPOS (ANGOSTOS + MÁS A LA DERECHA) ====== */
+/* ====== TIPOS  ====== */
 .tipos {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  gap: 8px;
-  justify-content: start;
-  transform: translateX(40px);
-  margin-top: 4px;
+  grid-template-columns: repeat(3, 100px);  
+  gap: 16px;
+  column-gap: 40px;                                  
+  justify-content: center;                  
+  margin-top: 10px;
 
+  /* ======== FORMA DE CADA CUADRITO ======== */
   div {
-    width: 95px;
-    height: 30px;
-    display: flex;
+    width: 100px;             
+    height: 22px;             
+    border: 1px solid #ddd;   
+    border-radius: 5px;       
+    display: flex;            
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
+    text-align: center;
     font-weight: bold;
-    border: 1px solid transparent;
-    transition: 0.25s;
+    cursor: pointer;
+    transition: 0.25s ease;   
   }
 
+  /* ======== ESTILO DEL TIPO ACTIVO ======== */
   .activo {
-    transform: scale(1.05);
-    border: 1px solid white;
-    box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);                            
+    border: 1px solid white;                           
+    box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.4);  
   }
 }
 
+
+.agua,
+.aguaCard {
+  background: #6390f0;
+  color: white;
+}
+.fuego,
+.fuegoCard {
+  background: #ee8130;
+  color: white;
+}
+.planta,
+.plantaCard {
+  background: #7ac74c;
+  color: white;
+}
+.electrico,
+.electricoCard {
+  background: #f7d02c;
+  color: #333;
+}
+.tierra,
+.tierraCard {
+  background: #e2bf65;
+  color: #333;
+}
+.roca,
+.rocaCard {
+  background: #b6a136;
+  color: white;
+}
+.psiquico,
+.psiquicoCard {
+  background: #f95587;
+  color: white;
+}
+.lucha,
+.luchaCard {
+  background: #c22e28;
+  color: white;
+}
+.fantasma,
+.fantasmaCard {
+  background: #735797;
+  color: white;
+}
+.hielo,
+.hieloCard {
+  background: #96d9d6;
+  color: #333;
+}
+.veneno,
+.venenoCard {
+  background: #a33ea1;
+  color: white;
+}
+.volador,
+.voladorCard {
+  background: #a98ff3;
+  color: #333;
+}
+.normal,
+.normalCard {
+  background: #a8a77a;
+  color: #333;
+}
+.dragon,
+.dragonCard {
+  background: #6f35fc;
+  color: white;
+}
+.bicho,
+.bichoCard {
+  background: #a6b91a;
+  color: #333;
+}
+.siniestro,
+.siniestroCard {
+  background: #705746;
+  color: white;
+}
+.hada,
+.hadaCard {
+  background: #d685ad;
+  color: #333;
+}
+.acero,
+.aceroCard {
+  background: #b7b7ce;
+  color: #333;
+}
 /* ====== ALTURA / PESO (CUADRADOS MÁS JUNTOS) ====== */
 .alturas,
 .pesos {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 14px;
+  gap: 35px;
 
   div {
     width: 110px;
-    height: 110px;
-    background: white;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: 0.25s;
-
-    &.activo {
-      transform: scale(1.06);
-      border: 2px solid #cc0000;
-      box-shadow: 0 0 4px #ff0000;
-    }
-
+    height: 110px;  
+    margin: 0 ;
+    padding: 0;
+  
     img {
       width: 75px;
       height: 75px;
-      object-fit: contain;
     }
   }
 }
@@ -165,11 +246,11 @@
     transition: background 0.2s ease;
 
     &:hover {
-      background: #b00000;
+      background: #858585;
     }
 
     &:active {
-      background: #900000;
+      background: #8b8b8b;
       box-shadow: none; /* elimina brillo rojo */
     }
   }
