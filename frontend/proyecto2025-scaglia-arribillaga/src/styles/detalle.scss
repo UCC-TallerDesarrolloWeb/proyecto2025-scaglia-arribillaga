@@ -9,44 +9,53 @@
   gap: 35px;
 }
 
-/* Botón volver */
-#btnVolver {
+/* ======================= BOTÓN VOLVER ======================= */
+.btnVolver {
   background: #cc0000;
-  border: none;
   color: white;
-  padding: 10px 25px;
-  border-radius: 8px;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-/* Flechas laterales */
-.pokemonAnterior,
-.pokemonPosterior {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.pokemonAnterior {
-  left: 20px;
-}
-
-.pokemonPosterior {
-  right: 20px;
-}
-
-.pokemonAnterior button,
-.pokemonPosterior button {
-  width: 60px;
-  height: 60px;
-  font-size: 30px;
-  border-radius: 12px;
-  background: #cc0000;
   border: none;
-  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
+  margin-bottom: 10px;
 }
+
+.btnVolver:hover {
+  background: #a30000;
+}
+
+/* ======== FLECHAS LATERALES ======== */
+.flechaNav {
+  position: absolute;
+  top: 110%;                  /* ✅ MEDIA ALTURA REAL */
+  transform: translateY(-50%); 
+  background: #cc0000;
+  color: #fff;
+  border: none;
+  width: 45px;               /* tamaño chico */
+  height: 45px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.flechaIzquierda {
+  left: 25px;                /* separada del borde */
+}
+
+.flechaDerecha {
+  right: 25px;
+}
+
+.flechaNav:hover {
+  background: #a00000;
+}
+
 
 /* CONTENEDOR CENTRAL */
 .paginaPokemon {
@@ -89,24 +98,48 @@
   line-height: 1.6;
 }
 
-/* Estadísticas */
+/* ===================== ESTADÍSTICAS  ===================== */
+
 .stats {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+  
+  /* grilla exacta usada en tu referencia */
+  display: grid;
+  grid-template-columns: 140px 40px 1fr;
+  grid-row-gap: 12px;
 
-.statItem {
-  display: flex;
   align-items: center;
-  gap: 10px;
+  justify-items: start;
 }
 
+/* Nombre del stat (HP:, Ataque:, etc.) */
+.statLabel {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+  width: 140px;
+}
+
+/* Valor numérico del stat */
+.statValue {
+  font-size: 20px;
+  font-weight: bold;
+  width: 40px;
+  text-align: left;
+}
+
+/* Contenedor de barra */
+.statBarContainer {
+  width: 100%;
+}
+
+/* Barra de progreso */
 .statBar {
   height: 10px;
-  background: black;
+  background: #000;
+  border-radius: 4px;
 }
+
 
 /* Descripción */
 .descripcionTitulo {
