@@ -54,4 +54,17 @@
   height: 23px;
 }
 
+/* ====== BOTÓN GENÉRICO PARA LA LUPA ====== */
+.btn-lupa-generico {
+  padding: 7px;    /* mismo tamaño que tu btn original */
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  background: #cc0000;
+}
+
+.btn-lupa-generico img {
+  width: 24px ;
+  height: 23px ;
+}
 

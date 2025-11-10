@@ -255,5 +255,23 @@
     }
   }
 }
+/*  Ajuste para mantener estilo original de los botones */
+.btn-filtro-avanzado {
+  background: #cc0000 !important;
+  color: white !important;
+  padding: 10px 14px !important;
+  border-radius: 6px !important;
+  font-size: 15px !important;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background: #858585 !important;
+  }
+
+  &:active {
+    background: #8b8b8b !important;
+  }
+}
 
 

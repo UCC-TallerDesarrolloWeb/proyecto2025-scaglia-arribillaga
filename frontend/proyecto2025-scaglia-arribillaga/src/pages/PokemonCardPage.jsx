@@ -13,7 +13,7 @@ export default function PokemonCardPage() {
   const [filtrados, setFiltrados] = useState([]);
   const [pokemonSeleccionado, setPokemonSeleccionado] = useState(null);
 
-  // ✅ NUEVO: mensaje de error
+  //  NUEVO: mensaje de error
   const [mensajeError, setMensajeError] = useState("");
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function PokemonCardPage() {
     });
   }, []);
 
-  // ✅ BÚSQUEDA NORMAL
+  //  BÚSQUEDA NORMAL
   const buscar = (texto) => {
     if (!texto) {
       setFiltrados(pokemons);
@@ -42,7 +42,7 @@ export default function PokemonCardPage() {
 
     setFiltrados(resultados);
 
-    // ✅ mensaje error búsqueda normal
+    //  mensaje error búsqueda normal
     if (resultados.length === 0) {
       setMensajeError("No existe ningún Pokémon con las características ingresadas.");
     } else {
@@ -50,7 +50,7 @@ export default function PokemonCardPage() {
     }
   };
 
-  // ✅ BÚSQUEDA AVANZADA — REEMPLAZADA COMPLETA
+  //  BÚSQUEDA AVANZADA — REEMPLAZADA COMPLETA
   const filtrarAvanzado = ({ tipos, altura, peso }) => {
     let resultado = pokemons;
 
@@ -78,7 +78,7 @@ export default function PokemonCardPage() {
 
     setFiltrados(resultado);
 
-    // ✅ mensaje error búsqueda avanzada
+    //  mensaje error búsqueda avanzada
     if (resultado.length === 0) {
       setMensajeError("No existe ningún Pokémon con las características ingresadas.");
     } else {
@@ -86,15 +86,15 @@ export default function PokemonCardPage() {
     }
   };
 
-  // ✅ SELECCIONAR POKÉMON
+  //  SELECCIONAR POKÉMON
   const handleSeleccionar = (p) => {
     setPokemonSeleccionado({
       ...p,
 
-      // ✅ mantener array de tipos
+      //  mantener array de tipos
       tipos: p.tipos,
 
-      // ✅ Para evoluciones
+      //  Para evoluciones
       listaCompleta: pokemons,
 
       cambiarPokemon: (num) => {
@@ -115,7 +115,7 @@ export default function PokemonCardPage() {
       <Buscador onBuscar={buscar} />
       <BusquedaAvanzada onFiltrar={filtrarAvanzado} />
 
-      {/* ✅ MENSAJE DE ERROR */}
+      {/*  MENSAJE DE ERROR */}
       {mensajeError && (
         <p
           style={{
@@ -130,7 +130,7 @@ export default function PokemonCardPage() {
         </p>
       )}
 
-      {/* ✅ Lista de pokémon */}
+      {/*  Lista de pokémon */}
       {!pokemonSeleccionado && (
         <div id="resultadosPokedex">
           <div className="lista">
