@@ -106,7 +106,7 @@ async function obtenerPokemon(id) {
   };
 }
 
-// Obtener los 151 super rápido
+// Obtener los pokemones super rápido
 export async function getPokemons(limit = 1025) {
   const promesas = [];
 
@@ -116,4 +116,20 @@ export async function getPokemons(limit = 1025) {
 
   const lista = await Promise.all(promesas);
   return lista;
+}
+
+/* ======================================================
+                        MOCK 
+   ====================================================== */
+
+let logs = []; // base simulada
+
+export function addLog(texto) {
+  logs.push({
+    texto,
+    fecha: new Date().toISOString(),
+  });
+
+  // Simula una request exitosa
+  return Promise.resolve({ status: "ok" });
 }

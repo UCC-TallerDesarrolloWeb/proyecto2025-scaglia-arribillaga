@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import "@styles/buscador.scss";
 import lupa from "@assets/lupa.png";
-import Button from "@components/Button"; // nuevo botón genérico
+import Button from "@components/Button";
+import { addLog } from "@api/pokemon"; //  MOCK IMPORTADO
 
 export default function Buscador({ onBuscar }) {
   const [texto, setTexto] = useState("");
   const [error, setError] = useState("");
 
-  //  Validar en tiempo real
   const validar = (valor) => {
     if (valor.trim() === "") {
       setError("");
@@ -36,23 +36,27 @@ export default function Buscador({ onBuscar }) {
     validar(v);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!error) {
-      //  Guardar el valor en localStorage
+      //  GUARDAR EN LOCALSTORAGE
       localStorage.setItem("ultimaBusqueda", texto);
 
+      //  REGISTRAR LA BÚSQUEDA EN EL MOCK (POST)
+      await addLog(texto);
+
+      //  BUSCAR
       onBuscar(texto.trim().toLowerCase());
     }
   };
 
-  //  Cargar la última búsqueda al entrar
+  //  Recuperar última búsqueda
   useEffect(() => {
     const guardado = localStorage.getItem("ultimaBusqueda");
     if (guardado) {
-      setTexto(guardado);   // mostrarlo en el input
-      validar(guardado);    // volver a validar
+      setTexto(guardado);
+      validar(guardado);
     }
   }, []);
 
@@ -75,7 +79,6 @@ export default function Buscador({ onBuscar }) {
               aria-describedby="error-busqueda"
             />
 
-            {/* Botón genérico */}
             <Button
               type="submit"
               disabled={!!error}
