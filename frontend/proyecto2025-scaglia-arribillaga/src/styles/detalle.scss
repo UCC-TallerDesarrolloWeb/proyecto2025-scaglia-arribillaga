@@ -1,9 +1,9 @@
 /* ***** CONTENEDOR GENERAL ***** */
 #detallePokemon {
-  width: 100%;
+  width: 90.5vw;
   min-height: 100vh;
   padding: 20px 40px;
-  background: #ffffff;
+  background: #f0e9e9;
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -34,13 +34,13 @@
 
 /* ======== FLECHAS LATERALES ======== */
 .flechaNav {
-  position: absolute;
-  top: 110%;                  
-  transform: translateY(-50%); 
+  position: absolute;      /* ✅ ahora se posiciona dentro del area blanca */
+  top: 50%;                /* ✅ centro vertical */
+  transform: translateY(-50%);
   background: #cc0000;
-  color: #fff;
+  color: white;
   border: none;
-  width: 45px;               
+  width: 45px;
   height: 45px;
   border-radius: 10px;
   font-size: 20px;
@@ -52,11 +52,11 @@
 }
 
 .flechaIzquierda {
-  left: 25px;                /* separada del borde */
+  left: -130px;                /* separada del borde */
 }
 
 .flechaDerecha {
-  right: 25px;
+  right: -130px;
 }
 
 .flechaNav:hover {
@@ -74,11 +74,12 @@
 /* GRID PRINCIPAL EN 2x2 */
 .detalleGrid {
   display: grid;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;      
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 25px;
+  position: relative;
 }
 
 /* ***** TARJETAS ***** */

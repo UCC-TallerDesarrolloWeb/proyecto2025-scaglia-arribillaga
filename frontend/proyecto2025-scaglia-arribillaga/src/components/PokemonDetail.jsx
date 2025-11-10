@@ -30,7 +30,10 @@ export default function PokemonDetail({
       {/* Volver */}
        <button id="btnVolver" onClick={onVolver}>⬅ Volver</button>
 
-      {/* Flecha izquierda SOLO si no es el primer Pokémon */}
+      <div className="paginaPokemon">
+        <div className="detalleGrid">
+
+          {/* Flecha izquierda SOLO si no es el primer Pokémon */}
       {Number(pokemon.numero) > 1 && (
         <button
           className="flechaNav flechaIzquierda"
@@ -49,9 +52,6 @@ export default function PokemonDetail({
           ➡
         </button>
       )}
-
-      <div className="paginaPokemon">
-        <div className="detalleGrid">
 
           {/* === 1) Imagen + datos === */}
           <div className="detalleCard detallePrincipal">
