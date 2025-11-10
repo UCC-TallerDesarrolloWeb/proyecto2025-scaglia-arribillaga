@@ -24,6 +24,28 @@ export default function PokemonDetail({
     )
     .filter(Boolean);
 
+    let etapas = [];
+if (evoObjs.length > 0) {
+  const ordenados = [...evoObjs].sort((a, b) => a.numero - b.numero);
+
+  let etapaActual = [ordenados[0]];
+
+  for (let i = 1; i < ordenados.length; i++) {
+    const prev = ordenados[i - 1].numero;
+    const curr = ordenados[i].numero;
+
+    // Cambio de etapa cuando hay salto en la numeración
+    if (curr - prev > 1) {
+      etapas.push(etapaActual);
+      etapaActual = [];
+    }
+
+    etapaActual.push(ordenados[i]);
+  }
+
+  etapas.push(etapaActual);
+}
+
   return (
     <section id="detallePokemon" className="detalle-activo">
       
@@ -82,7 +104,7 @@ export default function PokemonDetail({
             <div className="stats">
 
               {/* HP */}
-              <div className="statLabel">HP:</div>
+              <div className="statLabel">HP: </div>
               <div className="statValue">{pokemon.hp}</div>
               <div className="statBarContainer">
                 <div
@@ -92,7 +114,7 @@ export default function PokemonDetail({
               </div>
 
               {/* Ataque */}
-              <div className="statLabel">Ataque:</div>
+              <div className="statLabel">Ataque: </div>
               <div className="statValue">{pokemon.atk}</div>
               <div className="statBarContainer">
                 <div
@@ -102,7 +124,7 @@ export default function PokemonDetail({
               </div>
 
               {/* Defensa */}
-              <div className="statLabel">Defensa:</div>
+              <div className="statLabel">Defensa: </div>
               <div className="statValue">{pokemon.def}</div>
               <div className="statBarContainer">
                 <div
@@ -112,7 +134,7 @@ export default function PokemonDetail({
               </div>
 
               {/* Ataque Especial */}
-              <div className="statLabel">Ataque Esp:</div>
+              <div className="statLabel">Ataque Esp: </div>
               <div className="statValue">{pokemon.atkesp}</div>
               <div className="statBarContainer">
                 <div
@@ -122,7 +144,7 @@ export default function PokemonDetail({
               </div>
 
               {/* Defensa Especial */}
-              <div className="statLabel">Defensa Esp:</div>
+              <div className="statLabel">Defensa Esp: </div>
               <div className="statValue">{pokemon.defesp}</div>
               <div className="statBarContainer">
                 <div
@@ -132,7 +154,7 @@ export default function PokemonDetail({
               </div>
 
               {/* Velocidad */}
-              <div className="statLabel">Velocidad:</div>
+              <div className="statLabel">Velocidad: </div>
               <div className="statValue">{pokemon.vel}</div>
               <div className="statBarContainer">
                 <div
@@ -154,20 +176,26 @@ export default function PokemonDetail({
           <div className="detalleCard">
             <h2>Línea Evolutiva</h2>
 
-            <div id="detalleEvoluciones">
-              {evoObjs.length ? (
-                evoObjs.map((evo) => (
-                  <img
-                    key={evo.numero}
-                    src={evo.img}
-                    alt={evo.nombreES || evo.nombre}
-                    onClick={() => pokemon.cambiarPokemon(evo.numero)}
-                  />
-                ))
-              ) : (
-                <p>Este Pokémon no tiene evoluciones.</p>
-              )}
-            </div>
+            <div id="detalleEvoluciones" className="evoGrid">
+  {etapas.length ? (
+    etapas.map((col, i) => (
+      <div key={i} className="evoCol">
+        {col.map((evo) => (
+          <div key={evo.numero} className="evoStage">
+            <img
+              src={evo.img}
+              alt={evo.nombreES || evo.nombre}
+              onClick={() => pokemon.cambiarPokemon(evo.numero)}
+            />
+          </div>
+        ))}
+      </div>
+    ))
+  ) : (
+    <p>Este Pokémon no tiene evoluciones.</p>
+  )}
+</div>
+
           </div>
 
         </div>

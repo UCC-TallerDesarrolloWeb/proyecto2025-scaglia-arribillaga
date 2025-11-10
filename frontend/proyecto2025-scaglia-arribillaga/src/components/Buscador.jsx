@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "@styles/buscador.scss";
 import lupa from "@assets/lupa.png";
+import Button from "@components/Button"; // nuevo botón genérico
 
 export default function Buscador({ onBuscar }) {
   const [texto, setTexto] = useState("");
   const [error, setError] = useState("");
 
+  //  Validar en tiempo real
   const validar = (valor) => {
-    // vacío = no error
     if (valor.trim() === "") {
       setError("");
       return;
     }
 
-    // si es número → validar rango
     if (!isNaN(valor)) {
       const num = Number(valor);
       if (num < 1 || num > 1025) {
@@ -22,7 +22,6 @@ export default function Buscador({ onBuscar }) {
       }
     }
 
-    // nombre demasiado largo
     if (valor.length > 15) {
       setError("El nombre no puede superar los 15 caracteres.");
       return;
@@ -34,13 +33,28 @@ export default function Buscador({ onBuscar }) {
   const handleChange = (e) => {
     const v = e.target.value;
     setTexto(v);
-    validar(v); // ✅ validación en tiempo real
+    validar(v);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!error) onBuscar(texto.trim().toLowerCase());
+
+    if (!error) {
+      //  Guardar el valor en localStorage
+      localStorage.setItem("ultimaBusqueda", texto);
+
+      onBuscar(texto.trim().toLowerCase());
+    }
   };
+
+  //  Cargar la última búsqueda al entrar
+  useEffect(() => {
+    const guardado = localStorage.getItem("ultimaBusqueda");
+    if (guardado) {
+      setTexto(guardado);   // mostrarlo en el input
+      validar(guardado);    // volver a validar
+    }
+  }, []);
 
   return (
     <section className="buscador">
@@ -49,7 +63,9 @@ export default function Buscador({ onBuscar }) {
 
         <div className="busqueda">
           <label>Nombre o Número:</label>
+
           <div className="botonesBusqueda">
+
             <input
               type="text"
               maxLength="15"
@@ -59,12 +75,16 @@ export default function Buscador({ onBuscar }) {
               aria-describedby="error-busqueda"
             />
 
-            <button type="submit" id="btnLupa" disabled={!!error}>
+            {/* Botón genérico */}
+            <Button
+              type="submit"
+              disabled={!!error}
+              className="btn-lupa-generico"
+            >
               <img src={lupa} alt="Buscar" />
-            </button>
+            </Button>
           </div>
 
-          {/* ✅ mensaje accesible */}
           {error && (
             <p
               id="error-busqueda"

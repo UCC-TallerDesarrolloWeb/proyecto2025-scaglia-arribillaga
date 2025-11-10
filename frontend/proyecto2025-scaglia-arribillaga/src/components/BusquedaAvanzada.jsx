@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "@styles/busquedaAvanzada.scss";
+import Button from "@components/Button"; //  botón genérico
 
 export default function BusquedaAvanzada({ onFiltrar }) {
   const [mostrar, setMostrar] = useState(false);
@@ -114,7 +115,7 @@ export default function BusquedaAvanzada({ onFiltrar }) {
           </div>
         </div>
 
-        {/* ✅ Mensaje accesible */}
+        {/*  Mensaje accesible */}
         {error && (
           <p
             id="error-avanzado"
@@ -127,13 +128,24 @@ export default function BusquedaAvanzada({ onFiltrar }) {
         )}
 
         <div className="botonesFiltro">
-          <button type="button" id="btnBusqueda" onClick={aplicar} disabled={!!error}>
-            Buscar
-          </button>
 
-          <button type="button" id="btnResetear" onClick={reset}>
+          {/*  botón genérico — Buscar */}
+          <Button
+            onClick={aplicar}
+            disabled={!!error}
+            className="btn-filtro-avanzado"
+          >
+            Buscar
+          </Button>
+
+          {/*  botón genérico — Resetear */}
+          <Button
+            onClick={reset}
+            className="btn-filtro-avanzado"
+          >
             Restablecer
-          </button>
+          </Button>
+
         </div>
       </form>
 
@@ -142,7 +154,10 @@ export default function BusquedaAvanzada({ onFiltrar }) {
           {mostrar ? "Ocultar búsqueda avanzada" : "Mostrar búsqueda avanzada"}
         </h5>
 
-        <img src={mostrar ? "/chevron-arriba.png" : "/chevron-abajo.png"} alt="Toggle" />
+        <img
+          src={mostrar ? "/chevron-arriba.png" : "/chevron-abajo.png"}
+          alt="Toggle"
+        />
       </div>
     </div>
   );

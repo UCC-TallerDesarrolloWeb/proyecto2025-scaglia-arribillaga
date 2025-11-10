@@ -175,3 +175,30 @@
 #detalleEvoluciones img:hover {
   transform: scale(1.1);
 }
+
+
+#detalleEvoluciones.evoGrid {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 30px;
+  justify-content: center;
+}
+
+.evoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.evoStage img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.evoStage img:hover {
+  transform: scale(1.1);
+}
