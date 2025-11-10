@@ -30,7 +30,7 @@ export default function PokemonDetail({
       {/* Volver */}
        <button id="btnVolver" onClick={onVolver}>⬅ Volver</button>
 
-      {/* ✅ Flecha izquierda SOLO si no es el primer Pokémon */}
+      {/* Flecha izquierda SOLO si no es el primer Pokémon */}
       {Number(pokemon.numero) > 1 && (
         <button
           className="flechaNav flechaIzquierda"

@@ -2,34 +2,45 @@ import { useState } from "react";
 import "@styles/buscador.scss";
 import lupa from "@assets/lupa.png";
 
-
 export default function Buscador({ onBuscar }) {
   const [texto, setTexto] = useState("");
+  const [error, setError] = useState("");
 
- const handleSubmit = (e) => {
-  e.preventDefault();
-
-  const valor = texto.trim().toLowerCase();
-
-  // Campo vacío
-  if (valor === "") {
-    alert("No existe un Pokémon con ese número o nombre. Por favor, ingrese un valor existente.");
-    return;
-  }
-
-  // Validación numérica 1–1025
-  const numero = Number(valor);
-  if (!isNaN(numero)) {
-    if (numero < 1 || numero > 1025) {
-      alert("El número ingresado está fuera del rango válido (1 a 1025).");
+  const validar = (valor) => {
+    // vacío = no error
+    if (valor.trim() === "") {
+      setError("");
       return;
     }
-  }
 
-  //Si todo está ok
-  onBuscar(valor);
-};
+    // si es número → validar rango
+    if (!isNaN(valor)) {
+      const num = Number(valor);
+      if (num < 1 || num > 1025) {
+        setError("El número debe estar entre 1 y 1025.");
+        return;
+      }
+    }
 
+    // nombre demasiado largo
+    if (valor.length > 15) {
+      setError("El nombre no puede superar los 15 caracteres.");
+      return;
+    }
+
+    setError("");
+  };
+
+  const handleChange = (e) => {
+    const v = e.target.value;
+    setTexto(v);
+    validar(v); // ✅ validación en tiempo real
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!error) onBuscar(texto.trim().toLowerCase());
+  };
 
   return (
     <section className="buscador">
@@ -44,14 +55,26 @@ export default function Buscador({ onBuscar }) {
               maxLength="15"
               placeholder="Ej: Bulbasaur o 001"
               value={texto}
-              onChange={(e) => setTexto(e.target.value)}
+              onChange={handleChange}
+              aria-describedby="error-busqueda"
             />
 
-           <button type="submit" id="btnLupa">
-            <img src={lupa} alt="Lupa" />
-           </button>
-
+            <button type="submit" id="btnLupa" disabled={!!error}>
+              <img src={lupa} alt="Buscar" />
+            </button>
           </div>
+
+          {/* ✅ mensaje accesible */}
+          {error && (
+            <p
+              id="error-busqueda"
+              role="alert"
+              aria-live="assertive"
+              style={{ color: "red", marginTop: "5px" }}
+            >
+              {error}
+            </p>
+          )}
         </div>
       </form>
     </section>

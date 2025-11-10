@@ -145,7 +145,7 @@ export default function PokemonCardPage() {
         </div>
       )}
 
-      {/* ✅ MOSTRAR DETALLE */}
+      {/*MOSTRAR DETALLE */}
       {pokemonSeleccionado && (
         <PokemonDetail
           pokemon={pokemonSeleccionado}
