@@ -176,39 +176,29 @@
   transform: scale(1.1);
 }
 
+
 #detalleEvoluciones.evoGrid {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: max-content;
-  gap: 40px;
+  gap: 30px;
   justify-content: center;
-  margin-top: 15px;
 }
 
 .evoCol {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   align-items: center;
 }
 
 .evoStage img {
-  width: 85px;
-  height: 85px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   cursor: pointer;
-  background: #f3f3f3;
-  padding: 8px;
   transition: 0.2s;
 }
 
 .evoStage img:hover {
   transform: scale(1.1);
 }
-
-.evoStage p {
-  text-align: center;
-  font-weight: 500;
-  margin: 5px 0 0;
-}
-

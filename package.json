@@ -1,0 +1,21 @@
+{
+  "name": "proyecto2025-scaglia-arribillaga",
+  "version": "1.0.0",
+  "description": "Una Pokédex moderna e interactiva desarrollada con **HTML, CSS y JavaScript**.  \r Permite buscar, filtrar y explorar Pokémon de manera dinámica, con una interfaz visual atractiva y responsive.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UCC-TallerDesarrolloWeb/proyecto2025-scaglia-arribillaga.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/UCC-TallerDesarrolloWeb/proyecto2025-scaglia-arribillaga/issues"
+  },
+  "homepage": "https://github.com/UCC-TallerDesarrolloWeb/proyecto2025-scaglia-arribillaga#readme"
+}
