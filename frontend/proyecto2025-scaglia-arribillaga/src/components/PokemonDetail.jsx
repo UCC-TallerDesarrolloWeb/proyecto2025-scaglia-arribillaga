@@ -109,7 +109,7 @@ if (evoObjs.length > 0) {
               <div className="statBarContainer">
                 <div
                   className="statBar"
-                  style={{ width: `${(pokemon.hp / 250) * 100}%` }}
+                  style={{ "--valor": `${(pokemon.hp / 250) * 100}%` }}
                 ></div>
               </div>
 
@@ -119,7 +119,7 @@ if (evoObjs.length > 0) {
               <div className="statBarContainer">
                 <div
                   className="statBar"
-                  style={{ width: `${(pokemon.atk / 250) * 100}%` }}
+                  style={{ "--valor": `${(pokemon.atk / 250) * 100}%` }}
                 ></div>
               </div>
 
@@ -129,7 +129,7 @@ if (evoObjs.length > 0) {
               <div className="statBarContainer">
                 <div
                   className="statBar"
-                  style={{ width: `${(pokemon.def / 250) * 100}%` }}
+                  style={{ "--valor": `${(pokemon.def / 250) * 100}%` }}
                 ></div>
               </div>
 
@@ -139,7 +139,7 @@ if (evoObjs.length > 0) {
               <div className="statBarContainer">
                 <div
                   className="statBar"
-                  style={{ width: `${(pokemon.atkesp / 250) * 100}%` }}
+                  style={{ "--valor": `${(pokemon.atkesp / 250) * 100}%` }}
                 ></div>
               </div>
 
@@ -149,7 +149,7 @@ if (evoObjs.length > 0) {
               <div className="statBarContainer">
                 <div
                   className="statBar"
-                  style={{ width: `${(pokemon.defesp / 250) * 100}%` }}
+                  style={{ "--valor": `${(pokemon.defesp / 250) * 100}%` }}
                 ></div>
               </div>
 
@@ -159,7 +159,7 @@ if (evoObjs.length > 0) {
               <div className="statBarContainer">
                 <div
                   className="statBar"
-                  style={{ width: `${(pokemon.vel / 250) * 100}%` }}
+                  style={{ "--valor": `${(pokemon.vel / 250) * 100}%` }}
                 ></div>
               </div>
 

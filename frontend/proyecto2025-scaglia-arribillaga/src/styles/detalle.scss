@@ -145,6 +145,7 @@
 /* Barra de progreso */
 .statBar {
   height: 10px;
+  width: var(--valor);
   background: #000;
   border-radius: 4px;
 }
