@@ -17,10 +17,17 @@ export default function PokemonCardPage() {
   const [mensajeError, setMensajeError] = useState("");
 
   useEffect(() => {
-    getPokemons(1025).then((data) => {
-      setPokemons(data);
-      setFiltrados(data);
-    });
+    const cargarPokemons = async () => {
+      try {
+        const data = await getPokemons(1025);
+        setPokemons(data);
+        setFiltrados(data);
+      } catch (error) {
+        console.error("Error al cargar los pokemons:", error);
+      }
+    };
+
+    cargarPokemons();
   }, []);
 
   //  BÚSQUEDA NORMAL
@@ -44,7 +51,9 @@ export default function PokemonCardPage() {
 
     //  mensaje error búsqueda normal
     if (resultados.length === 0) {
-      setMensajeError("No existe ningún Pokémon con las características ingresadas.");
+      setMensajeError(
+        "No existe ningún Pokémon con las características ingresadas."
+      );
     } else {
       setMensajeError("");
     }
@@ -80,7 +89,9 @@ export default function PokemonCardPage() {
 
     //  mensaje error búsqueda avanzada
     if (resultado.length === 0) {
-      setMensajeError("No existe ningún Pokémon con las características ingresadas.");
+      setMensajeError(
+        "No existe ningún Pokémon con las características ingresadas."
+      );
     } else {
       setMensajeError("");
     }

@@ -121,7 +121,7 @@ export default function BusquedaAvanzada({ onFiltrar }) {
             id="error-avanzado"
             role="alert"
             aria-live="assertive"
-            style={{ color: "red", marginTop: "10px" }}
+            className="error-avanzado"
           >
             {error}
           </p>

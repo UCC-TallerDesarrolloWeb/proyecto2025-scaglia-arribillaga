@@ -93,7 +93,7 @@ export default function Buscador({ onBuscar }) {
               id="error-busqueda"
               role="alert"
               aria-live="assertive"
-              style={{ color: "red", marginTop: "5px" }}
+              className="error-busqueda"
             >
               {error}
             </p>

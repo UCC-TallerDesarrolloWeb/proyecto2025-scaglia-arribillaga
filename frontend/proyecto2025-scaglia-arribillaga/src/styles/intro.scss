@@ -9,11 +9,6 @@
   background-size: cover;
   color: #ffffff;
   transition: opacity 0.5s ease;
-
-  &.hide {
-    opacity: 0;
-    pointer-events: none;
-  }
 }
 
 #intro h1 {

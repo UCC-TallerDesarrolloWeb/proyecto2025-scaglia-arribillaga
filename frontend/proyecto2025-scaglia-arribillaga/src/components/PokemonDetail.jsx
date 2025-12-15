@@ -1,4 +1,3 @@
-import React from "react";
 import "@styles/detalle.scss";
 
 export default function PokemonDetail({
