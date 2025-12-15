@@ -1,3 +1,5 @@
+const api_base_url = "https://pokeapi.co/api/v2";
+
 const traduccionTipos = {
   grass: "planta",
   fire: "fuego",
@@ -27,7 +29,7 @@ const chainCache = {};
 async function getSpecies(id) {
   if (speciesCache[id]) return speciesCache[id];
 
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+  const res = await fetch(`${api_base_url}/pokemon-species/${id}`);
   const data = await res.json();
 
   const entradaES = data.flavor_text_entries.find(
@@ -77,7 +79,7 @@ async function getEvolutionChain(url) {
 
 // Obtener un Pokémon completo (rápido y con cache)
 async function obtenerPokemon(id) {
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  const res = await fetch(`${api_base_url}/pokemon/${id}`);
   const d = await res.json();
 
   const species = await getSpecies(id);
