@@ -19,7 +19,7 @@ export default function PokemonCardPage() {
   useEffect(() => {
     const cargarPokemons = async () => {
       try {
-        const data = await getPokemons(1025);
+        const data = await getPokemons(151);
         setPokemons(data);
         setFiltrados(data);
       } catch (error) {
@@ -59,7 +59,7 @@ export default function PokemonCardPage() {
     }
   };
 
-  //  BÚSQUEDA AVANZADA — REEMPLAZADA COMPLETA
+  //  BÚSQUEDA AVANZADA 
   const filtrarAvanzado = ({ tipos, altura, peso }) => {
     let resultado = pokemons;
 
@@ -74,6 +74,7 @@ export default function PokemonCardPage() {
         if (altura === "bajo") return p.altura < 1;
         if (altura === "medio") return p.altura >= 1 && p.altura <= 2;
         if (altura === "alto") return p.altura > 2;
+        return false;
       });
     }
 
@@ -82,6 +83,7 @@ export default function PokemonCardPage() {
         if (peso === "liviano") return p.peso < 10;
         if (peso === "medio") return p.peso >= 10 && p.peso <= 100;
         if (peso === "pesado") return p.peso > 100;
+        return false;
       });
     }
 
