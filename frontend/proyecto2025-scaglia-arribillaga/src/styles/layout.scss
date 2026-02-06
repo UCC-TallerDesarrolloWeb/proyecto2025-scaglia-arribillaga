@@ -172,3 +172,11 @@
   100% { transform: translateX(0); }
 }
 
+/* importo los styles del mensaje de error */
+.mensaje-error {
+  color: red;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}

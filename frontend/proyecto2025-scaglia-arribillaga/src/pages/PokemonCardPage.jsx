@@ -128,20 +128,13 @@ export default function PokemonCardPage() {
       <Buscador onBuscar={buscar} />
       <BusquedaAvanzada onFiltrar={filtrarAvanzado} />
 
-      {/*  MENSAJE DE ERROR */}
-      {mensajeError && (
-        <p
-          style={{
-            color: "red",
-            textAlign: "center",
-            marginTop: "15px",
-            fontSize: "18px",
-            fontWeight: "bold",
-          }}
-        >
-          {mensajeError}
-        </p>
-      )}
+      {/* MENSAJE DE ERROR */}
+       {mensajeError && (
+      <p className="mensaje-error">
+         {mensajeError}
+      </p>
+       )}
+
 
       {/*  Lista de pokémon */}
       {!pokemonSeleccionado && (
