@@ -16,8 +16,8 @@ export default function Buscador({ onBuscar }) {
 
     if (!isNaN(valor)) {
       const num = Number(valor);
-      if (num < 1 || num > 1025) {
-        setError("El número debe estar entre 1 y 1025.");
+      if (num < 1 || num > 151) {
+        setError("El número debe estar entre 1 y 151.");
         return;
       }
     }
