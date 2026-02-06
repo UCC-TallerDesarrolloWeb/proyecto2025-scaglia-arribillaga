@@ -109,7 +109,7 @@ async function obtenerPokemon(id) {
 }
 
 // Obtener los pokemones super rápido
-export async function getPokemons(limit = 1025) {
+export async function getPokemons(limit = 151) {
   const promesas = [];
 
   for (let i = 1; i <= limit; i++) {
