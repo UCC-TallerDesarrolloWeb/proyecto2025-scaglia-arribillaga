@@ -65,7 +65,7 @@ if (evoObjs.length > 0) {
       )}
 
       {/* Flecha derecha SOLO si no es el último Pokémon */}
-      {Number(pokemon.numero) < 1025 && (
+      {Number(pokemon.numero) < 151 && (
         <button
           className="flechaNav flechaDerecha"
           onClick={onSiguiente}
